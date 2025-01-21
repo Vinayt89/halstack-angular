@@ -1,0 +1,150 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "halstack-angular": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "preserveSymlinks": true,
+            "outputPath": "dist/halstack-angular",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "inlineStyleLanguage": "scss",
+            "tsConfig": "tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/zearch.html",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@dxc-technology/halstack-angular/lib/assets",
+                "output": "./assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-monaco-editor/assets/monaco",
+                "output": "./assets/monaco/"
+              }
+            ],
+            "styles": [
+              "./node_modules/@dxc-technology/halstack-angular/lib/styles/themes/theme.scss",
+              "src/styles.scss"
+
+            ],
+            "scripts": [],
+            "baseHref": "https://github.dxc.com/vthakre2/Angular-Halstack-Sompo.git",
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "4mb",
+                  "maximumError": "6mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              "browserTarget": "halstack-angular:build"
+            },
+          "configurations": {
+            "production": {
+              "browserTarget": "halstack-angular:build:production"
+            }
+          }
+
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "halstack-angular:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "/src/test.ts",
+            "polyfills": "/src/polyfills.ts",
+            "tsConfig": "/tsconfig.spec.json",
+            "karmaConfig": "/karma.conf.js",
+            "assets": [
+              "/src/favicon.ico",
+              "/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@dxc-technology/halstack-angular/lib/styles/themes/theme.scss",
+              "/src/styles.scss"
+
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "without-browser-target": {
+      "root": "",
+      "projectType": "library",
+      "architect": {
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "tsConfig": "src/tsconfig.app.json",
+            "docsMode":false
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "tsConfig": "src/tsconfig.app.json"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "halstack-angular",
+  "cli": {
+    "analytics": false
+  }
+}

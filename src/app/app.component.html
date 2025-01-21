@@ -1,0 +1,17 @@
+<dxc-application-layout theme>
+  <dxc-header [underlined]="true" [padding]="{ right: 'medium', left: 'medium' }"> 
+  </dxc-header>
+   
+  <dxc-application-layout-main>
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </dxc-application-layout-main>
+
+  <dxc-footer [bottomLinks]="[
+      { text: 'Twitter', href: 'https://twitter.com/DXCTechnology' },
+      { text: 'Facebook', href: 'https://www.facebook.com/DXCTechnology/' },
+      { text: 'Instagram', href: 'https://www.instagram.com/dxctechnology/' }
+    ]"
+    [copyright]="'© DXC Technology 2024. All rights reserved.'"
+  >
+  </dxc-footer>
+</dxc-application-layout>

@@ -1,0 +1,77 @@
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <div class="lowerheader">
+         <img src="assets/img/img_currentq1_02.png" class="img1-lowerheader" />
+         <img src="assets/img/img_currentq2_01.png" class="img2-lowerheader" />
+         <img src="assets/img/img_currentq3_01.png" class="img3-lowerheader" />
+         <img src="assets/img/icon_5minutes_01.png" class="img4-lowerheader" />
+      </div>
+     
+      <h2 style="padding-left: 140px; margin-top: 50px;">Q4. aaaa</h2>
+      <div class="screenthree-container">
+         <div class="screenthree-header">
+            <dxc-box class="outer-box" padding="xsmall">
+               <div style="display: flex; flex-direction: column; gap: 16px;">
+                   
+                  <!-- Q4-1 Start -->
+                  <dxc-box id="q1Section" class="inner-box" style="background-color: rgb(245, 208, 213);" size="fillParent" padding="small">
+                     <div class="questionbadge">
+                        Q4-<span>1</span>
+                     </div>
+                     <span style="margin-top: 0px; margin-left: 10px; font-weight: bold;"></span>     
+                     <span style="margin-top: 0px; font-weight: 700;  color: #e37026;"></span>
+                     <span style="margin-top: 0px; margin-left: 5px; font-weight: bold;"></span>   
+                     <div class="dotted-line"></div>                                             
+                  </dxc-box>
+                  <!-- Q4-1 End -->
+                  <dxc-box size="fillParent" padding="small" style="height: 60px; background-color: #fffff0;" shadowDepth="0">
+                     <div class="prv-btn"> <img src="assets/img/btn_prev_01_o.png" 
+                        style="width: 106px; height: 36px; margin-top: 15px; margin-left: -20px;"
+                        (click)="goToPreviousScreen()"/>
+                     </div>
+                     <div class="prv-btn"> <img src="assets/img/btn_quot_01_d.png" 
+                        style="width: 280px; height: 64px; margin-bottom: -10px; margin-left: 100px;"
+                        (click)="goToNextScreen()"/>
+                     </div>
+                  </dxc-box>
+               </div>
+            </dxc-box>
+            <dxc-box class="outer-box2" padding="xxsmall" style="max-height: 1040px;">
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <dxc-box class="inner-box3" padding="small">
+                    <label class="inner-box3-label" style="margin-bottom: 8px;">
+                     損保ジャパンの全国ネットワークと提携し、お客様の安心かつスムーズな事故解決を実現しています。
+                  </label>
+                  <img src="assets/img/logo_sjnk_02.gif" />
+                  </dxc-box>
+                  <img src="assets/img/banner_alsok_03.gif" style="height: 180px;" />
+                  <dxc-box class="inner-box3" padding="small">
+                    <img src="assets/img/hdg_question_01.gif" class="inner-box3-btnimg" />
+                    <span class="inner-box3-label2">
+                     お車について
+                    </span>
+                    <div class="dotted-line2"></div>
+                    <ul class="links">
+                      <li *ngFor="let link of sidePanelLinks">
+                        <a class="link" target="_blank" rel="noopener noreferrer" 
+                        [href]="link.href">{{ link.text }}</a>
+                      </li>
+                    </ul>
+                  </dxc-box>
+                  <img src="assets/img/img_contact_03.gif" />
+              </div>
+            </dxc-box>
+         </div>
+      <div class="footer-links" style="margin-top: 15px; margin-right: 50px; margin-top: 40px;">
+        <ng-container *ngFor="let link of footerLinks; let last = last">
+          <mat-icon  aria-hidden="true">chevron_right</mat-icon>
+          <a class="link" target="_blank" rel="noopener noreferrer" [href]="link.href" >{{ link.text }}</a>
+        </ng-container>
+      </div>
+      </div>
+   </body>
+</html>

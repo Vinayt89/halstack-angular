@@ -1,0 +1,385 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+</head>
+<div class="lowerheader">
+   <img src="assets/img/img_currentq1_02.png" class="img1-lowerheader" />
+   <img src="assets/img/img_currentq2_01.png" class="img2-lowerheader" />
+   <img src="assets/img/img_currentq3_01.png" class="img3-lowerheader" />
+   <img src="assets/img/icon_5minutes_01.png" class="img4-lowerheader" />
+</div>
+
+<div class="screen-one-container">
+    <h2 style="margin-top: -5px;">Q1. お車を使用される方について</h2>
+   <!-- <img style="margin-top: -15px; margin-bottom: 25px;" src="assets/img/hdg_q1_01.gif" class="img-ques1-heading" /> -->
+   <div class="screen-one-header">
+       <dxc-box class="outer-box" padding="xsmall">
+           <div style="display: flex; flex-direction: column; gap: 16px;">
+               <dxc-box class="inner-box" size="fillParent" padding="small">
+                    <div style="margin-top: 10px;"></div>
+                   <img src="assets/img/hdg_q1-1_01.png" />
+                   <div class="dotted-line"></div>
+                   <div class="date-div" style="display: flex; align-items: center; gap: 10px;">
+                       <label class="date-label" style="margin-right: 10px;">生年月日</label>
+                       <!-- Year Selector -->
+                       <dxc-select class="date-select" label="年" style="width: 150px;" [options]="yearOptions" (onFocus)="adjustDropdownPosition('year')" (onChange)="onYearChange($event)"> </dxc-select>
+                       <!-- Month Selector -->
+                       <dxc-select label="月" style="width: 100px;" [options]="monthOptions" (onFocus)="adjustDropdownPosition('month')" (onChange)="onMonthChange($event)"> </dxc-select>
+                       <!-- Day Selector -->
+                       <dxc-select label="日" style="width: 100px;" [options]="dayOptions" (onFocus)="adjustDropdownPosition('day')" (onChange)="onDayChange($event)"> </dxc-select>
+                   </div>
+               </dxc-box>
+               <dxc-box class="inner-box" size="fillParent" padding="small">
+                   <img src="assets/img/hdg_q1-2_01.png" />
+                   <div class="dotted-line"></div>
+                   <div class="radiobtnq2">
+                       <dxc-radio label="ゴールド" name="radioLabel2" margin="medium" labelPosition="after"></dxc-radio>
+                   </div>
+                   <div class="radio-space"></div>
+                   <div class="radiobtnq2">
+                       <dxc-radio label="ブルー" name="radioLabel2" margin="medium" labelPosition="after"></dxc-radio>
+                   </div>
+                   <div class="radio-space"></div>
+                   <div class="radiobtnq2">
+                       <dxc-radio label="グリーン" name="radioLabel2" margin="medium" labelPosition="after"></dxc-radio>
+                   </div>
+                   <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=9867" class="custom-link" style="margin-top: 10px;" target="_blank" rel="noopener noreferrer">免許証の色を選択する場合の注意点 </a>
+               </dxc-box>
+               <dxc-box class="inner-box" size="fillParent" padding="small">
+                   <img src="assets/img/hdg_q1-3_01.png" />
+                   <div class="dotted-line"></div>
+                   <div class="radiobtnq3">
+                       <dxc-radio label="加入している" name="radioLabel2" margin="medium" (click)="toggleSection()" labelPosition="after"></dxc-radio>
+                   </div>
+                   <div class="radio-space"></div>
+                   <div class="radiobtnq3">
+                       <dxc-radio label="加入していない" name="radioLabel2" margin="medium" (click)="toggleSection()"  labelPosition="after"></dxc-radio>
+                   </div>
+
+                   <dxc-box class="inner-box3" padding="xxsmall">
+                       <span>※</span><a href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1084" class="custom-link" target="_blank" rel="noopener noreferrer">中断証明書</a>
+                       <span class="normal-text">
+                           の発行理由が海外への渡航による中断の場合は、当サイトでのお取扱いはできません。 <br />
+                           お客様サポートセンターまでお電話ください。 <br />
+                           お客様サポートセンター：0120-163-028　営業時間：9：00～17：30 年末年始は除く
+                       </span>
+                   </dxc-box>
+               </dxc-box>
+               <dxc-box class="inner-box" size="fillParent" padding="small">
+                   <img src="assets/img/hdg_q1-4_01.png" />
+                   <span style="margin-top: 14px; margin-left: 5px;">
+                       <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
+                       <a style="margin-left: -5px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=1350" class="custom-link">使用目的とは </a>
+                   </span>
+                   <div class="dotted-line"></div>
+                   <div class="radiobtnq2">
+                       <dxc-radio label="日常・レジャー" name="radioLabel2" margin="small" [checked]="isSectionVisible" (click)="showSection(1)" labelPosition="after"></dxc-radio>
+                   </div>
+                   <div class="radio-space"></div>
+                   <div class="radiobtnq2">
+                       <dxc-radio label="通勤・通学" name="radioLabel2" margin="small" [checked]="isSectionVisible" (click)="showSection(1)" labelPosition="after"></dxc-radio>
+                   </div>
+                   <div class="radio-space"></div>
+                   <div class="radiobtnq2">
+                       <dxc-radio label="業務使用" name="radioLabel2" margin="small" [checked]="isSectionVisible" (click)="showSection(2)" labelPosition="after"></dxc-radio>
+                   </div>
+                   <div *ngIf="isSectionVisible">
+                       <dxc-box class="inner-box5" size="fitcontent" padding="small">
+                           <span>過去１年間のお車の走行距離（前年走行距離）をご選択ください。</span>
+                           <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
+                           <a style="margin-left: -3px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=12119" class="custom-link">前年走行距離とは </a>
+                           <div class="radiobtnq4">
+                               <dxc-radio label="3,000km以下" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
+                           </div>
+                           <div class="radio-space"></div>
+                           <div class="radiobtnq4">
+                               <dxc-radio label="3,000km超～5,000km以下" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
+                           </div>
+                           <div class="radiobtnq4">
+                               <dxc-radio label="5,000km超～10,000km以下" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
+                           </div>
+                           <div class="radio-space"></div>
+                           <div class="radiobtnq4">
+                               <dxc-radio label="10,000km超～15,000km以下" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
+                           </div>
+                           <div class="radiobtnq4">
+                               <dxc-radio label="15,000km超" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
+                           </div>
+                           <div>
+                               <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
+                               <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=12120" class="custom-link" target="_blank" rel="noopener noreferrer" style="margin-top: 20px; margin-left: -5px;">
+                                   前契約保険会社が当社（ＳＯＭＰＯダイレクト（旧セゾン自動車火災保険））の方への注意点
+                               </a>
+                           </div>
+                       </dxc-box>
+                   </div>
+                   <div>
+                       <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
+                       <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=1519" class="custom-link" target="_blank" rel="noopener noreferrer" style="margin-top: 15px;">
+                           車を通勤・通学のための“送迎”で利用している場合の使用目的は？
+                       </a>
+                   </div>
+               </dxc-box>
+
+               <div *ngIf="isImageVisible">
+                   <div style="display: flex; flex-direction: column; gap: 16px;">
+                       <dxc-box class="inner-box" size="fillParent" padding="small">
+                           <img style="width: 450px;" src="assets/img/hdg_q1-5_02.png" />
+                           <span style="margin-top: 14px; margin-left: 5px;">
+                               <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
+                               <a style="margin-left: -5px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=12119" class="custom-link">運転者の範囲の決め方は？ </a>
+                           </span>
+                           <div class="dotted-line"></div>
+
+                           <div class="image-container">
+                              <ng-container [ngSwitch]="selectedSection">
+                                <div *ngSwitchCase="1">
+                                 <img src="assets/img/fig_driver_04_type4.png" alt="q5-image4" class="q5-image4" [ngClass]="{ faint: activeImage !== null && activeImage !== 4 }" (click)="setActiveImage(4)" style="cursor: pointer;" />
+                                 <img src="assets/img/fig_driver_03_type4.png" alt="q5-image3" class="q5-image3" [ngClass]="{ faint: activeImage !== null && activeImage !== 3 }" (click)="setActiveImage(3)" style="cursor: pointer;" />
+                                 <img src="assets/img/fig_driver_02_type4.png" alt="q5-image2" class="q5-image2" [ngClass]="{faint: activeImage !== null && activeImage !== 2 }" (click)="setActiveImage(2)" style="cursor: pointer;" />
+                                 <img src="assets/img/fig_driver_01_type4.png" alt="q5-image1" class="q5-image1" [ngClass]="{ faint: activeImage !== null && activeImage !== 1 }" (click)="setActiveImage(1)" style="cursor: pointer;" />
+                                </div>
+                                <div *ngSwitchCase="2">
+                                 <img src="assets/img/fig_driver_04_b_type4.png" alt="q5-b-image4" class="q5-b-image4" [ngClass]="{ faint: activeImage !== null && activeImage !== 4 }" (click)="setActiveImage(4)" style="cursor: pointer;" />
+                                 <img src="assets/img/fig_driver_03_b_type4.png" alt="q5-b-image3" class="q5-b-image3" [ngClass]="{ faint: activeImage !== null && activeImage !== 3 }" (click)="setActiveImage(3)" style="cursor: pointer;" />
+                                 <img src="assets/img/fig_driver_02_b_type4.png" alt="q5-b-image2" class="q5-b-image2" [ngClass]="{faint: activeImage !== null && activeImage !== 2 }" (click)="setActiveImage(2)" style="cursor: pointer;" />
+                                 <img src="assets/img/fig_driver_01_b_type4.png" alt="q5-b-image1" class="q5-b-image1" [ngClass]="{ faint: activeImage !== null && activeImage !== 1 }" (click)="setActiveImage(1)" style="cursor: pointer;" /> 
+                                </div>
+                              </ng-container>
+                            </div>
+                           <img style="width: 630px; margin-top: 10px;" src="assets/img/range.png" />
+                           <div class="radiobtnq5">
+                               <dxc-radio
+                                   label="補償範囲：①
+                                 【主に運転される方】のみ運転"
+                                   name="radioLabel2"
+                                   margin="xxsmall"
+                                   labelPosition="after"
+                                   [checked]="activeImage === 1"
+                                   (click)="setActiveImage(1)"
+                               >
+                               </dxc-radio>
+                           </div>
+                           <div class="radio-space"></div>
+                           <div class="radiobtnq5">
+                               <dxc-radio
+                                   label="補償範囲：①+②
+                                 【主に運転される方・配偶者・別居の未婚のお子さま】のみ運転"
+                                   name="radioLabel2"
+                                   margin="xxsmall"
+                                   labelPosition="after"
+                                   [checked]="activeImage === 2"
+                                   (click)="setActiveImage(2)"
+                               >
+                               </dxc-radio>
+                           </div>
+                           <div class="radio-space"></div>
+                           <div class="radiobtnq5">
+                               <dxc-radio
+                                   label="補償範囲：①+②+③
+                                 【同居のお子さま】以外の方が運転"
+                                   name="radioLabel2"
+                                   margin="xxsmall"
+                                   labelPosition="after"
+                                   [checked]="activeImage === 3"
+                                   (click)="setActiveImage(3)"
+                               >
+                               </dxc-radio>
+                           </div>
+                           <div class="radio-space"></div>
+                           <div class="radiobtnq5">
+                               <dxc-radio
+                                   label="補償範囲：①+②+③+④
+                                 【同居のお子さま（その方の配偶者含む）】も含め運転"
+                                   name="radioLabel2"
+                                   margin="xxsmall"
+                                   labelPosition="after"
+                                   [checked]="activeImage === 4"
+                                   (click)="setActiveImage(4)"
+                               >
+                               </dxc-radio>
+                           </div>
+                           <div style="font-size: 11px; font-weight: normal; margin-top: 20px;">
+                               <dxc-box size="fillParent" padding="xsmall" style="background-color: #f5f5f5; width: 595px;" shadowDepth="0">
+                                   <span>
+                                       補償される運転者の範囲 <br />
+                                       (1) お車を主に運転される方 <br />
+                                       (2) お車を主に運転される方の配偶者 <br />
+                                       (3) 上記(1)、(2)のどちらとも別居している未婚のお子さま <br />
+                                       (4) 同居の親族・友人・知人や別居の既婚のお子さまなど <br />
+                                       (5) 同居のお子さま（同居のお子さまの配偶者含む） ※1 <br />
+                                       <br />
+                                       ※1 設定した年齢（※2）未満の「<a class="custom-link" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1446">同居のお子さま</a>」 が運転中の事故は補償されませんので、ご注意ください。
+                                       <br />
+                                       （「<a class="custom-link" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1446">同居のお子さま</a>」以外の方が運転中の事故は、年齢による制限なく補償されます。） <br />
+                                       ※2 入力された生年月日から計算した保険期間の初日時点の年齢をいいます。
+                                   </span>
+                               </dxc-box>
+                           </div>
+                       </dxc-box>
+                       <dxc-box class="inner-box" size="fillParent" padding="small">
+                        <img style="width: 630px;" src="assets/img/hdg_q1-6_02.png" />
+                        <div class="dotted-line"></div>
+                        <span style="margin-top: 10px; font-size: 14px;">運転する同居のお子さまで一番若い方の生年月日
+                        </span>
+                        <div class="date-div" style="display: flex; align-items: center; gap: 10px;">
+                        <dxc-select class="date-select" label="年" style="width: 150px;" [options]="yearOptions" (onFocus)="adjustDropdownPosition('year')" (onChange)="onYearChange($event)"> </dxc-select>
+                        <dxc-select label="月" style="width: 100px;" [options]="monthOptions" (onFocus)="adjustDropdownPosition('month')" (onChange)="onMonthChange($event)"> </dxc-select>
+                        <dxc-select label="日" style="width: 100px;" [options]="dayOptions" (onFocus)="adjustDropdownPosition('day')" (onChange)="onDayChange($event)"> </dxc-select>
+                        </div>
+                        
+                        <dxc-box size="fillParent" padding="xsmall" style="background-color: #f5f5f5; 
+                        margin-top: 20px;" shadowDepth="0">
+                           <span style="font-size: 11px; font-weight: normal;">
+                              設定した年齢※未満の「
+                              <a class="custom-link" href="">同居のお子さま</a>」が運転中の事故は補償されませんので、ご注意ください。
+                              <br>（「<a class="custom-link" href="">居のお子さま</a>」以外の方が運転中の事故は、年齢による制限なく補償されます。）
+                              <br>※入力された生年月日から計算した保険期間の初日時点の年齢をいいます。
+                           </span>   
+                        </dxc-box>
+                        
+                       </dxc-box>
+                   </div>
+               </div>
+
+               <dxc-box size="fillParent" padding="small" style="height: 60px; background-color: #fffff0;" shadowDepth="0">
+                <div class="prv-btn"> <img src="assets/img/btn_prev_01_o.png" 
+                    style="width: 106px; height: 36px; margin-top: 15px;"
+                    />
+                  </div>
+                  <div class="prv-btn"> <img src="assets/img/btn_next01_01_d.gif" 
+                    style="width: 420px; height: 64px; margin-bottom: -10px; margin-left: 20px;"
+                    (click)="goToScreenTwo()"
+                    />
+                  </div>
+               </dxc-box>
+           </div>
+       </dxc-box>
+       <dxc-box class="outer-box2" padding="xxsmall" style="max-height: 950px;">
+           <div style="display: flex; flex-direction: column; gap: 6px;">
+               <dxc-box class="inner-box2" padding="small">
+                   <label class="inner-box2-label" style="margin-bottom: 8px;">
+                       インターネットでお申込みが可能な条件をご確認ください。
+                   </label>
+                   <mat-icon style="color: blue; margin-left: -15px; font-weight: bold; font-size: 15px;">arrow_forward</mat-icon>
+                   <a class="custom-link" style="margin-left: -7px;" href="https://www.sompo-direct.co.jp/otona/clause/" target="_blank" rel="noopener noreferrer">お申込み可能な条件について</a>
+               </dxc-box>
+               <dxc-box class="inner-box2" style="height: 100px; " padding="small">
+                   <label class="inner-box2-label" style="margin-bottom: 8px;">
+                       損保ジャパンの全国ネットワークと提携し、お客様の安心かつスムーズな事故解決を実現しています。
+                   </label>
+                   <img src="assets/img/logo_sjnk_02.gif" />
+               </dxc-box>
+               <img src="assets/img/banner_alsok_03.gif" style="height: 180px;" />
+               <dxc-box class="inner-box2" padding="small" style="height: 210px;">
+                   <img src="assets/img/hdg_question_01.gif" class="inner-box-btnimg" />
+                   <label class="inner-box2-label2">
+                       当社試算サイトについて
+                   </label>
+                   <div class="dotted-line2"></div>
+                   <a class="custom-link" target="_blank" rel="noopener noreferrer" style="margin-left: -10px; margin-top: 7px;" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?cid=WHP001&id=1541&category=&page=3">40代、50代以外でも契約できますか？ </a>
+                   <label class="inner-box2-label2">
+                       運転者の範囲について
+                   </label>
+                   <div class="dotted-line2"></div>
+                   <a class="custom-link" target="_blank" rel="noopener noreferrer" style="margin-left: -10px; margin-top: 7px;" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=1578&category=140">運転者の「年齢条件」はないのですか？ </a>
+                   <a class="custom-link" target="_blank" rel="noopener noreferrer" style="margin-left: -20px;" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=1576&category=140">「家族限定特約」はありますか？ </a>
+                   <div class="dotted-line2"></div>
+               </dxc-box>
+               <img src="assets/img/img_contact_03.gif" />
+           </div>
+       </dxc-box>
+   </div>
+
+   <div style="margin-top: -20px;">
+       <dxc-box class="outer-box" padding="xsmall" style="background-color: white; width: 680px;">
+           <div style="display: flex; flex-direction: column; gap: 16px;">
+               <img src="assets/img/hdg_caution_box_01.gif" style="width: 678px;" />
+               <dxc-box class="inner-box3" shadowDepth="0" size="fillParent" padding="small" margin="xxsmall" style="background-color: white; margin-top: -20px;">
+                   <mat-icon>warning</mat-icon><span class="normal-text">下記「お申込みが可能な条件」に該当しない場合は、インターネットでのお申込みができません。お見積りの前に必ずご確認ください。 </span>
+               </dxc-box>
+               <dxc-box class="inner-box4" size="fillParent" padding="xsmall" style="margin-top: -25px;">
+                   <h5 style="margin-top: -10px;">お申込みが可能な主な条件</h5>
+                   <div class="normal-text" style="margin-left: -150px; margin-top: 15px;">
+                       <mat-icon style="font-size: 8px;">lens</mat-icon>
+                       <span>
+                           ノンフリート契約※であること <br />
+                           ※今回、お見積りのお車も含めて、ご自身が所有・使用し、自動車保険を付けているお車が9台以下であること
+                       </span>
+                       <br />
+                       <mat-icon style="font-size: 8px;">lens</mat-icon>
+                       <span>
+                           お車を主に使用される方（記名被保険者）が個人であること
+                          <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon> <a class="custom-link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1180">記名被保険者とは</a>
+                       </span>
+                       <br />
+                       <mat-icon style="font-size: 8px;">lens</mat-icon>お車が自家用車で3、4、5、6、7ナンバーであることなど
+                   </div>
+                   <div class="dotted-line"></div>
+                   <div class="normal-text" style="margin-left: 15px; margin-top: 5px;">
+                       詳細はこちらをクリックしてご確認ください。<mat-icon style="color: blue; margin-left: -5px; font-weight: bold; font-size: 15px;">arrow_forward</mat-icon>
+                       <a style="margin-left: -7px;" target="_blank" rel="noopener noreferrer" class="custom-link" href="https://www.sompo-direct.co.jp/otona/clause/">お申込み可能な条件について</a>
+                   </div>
+               </dxc-box>
+               <h2 style="font-size: 18px; margin-bottom : -15px">お申込みの際にご用意いただくもの</h2>
+               <div class="bottom-container">
+                  <div class="section">
+                    <h3 style="font-size: 14px;">他社でご契約中のお車の場合</h3>
+                    <div class="bottom-image-items">
+                      <div class="bottom-image-item">
+                        <img src="assets/img/guide-img01.png" alt="運転免許証" style="width: 65px; height: 45px;"/>
+                        <p>運転免許証</p>
+                      </div>
+                      <div class="bottom-image-item">
+                        <img src="assets/img/guide-img02.png" alt="車検証" style="width: 65px; height: 45px;"/>
+                        <p><a class="custom-link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1085">車検証</a></p>
+                      </div>
+                      <div class="bottom-image-item">
+                        <img src="assets/img/guide-img03.png" alt="保険証券（満期案内）" style="width: 65px; height: 45px;" />
+                        <p>保険証券（満期案内）</p>
+                      </div>
+                      <div class="bottom-image-item">
+                        <img src="assets/img/guide-img07.png" alt="累計走行距離の値" style="width: 58px; height: 67px;"/>
+                        <p>累計走行距離の値</p>
+                      </div>
+                      <div class="bottom-image-item" style="margin-right: -5px;">
+                        <img src="assets/img/guide-img05.png" alt="Eメールアドレス" style="width: 60px; height: 40px;"/>
+                        <p>Eメールアドレス</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vertical-line"></div>
+                  <div class="section" style="margin-left: -5px;">
+                    <h3 style="font-size: 14px;">はじめて自動車保険にご契約するお車の場合</h3>
+                    <div class="bottom-image-items">
+                      <div class="bottom-image-item">
+                        <img src="assets/img/guide-img01.png" alt="運転免許証" style="width: 65px; height: 45px; margin-right: 5px; margin-left: 7px;"/>
+                        <p>運転免許証</p>
+                      </div>
+                      <div class="bottom-image-item">
+                        <img src="assets/img/guide-img02.png" alt="車検証" style="width: 65px; height: 45px; margin-right: 5px;"/>
+                        <p><a class="custom-link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1085">車検証</a></p>
+                      </div>
+                      <div class="bottom-image-item">
+                        <img src="assets/img/guide-img07.png" alt="累計走行距離の値" style="width: 58px; height: 67px; margin-right: 5px;"/>
+                        <p>累計走行距離の値</p>
+                      </div>
+                      <div class="bottom-image-item">
+                        <img src="assets/img/guide-img05.png" alt="Eメールアドレス" style="width: 60px; height: 40px;"/>
+                        <p>Eメールアドレス</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+           </div>
+       </dxc-box>
+   </div>
+   <div class="footer-links" style="margin-top: 15px; margin-right: 50px; margin-top: 40px;">
+    <ng-container *ngFor="let link of footerLinks; let last = last">
+      <mat-icon  aria-hidden="true">chevron_right</mat-icon>
+      <a class="link" target="_blank" rel="noopener noreferrer" [href]="link.href" >{{ link.text }}</a>
+    </ng-container>
+  </div>
+</div>
+</html>

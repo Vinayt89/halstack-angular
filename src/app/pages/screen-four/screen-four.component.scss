@@ -1,0 +1,693 @@
+body {
+  font-family: 'Noto Sans JP', "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+div.screenthree-container {
+  max-width: 1120px;
+  margin: 0px auto;
+  // padding: 50px 20px;
+  margin-left: 140px;
+}
+
+div.screenthree-header {
+  display: flex;
+  size : 10px;
+  // margin: 40px 0px;
+  margin-top: 0px;
+  height:  auto;
+}
+
+.image-highlight {
+    background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: center;
+  background-color: orange;
+  padding: 30px 0;
+}
+
+.tab {
+  position: relative;
+  padding: 5px 60px; /* Increased size */
+  background-color: orange; /* Background for tabs */
+  margin: 0 10px;
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+  border: 1.5px solid white;  /* Thick white border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.tab.active {
+  background-color: #ff7f00;
+  transform: translateY(-5px);
+}
+
+.tab:hover {
+  background-color: #ff6f00;
+}
+
+.tab-content {
+  margin-top: 40px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.outer-box {
+  background-color: #FFFFF0;
+}
+
+.outer-box2 {
+  background-color: #f6f6ef;
+  margin-left: 20px;
+}
+
+.inner-box {
+  flex-wrap: wrap;
+  width: 630px;
+}
+
+.questionbadge {
+  background-color: #e37026;  // Orange background
+  color: #fff;                // White text color
+  margin-top: -15px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;  
+  margin-left: -15px;
+  padding: 6px 12px;          // Padding
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  // Subtle shadow
+}
+
+.dotted-line {
+  border-bottom: 2px dotted rgba(208, 203, 203, 0.961); 
+    width: 120%; 
+    margin: 10px 0;
+    margin-left: -10px;
+}
+
+.lowerheader {
+  width: auto;
+  height: 60px;
+  background-color: orange;
+  margin-bottom: -20px;
+}
+
+.img1-lowerheader {
+  // width: 19%;
+  // height: 70%;
+  // min-width: 256px;
+  // min-height: 40px;
+  margin-bottom: 10px;
+  padding: 8px 20px;
+  margin-left: 120px;
+}
+.img2-lowerheader {
+  // width: 19%;
+  // height: 70%;
+  // min-width: 240px;
+  // min-height: 40px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  margin-left: -25px;
+}
+.img3-lowerheader {
+  // width: 19%;
+  // height: 70%;
+  // min-width: 224px;
+  // min-height: 40px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  margin-left: -14px;
+}
+.img4-lowerheader {
+  margin-top: -4.2%; 
+  margin-left: 75%; 
+  // min-width: 111px;
+  // min-height: 101px;
+  transform: translateX(-50%);
+}
+
+.radiobtn1div {
+  border: 2px solid #969c9f;
+  font-size: 10;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: -4px;
+  margin-top: 10px;
+  // margin: 10px 0 20px 0;
+  // height: 90px;
+  display: flex; 
+  align-items: center; 
+  transition: border-color 0.3s ease; 
+  width: 282px;
+  height: 40px;
+  &:focus-within {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
+  &:active {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
+}
+
+.radiobtn1div + .radiobtn1div {
+  margin-left: 10px;  /* Ensures space between consecutive radio button divs */
+}
+
+.q2-1-text {
+  width: 100%;
+  transition: border-color 0.3s ease; 
+  // margin: 10px auto;
+  margin-top: 20px;
+  margin-left: -4px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.8;
+  font-family: 'Arial', sans-serif;
+}
+
+.q2-1-text2 {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-left: -4px;
+  font-size: 12px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+  // margin: 10px auto;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+.link {
+  text-decoration: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.inner-box2 {
+  flex-wrap: wrap;
+  margin-top: 10px;
+  width: 100%;
+  font-weight: normal ;
+  font-size: 15px;
+  text-decoration: none;  
+  cursor: pointer;
+  display: inline-flex;
+  background-color: #f8f8e9;
+  // border: 2px solid rgb(255, 119, 0);
+  border-width: 3px;
+}
+
+.inner-box3 {
+  flex-wrap: wrap;
+  width: 180px;
+  // height: 300px;
+}
+
+.inner-box3-label {
+  font-size: 11px;
+  margin-left: -15px;
+  margin-top: -3px;
+  margin-right: -15px;
+}
+.inner-box3-btnimg {
+  margin-left: -15px;
+  margin-top: -15px;
+  margin-right: -15px;
+  width: 117%;
+  height: 40px;
+}
+.inner-box3-label2 {
+  font-size: 12px;
+  margin-left: -15px;
+  margin-top: 10px;
+  margin-right: -15px;
+  font-weight:normal;
+}
+.dotted-line2 {
+  border-bottom: 2px dotted lightgray; 
+    width: 120%; 
+    margin-top: 5px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.radiobtn2div {
+  border: 2px solid #969c9f;
+  font-size: 10;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: -20px;
+  // margin: 10px 0 20px 0;
+  height: 90px;
+  display: flex; 
+  align-items: center; 
+  transition: border-color 0.3s ease; 
+  width: 240px;
+  height: 100px;
+  &:focus-within {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
+  &:active {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
+}
+
+.radiobtn2div + .radiobtn2div {
+  margin-left: 20px;  /* Ensures space between consecutive radio button divs */
+}
+
+.radiobtn3 {
+  border: 2px solid #969c9f;
+  font-size: 12;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  height: 90px;
+  display: flex; 
+  align-items: center; 
+  transition: border-color 0.3s ease; 
+  width: 260px;
+  height: 90px;
+  background-color: #f7f0f0;
+
+  &:focus-within {
+    border-color: orange; 
+    background-color: rgb(239, 210, 155);
+  }
+
+  &:active {
+    border-color: orange; 
+    background-color: rgb(239, 210, 155);
+  }
+}
+
+.radiobtn3 + .radiobtn3 {
+  margin-left: 10px;  /* Ensures space between consecutive radio button divs */
+}
+
+.inner-box2-text {
+  margin-top:20px;
+  font-size: 12px;
+  font-weight: 650;
+  color: rgb(255, 111, 0);
+  
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 60vh;
+  margin-top: -110px;
+}
+.grid {
+  display: grid;
+  margin-top: 120px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.grid-item {
+  background-color: #f9d5d3;
+  width: 184px;
+  height: 55px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 550;
+}
+.grid-item label {
+  flex: 1;
+  text-align: center;
+  margin-left: 10px;
+}
+.grid-item:hover {
+  background-color: #f4b6b3;
+}
+
+.q2-2-text2 {
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-size: 13px;
+  border-radius: 8px;
+  // margin-top: -30px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 10px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.q3SelectOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: -20px;
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.label {
+  width: 120px;
+  text-align: right;
+}
+
+.dropdown {
+  padding: 5px;
+  background-color: #f9e6e6;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+}
+
+.q3-3-text2 {
+  background-color: #f2f2f2;
+  width: 100%;
+  padding: 10px;
+  font-size: 11px;
+  border-radius: 8px;
+  // margin: -20px;
+  margin-top: 20px;
+  margin-left: -25px;
+  // font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+
+.q3-3-text3 {
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  margin: -20px;
+  // margin-left: -20px;
+  width: 820px;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: red;
+}
+
+.q2-2-text1 {
+  background-color: #f2f2f2;
+  width: 410px;
+  height: 100px;
+  padding: 10px;
+  font-size: 11px;
+  border-radius: 8px;
+  margin: -20px;
+  margin-left: 50px;
+  margin-top: 45px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+
+.q2-2-text2 {
+  background-color: #f2f2f2;
+  padding: 10px;
+  width: 100%;
+  font-size: 11px;
+  border-radius: 8px;
+  // margin-left: 5px;
+  margin-top: 40px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+
+.q2-5-text {
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-size: 12px;
+  width: 820px;
+  border-radius: 8px;
+  margin-left: 5px;
+  margin-top: 40px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+
+.inner-box2-label {
+  font-size: 12px;
+  margin-left: -15px;
+  margin-top: -5px;
+  margin-right: -15px;
+}
+
+.q3-3checkbox-container {
+  display: flex;  
+  align-items: center;
+  justify-content: start;
+}
+
+.q3-3checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #ffe6e6; /* Light pink background */
+  border-radius: 4px; /* Rounded corners */
+  padding: 5px; /* Space inside the box */
+  height: 40px;
+  width: 800px;
+}
+
+.q3-3checkbox-label {
+  font-size: 14px;
+  color: #000;
+  white-space: nowrap; /* Prevent label from wrapping */
+}
+
+.q3-3checkbox-text {
+  width: 100%;
+  transition: border-color 0.3s ease; 
+  // margin: 10px auto;
+  margin-top: 20px;
+  margin-left: -24px;
+  height: 50px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.8;
+  font-family: 'Arial', sans-serif;
+}
+
+.radio-space {
+  margin-left: 20px;
+}
+
+.prv-btn img {
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  cursor: pointer; 
+}
+
+.prv-btn img:hover {
+  opacity: 0.7; 
+  // transform: scale(1.05); /* Optionally scale up slightly */
+}
+
+.links {
+  list-style-type: disc; /* Ensures bullet points are shown */
+  padding-left: 10px;    /* Adds space for the bullet points */
+  margin: 0;
+}
+
+.footer-links {
+  text-decoration: none;
+  color: #007bff;
+  // text-decoration: underline;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: normal;
+  font-size: 12px;
+}
+/* ---------------------------------------------------------------- */
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.custom-button {
+  font-size: 16px;
+  width: 300px;
+  font-weight: bold;
+  color: #000;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  background: #e0e0e0;
+}
+
+.custom-button .icon {
+  color: orange;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+/* Wrapper for plates and info text */
+.license-plates-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px;
+}
+
+/* Flex container for license plates and info text */
+.plates-and-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 1fr; /* 3 plates + 1 column for info text */
+  gap: 14px; /* Ensures space between plates and info text */
+}
+
+/* License plates grid */
+.license-plates-container {
+  grid-column: span 3; /* Span 3 columns for plates */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for plates */
+  gap: 28px; /* Added space between rows and columns */
+}
+
+/* Individual license plate */
+.license-plate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 3px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  margin-left: -15px;
+  width: 190px; /* Set consistent width */
+  height: 190px;
+}
+
+.license-plate input {
+  display: none; /* Hide raw radio button */
+}
+
+.license-label {
+  display: block;
+  cursor: pointer;
+  padding: 8px; /* Adds spacing around the label */
+  margin: 8px; /* Adds spacing between the plates */
+  text-align: center;
+}
+
+.license-plate .plate-image {
+  width: 120px;
+  margin-left: -20px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.license-plate .plate-description {
+  font-size: 14px;
+  color: #333;
+  margin-left: -5px;
+}
+
+/* Styling for info text */
+.info-text {
+  grid-column: 4; /* Align in the fourth column */
+  width: 195px;
+  font-size: 12px;
+  color: #333;
+  align-self: start; /* Align to the top of the plates */
+  margin-top: 350px;
+  // margin-left: 45px;
+}
+.q2-btn {
+  margin-left: 140px;
+  margin-top: -25px;
+}
+.q2-btn img {
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  cursor: pointer; 
+}
+.q2-btn img:hover {
+  opacity: 0.7; 
+  // transform: scale(1.05); /* Optionally scale up slightly */
+}
+
+.q3highlighted-box {
+  position: relative;
+  border: 3px solid rgb(255, 111, 0);
+  background-color: #fffbe6;
+  padding: 15px;
+  margin-left: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Arrow pointing to the checkbox text */
+.q3highlighted-box .arrow {
+  position: absolute;
+  top: -10px; /* Position the arrow just above the box */
+  left: 60px; /* Adjust to align with checkbox text */
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 10px solid rgb(255, 111, 0);
+}
+
+/* Styling for the text inside the box */
+.q3highlighted-box p {
+  margin: 5px 0;
+}

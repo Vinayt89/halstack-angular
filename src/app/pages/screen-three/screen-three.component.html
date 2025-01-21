@@ -1,0 +1,245 @@
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <div class="lowerheader">
+         <img src="assets/img/img_currentq1_02.png" class="img1-lowerheader" />
+         <img src="assets/img/img_currentq2_01.png" class="img2-lowerheader" />
+         <img src="assets/img/img_currentq3_01.png" class="img3-lowerheader" />
+         <img src="assets/img/icon_5minutes_01.png" class="img4-lowerheader" />
+      </div>
+     
+      <h2 style="padding-left: 140px; margin-top: 50px;">Q3. お車について</h2>
+      <div class="screenthree-container">
+         <div class="screenthree-header">
+            <dxc-box class="outer-box" padding="xsmall">
+               <div style="display: flex; flex-direction: column; gap: 16px;">
+                  <div class="button-container">
+                     <button class="custom-button"
+                     (click)="scrollToQ1Section()">
+                       メーカー名から選択する
+                       <span class="icon">▼</span>
+                     </button>
+                     <button class="custom-button"
+                     (click)="scrollToQ2Section()">
+                       型式から検索する
+                       <span class="icon">▼</span>
+                     </button>
+                   </div>
+                   
+                  <!-- Q3-1 Start -->
+                  <dxc-box id="q1Section" class="inner-box" style="background-color: rgb(245, 208, 213);" size="fillParent" padding="small">
+                     <div class="questionbadge">
+                        Q3-<span>1</span>
+                     </div>
+                     <span style="margin-top: 0px; margin-left: 10px; font-weight: bold;">お見積りされる</span>     
+                     <span style="margin-top: 0px; font-weight: 700;  color: #e37026;">お車のタイプ</span>
+                     <span style="margin-top: 0px; margin-left: 5px; font-weight: bold;">をご選択ください</span>   
+                     <div class="dotted-line"></div>
+                     <div class="license-plates-wrapper">
+                        <!-- License Plates and Info Text -->
+                        <div class="plates-and-info">
+                          <!-- License Plates Container -->
+                          <div class="license-plates-container">
+                            <div class="license-plate" *ngFor="let plate of licensePlates">
+                              <dxc-radio
+                                [id]="plate.id"
+                                name="licenseType"
+                                [value]="plate.id"
+                              >
+                              </dxc-radio>
+                              <label [for]="plate.id" class="license-label">
+                                <img [src]="plate.imageUrl" [alt]="plate.header" class="plate-image" />
+                                <div class="plate-description">
+                                 <span style="color: rgb(255, 106, 0); font-weight: bold;">{{ plate.color }}</span>で分類番号が
+                                 <br><span style="color: rgb(255, 106, 0); font-weight: bold;">{{ plate.code }}</span>から始まるナンバー
+                                 <br />
+                                 <span style="font-weight: bold;">({{ plate.description }})</span>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                          <!-- Info Text -->
+                          <div class="info-text">
+                            福祉車両（「車いす移動車」等）の <br>
+                            お取扱いは<a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=15696" target="_blank" rel="noopener noreferrer" class="link">こちら</a>をご確認ください。
+                          </div>
+                        </div>
+                      </div>                                              
+                  </dxc-box>
+                  <!-- Q3-1 End -->
+                   <!-- Q3-2 Start -->
+                  <dxc-box id="q2Section" class="inner-box" size="fillParent" padding="small">
+                     <div class="questionbadge">
+                        Q3-<span>2</span>
+                     </div>
+                     <span style="margin-top: 0px; margin-left: 10px; font-weight: bold;">お車の</span>     
+                     <span style="margin-top: 0px; font-weight: 700;  color: #e37026;">メーカー名、車名</span>
+                     <span style="margin-top: 0px; margin-left: 5px; font-weight: bold;">をご入力ください</span>   
+                     <div class="dotted-line"></div>
+                     <div style="margin-left: -10px; font-size: 13px;" class="q2SelectOptions">
+                        <div class="row">
+                           メーカー名
+                           <dxc-select class="dropdown" style="margin-left: 10px; width: 65px;"></dxc-select>
+                           <div class="q2-2-text1">
+                              <span>※以下の車は、お見積りいただけません。<br>
+                                 ・型式の末尾に「改」または「カイ」が付いているお車<a class="link" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1079" target="_blank" rel="noopener noreferrer">（改造車）</a><br>
+                                 ・型式が「ハイフン（－）」で囲まれているお車<a class="link" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1080" target="_blank" rel="noopener noreferrer">（並行輸入車）</a><br>
+                                 ・型式が「不明」、「フメイ」、「ＦＵＭＥＩ」となっているお車<a href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1081" class="link" target="_blank" rel="noopener noreferrer" href="">（型式不明車）</a>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="row" style="margin-top: -45px;">
+                           車名
+                           <dxc-select class="dropdown" style="margin-left: 50px; width: 65px;"></dxc-select>
+                        </div>
+                        <div class="q2-2-text2">
+                           <span style="font-weight: bold; font-size: 14px;">型式がわかる方はこちら<br></span>
+                          <span> 満期案内等には、継続後の等級が記載されている場合があります。 <br>
+                           型式がわかる場合はこちらから検索することができます。<br>
+                           お車の型式を入力し、検索ボタンをクリックしてください。<br>
+                           ※DBA-等のハイフン（-）より前の部分は省略して入力してください。
+                           </span> <br><br>
+                          <span> 型式 <input style="margin-left: 5px; width: 100px;" type="text"/></span>
+                          <div class="q2-btn"> <img style="margin-left: 8px; height: 25px;"
+                           src="assets/img/btn_search_01_o.png"/>
+                        </div>
+                        </div>
+                     </div>
+                  </dxc-box>
+                  <!-- Q3-2 End -->
+                  <!-- Q3-3 Start-->
+                  <dxc-box class="inner-box" size="fillParent" padding="small">
+                     <div class="questionbadge">
+                        Q3-<span>3</span>
+                     </div>
+                     <span style="margin-top: 0px; margin-left: 10px; font-weight: bold;">お車の</span>     
+                     <span style="margin-top: 0px; font-weight: 700;  color: #e37026;">初度登録年月（初度検査年月）</span>
+                     <span style="margin-top: 0px; margin-left: 5px; font-weight: bold;">をご入力ください</span>   
+                     <mat-icon style="color: rgb(0, 106, 255); font-size: 18px; margin-left: 10px; margin-top: 5px;" >help</mat-icon>
+                     <span><a class="link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1029">初度登録年月とは</a></span>
+                     <div class="dotted-line"></div>
+                     <div class="q3SelectOptions">
+                        <div class="row" *ngFor="let label of q3Selectlabels; let i = index">
+                           <span class="label">{{ label }}</span>
+                           <dxc-select class="dropdown" style="margin-left: 15px;">
+                           </dxc-select>
+                           <span>年</span>
+                           <dxc-select class="dropdown"></dxc-select>
+                           <span>月</span>
+                        </div>
+                        <span class="q3-3checkbox-text" style="margin-left: 20px; width: 420px; margin-top: 10px;">
+                           <div class="q3-3checkbox-container">
+                              <div class="q3-3checkbox-wrapper">
+                                 <dxc-checkbox
+                                    label="初度登録年月（初度検査年月）がわからない"
+                                    (click)="q3Checked($event)"
+                                    labelPosition="after"
+                                    margin="medium"
+                                    >
+                                 </dxc-checkbox>
+                              </div>
+                           </div>
+                        </span>
+                        <div *ngIf="isQ3Checked" class="q3highlighted-box">
+                           <div class="arrow"></div>
+                           <h2>初度登録を仮で設定します。</h2>
+                           <p>
+                           今回は概算保険料の案内となりますのでお申込み、保存はできません。初度登録年月は申込時に改めて
+                           お伺いします。
+                           </p>
+                           <div class="container">
+                              <div class="grid">
+                                 <div *ngFor="let option of q3RadioBtnOptions" style="height: 55px; width: 170px;" class="grid-item">
+                                    <dxc-radio type="radio" [id]="option.id"  ></dxc-radio>
+                                    <label [for]="option.id">
+                                        <span style="font-weight: bold; margin-left: -10px;">{{ option.date }}</span>
+                                        <br><span style="font-size: 10px; margin-left: -12px;">{{ option.desc }}</span>                               
+                                     </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </dxc-box>
+                  <!-- Q3-3 End -->
+                  <!-- Q3-4 Start -->
+                  <dxc-box class="inner-box" size="fillParent" padding="small">
+                     <div class="questionbadge">
+                        Q3-<span>4</span>
+                     </div>
+                     <span style="margin-top: 0px; margin-left: 10px; font-weight: bold;">お車を使用する</span>     
+                     <span style="margin-top: 0px; font-weight: 700;  color: #e37026;">主な都道府県 (主な使用地)</span>
+                     <span style="margin-top: 0px; margin-left: 5px; font-weight: bold;">をご選択ください</span>   
+                     <mat-icon style="color: rgb(0, 106, 255); font-size: 18px; margin-left: 5px; margin-top: 5px;" >help</mat-icon>
+                     <span><a class="link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1030">主な使用地とは</a></span>
+                     <div class="dotted-line"></div>
+                     <span style="margin-top: 20px;">主な使用地 (都道府県)</span>
+                     <dxc-select style="width: 200px; margin-left: 10px; margin-top: 10px;"></dxc-select>
+                  </dxc-box>
+                  <!-- Q3-4 End -->
+                  <!-- Q3-5 Start -->
+                  <dxc-box class="inner-box" size="fillParent" padding="small">
+                     <div class="questionbadge">
+                        Q3-<span>5</span>
+                     </div>
+                     <span style="margin-top: 0px; margin-left: 10px; font-weight: bold;">おとなの自動車保険をどこでお知りになりましたか？</span>     
+                     <div class="dotted-line"></div>
+                     <div class="container">
+                        <div class="grid">
+                           <div *ngFor="let option of q5RadioBtnOptions" class="grid-item">
+                              <dxc-radio [id]="option.id" name="" [value]="option.value" ></dxc-radio>
+                              <label [for]="option.id">{{ option.label }}</label>
+                           </div>
+                        </div>
+                     </div>
+                  </dxc-box> 
+                  <dxc-box size="fillParent" padding="small" style="height: 60px; background-color: #fffff0;" shadowDepth="0">
+                     <div class="prv-btn"> <img src="assets/img/btn_prev_01_o.png" 
+                        style="width: 106px; height: 36px; margin-top: 15px; margin-left: -20px;"
+                        (click)="goToPreviousScreen()"/>
+                     </div>
+                     <div class="prv-btn"> <img src="assets/img/btn_quot_01_d.png" 
+                        style="width: 280px; height: 64px; margin-bottom: -10px; margin-left: 100px;"
+                        (click)="goToNextScreen()"/>
+                     </div>
+                  </dxc-box>
+               </div>
+            </dxc-box>
+            <dxc-box class="outer-box2" padding="xxsmall" style="max-height: 1040px;">
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <dxc-box class="inner-box3" padding="small">
+                    <label class="inner-box3-label" style="margin-bottom: 8px;">
+                     損保ジャパンの全国ネットワークと提携し、お客様の安心かつスムーズな事故解決を実現しています。
+                  </label>
+                  <img src="assets/img/logo_sjnk_02.gif" />
+                  </dxc-box>
+                  <img src="assets/img/banner_alsok_03.gif" style="height: 180px;" />
+                  <dxc-box class="inner-box3" padding="small">
+                    <img src="assets/img/hdg_question_01.gif" class="inner-box3-btnimg" />
+                    <span class="inner-box3-label2">
+                     お車について
+                    </span>
+                    <div class="dotted-line2"></div>
+                    <ul class="links">
+                      <li *ngFor="let link of sidePanelLinks">
+                        <a class="link" target="_blank" rel="noopener noreferrer" 
+                        [href]="link.href">{{ link.text }}</a>
+                      </li>
+                    </ul>
+                  </dxc-box>
+                  <img src="assets/img/img_contact_03.gif" />
+              </div>
+            </dxc-box>
+         </div>
+      <div class="footer-links" style="margin-top: 15px; margin-right: 50px; margin-top: 40px;">
+        <ng-container *ngFor="let link of footerLinks; let last = last">
+          <mat-icon  aria-hidden="true">chevron_right</mat-icon>
+          <a class="link" target="_blank" rel="noopener noreferrer" [href]="link.href" >{{ link.text }}</a>
+        </ng-container>
+      </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,412 @@
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <div class="lowerheader">
+         <img src="assets/img/img_currentq1_02.png" class="img1-lowerheader" />
+         <img src="assets/img/img_currentq2_01.png" class="img2-lowerheader" />
+         <img src="assets/img/img_currentq3_01.png" class="img3-lowerheader" />
+         <img src="assets/img/icon_5minutes_01.png" class="img4-lowerheader" />
+      </div>
+      <!-- <div class="header-lower">
+         <div class="step">
+            <img #headerimg1 src="assets/img/img_currentq1_02.png" alt="Q1" />
+          </div>
+          <div class="step"> 
+            <img #headerimg2 class="image-highlight" src="assets/img/img_currentq2_01.png" alt="Q2"  />
+          </div>
+          <div class="step">
+            <img #headerimg3 src="assets/img/img_currentq3_01.png" alt="Q3"  />
+          </div>
+          <div class="complete">
+            <div class="estimate-container">
+              <img #headerimg4 src="assets/img/icon_5minutes_01.png" alt="5分でお見積り" />
+            </div>
+          </div>
+         </div> -->
+      <!-- <div class="tabs-header"> -->
+      <!-- <div class="tab" >
+         Section 1
+         </div>
+         <div class="tab" >
+         Section 2
+         </div>
+         <div class="tab" >
+         Section 3
+         </div> -->
+      <!-- </div> -->
+      <h2 style="padding-left: 140px; margin-top: 50px;">Q2. ご契約中の保険について</h2>
+      <div class="screentwo-container">
+         <div class="screentwo-header">
+            <dxc-box class="outer-box" padding="xsmall">
+               <div style="display: flex; flex-direction: column; gap: 16px;">
+                  <!-- Q2-1 Start -->
+                  <dxc-box class="inner-box" size="fillParent" padding="small">
+                     <span style="margin-top: 20px;">＜確認＞</span>
+                     <div class="questionbadge">
+                        Q2-<span>1</span>
+                     </div>
+                     <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お見積りされるお車は、</span>     
+                     <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">現在自動車保険に加入していますか？</span>
+                     <div class="dotted-line"></div>
+                     <span style="font-size: 13px;">下記の選択内容に誤りがある場合は、このページでは変更できません。</span>
+                     <span style="font-size: 13px;">「戻る」ボタンから前ページに戻り、Q1-3を変更してください。</span>
+                     <dxc-box class="inner-box"  size="fillParent" padding="xxsmall" shadowDepth="0">
+                        <div *ngFor="let option of q2RadioBtnOptions" class="radiobtn1div">
+                           <dxc-radio
+                           [value]="option.value"
+                           label="{{option.label}}"
+                           (change)="onSelectionChange(option.value)"
+                           id="{{option.id}}"
+                           labelPosition="after">
+                           </dxc-radio>
+                        </div>
+                        <span (click)="onSpanClicked($event)" class="q2-1-text">現在ご契約中の自動車保険を満期日より前に解約し<br>
+                        新たにお申込みいただく場合(中途更改の場合)はこちらからお見積りください。
+                        </span>
+                        <div class="q2-1-text2">
+                           <span>※「加入している」場合、おとなの自動車保険の保険始期日は、現在ご契約中の自動車保険の満期日となります。</span>
+                           <div style="margin-top: 12px;"></div>
+                           <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
+                           <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?cid=WHP001&id=12015" class="link" target="_blank" rel="noopener noreferrer">現在ご加入の自動車保険を解約する場合の注意点</a>
+                           <div style="margin-top: 12px;"></div>
+                           ※<a href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1084" class="link" target="_blank" rel="noopener noreferrer">中断証明書</a>の発行理由が海外への渡航による中断の場合は、当サイトでのお取扱いはできません。<br>
+                           お客様サポートセンターまでお電話ください。<br>
+                           お客様サポートセンター：0120-163-028 営業時間：9:00～17:30 年末年始は除く
+                        </div>
+                        <dxc-box *ngIf="isSpanClicked" class="inner-box2" padding="small">
+                           <span style="margin-top: 10px; font-weight: bold;">現在ご加入の自動車保険を解約して</span>     
+                           <span style="margin-top: 10px; font-weight: 700;  color: #e37026;">おとなの自動車保険に加入しますか？</span>
+                           <div class="dotted-line"></div>
+                           <div *ngFor="let option of q2RadioBtn2Options" class="radiobtn3">
+                              <dxc-radio
+                              id="{{option.id}}"
+                              labelPosition="after">
+                              </dxc-radio>
+                              <label [for]="option.id" class="q2-2-radio-label">
+                                <span style="font-weight: bold;"> {{option.caption}} </span> <br> {{option.desc}}
+                              </label>
+                           </div>
+                           <div class="inner-box2-text">
+                              現在ご加入の自動車保険を保険期間の途中で解約し、おとなの自動車保険をお申込みいただく場合<br>
+                              <span style="margin-left: -10px;">（中途更改の場合）は、以下の点に十分にご注意ください。</span>
+                           </div>
+                           <div style="margin-left: -10px; font-size: 14px;">
+                              <ol>
+                                 <li>
+                                    現在ご加入の自動車保険の解約は、お客様ご自身でお手続きが必要です(当社では代行できません。)。
+                                 </li>
+                                 <li>
+                                    現在ご加入の自動車保険の解約日は、おとなの自動車保険の始期日と同日付となるようにお手続きください。同日付でない場合、契約がない期間または契約が重複する期間が生じ、ノンフリート等級の継承ができない場合があります。
+                                 </li>
+                                 <li>
+                                    現在ご加入の自動車保険を保険期間の途中で解約し、おとなの自動車保険をお申込みいただくことで、お客様に不利益が発生することがあります。
+                                 </li>
+                              </ol>
+                              <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
+                              <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?cid=WHP001&id=12016" 
+                                 class="link" target="_blank" rel="noopener noreferrer">中途更改によりお客様に発生する不利益とは？</a>
+                           </div>
+                        </dxc-box>
+                        <!-- Q2-1 End -->
+                        <!-- Q2-2 Start -->
+                        <dxc-box class="inner-box" padding="small" style="margin-top: 10px;">
+                           <div class="questionbadge" style="height: 30px; margin-top: 25px;">
+                              Q2-<span>2</span>
+                           </div>
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お見積もりのお車が <br>
+                           <span style="color: #e37026; font-weight: 700;">現在ご加入中の保険会社（共済）</span>をご選択ください。
+                           </span>
+                           <div class="dotted-line"></div>
+                           <div class="container">
+                              <div class="grid">
+                                 <div *ngFor="let option of q2RadioBtn3Options" style="height: 55px; width: 165px;" class="grid-item">
+                                    <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" ></dxc-radio>
+                                    <label [for]="option.id">{{ option.label }}</label>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="q2-2-text2">
+                              <span>※現在ご加入の保険会社が「ＳＯＭＰＯダイレクト（おとなの自動車保険/旧セゾン自動車火災保険）」にもかかわらず、他の保 
+                              険会社（または共済）を選択しご契約された場合は、後日ご契約内容を訂正し、追加の保険料をいただくことがございますの 
+                              で、ご注意ください。
+                              </span>
+                           </div>
+                        </dxc-box>
+                        <!-- Q2-2 End -->
+                        <!-- Q2-3 Start -->
+                        <dxc-box class="inner-box" padding="small" style="margin-top: 10px;">
+                           <div class="questionbadge" style="height: 30px; margin-top: 25px;">
+                              Q2-<span>3</span>
+                           </div>
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お見積もりのお車が <br>
+                           現在ご加入の自動車保険の
+                           <span style="color: #e37026; font-weight: 700;">保険期間</span>をご入力ください。
+                           </span>
+                           <div class="dotted-line"></div>
+                           <dxc-box class="inner-box"  size="fillParent" padding="small" shadowDepth="0">
+                              <div style="color: red; margin-left: 50px; margin-top: -20px; margin-bottom: 20px; font-size: 14px;">1年ごとに更新する契約の場合は「1年」をご選択ください。</div>
+                              <div class="q2SelectOptions">
+                                 <div class="row">
+                                    <span class="label" style="margin-left: 15px;">契約年数</span>
+                                    <dxc-select class="dropdown">
+                                    </dxc-select>
+                                 </div>
+                                 <div style="margin-top: 10px;"></div>
+                              </div>
+                              <div class="q2SelectOptions">
+                                 <div class="row" *ngFor="let label of q2Selectlabels; let i = index">
+                                    <span class="label">{{ label }}</span>
+                                    <dxc-select class="dropdown" style="margin-left: 15px;">
+                                    </dxc-select>
+                                    <span>年</span>
+                                    <dxc-select class="dropdown"></dxc-select>
+                                    <span>月</span>
+                                    <dxc-select class="dropdown"></dxc-select>
+                                    <span>日</span>
+                                 </div>
+                              </div>
+                              <span class="q2-3checkbox-text" style="width: 400px;">
+                                 <div class="q2-3checkbox-container">
+                                    <div class="q2-3checkbox-wrapper">
+                                       <dxc-checkbox
+                                          (click)="toggleQ3Checked($event)"
+                                          label="保険期間がわからない"
+                                          labelPosition="after"
+                                          margin="medium"
+                                          >
+                                       </dxc-checkbox>
+                                    </div>
+                                 </div>
+                              </span>  
+                              <div *ngIf="isQ3Checked" class="q3highlighted-box">
+                                 <div class="arrow"></div>
+                                 <h2>このまま次にお進みください。</h2>
+                                 <p>
+                                 満期日（当社での保険始期日）を令和7年（2025年）2月28日として見積ります。
+                                 </p>
+                                 <p>
+                                 ※今回は概算保険料の案内となりますのでお申込み、保存はできません。
+                                 満期日については、申込時に改めてお願い致します。
+                                 </p>
+                              </div>
+                              <div class="q2-3-text2">
+                                 <span>
+                                 ※当サイトでは2025年04月30日までの契約締結が可能です。<br>
+                                 ※満期日を過ぎている場合、現在のご契約満期日の6日後（満期日が1/1の場合は1/7）まで、お申込手続きが可能です。<br>
+                                 ※無保険期間が発生しないよう、現在ご加入中の保険の満期日までにお手続きを完了してください。<br>
+                                 ※満期日の午後4時に保険が切れる場合は、満期日当日午後3時59分までにお手続きを完了してください。満期日当日の午後4時以降にお手続きされる場合でも、お手続きが完了した時刻の次の正時から補償開始可能です。<br>
+                                 （例えば午後5時40分にお手続き完了の場合は、午後6時から補償開始となります）<br>
+                                 ※本日中に補償開始ご希望の場合は、午後10時59分までにお手続きを完了してください。 お手続き完了が午後11時以降となる場合は、翌日補償開始となりますのでご注意ください。
+                                 </span>
+                              </div>
+                              <!--  <div style="margin-top: 20px; margin-left: -20px;">
+                                 <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
+                                 <a class="link" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?cid=WHP001&id=12015"
+                                 target="_blank" rel="noopener noreferrer">現在ご加入の自動車保険を解約する場合の注意点
+                                 </a>
+                                 </div>
+                                 <div class="q2-3-text2">
+                                 <span>※お手続き日の翌日以降を補償開始日とする場合は、設定された補償開始希望日の午前0時から補償が開始します。<br>
+                                   ※本日中に補償開始ご希望の場合 <br>
+                                   ・補償開始希望日がお手続き当日の場合でも、お手続きが完了した時刻の次の正時から補償開始可能です。<br>
+                                   （例えば午後5時40分にお手続き完了の場合は、午後6時から補償開始となります。）<br>
+                                   ・午後10時59分までにお手続きを完了してください。お手続きが午後11時以降となった場合は、本日中の補償開始ができませんのでご注意ください。
+                                 </span>
+                                 </div>
+                                 <div style="margin-top: 40px; margin-left: -20px; font-weight: bold; font-size: 18px;">保険始期日を「月日」に設定し見積もりいたします。</div>
+                                 <div>
+                                 <span style="margin-left: 240px;">（解約日）月日</span>
+                                 <img style="margin-top: 5px; margin-left: 10px;" src="assets/img/fig_q2-3.png">
+                                 </div>
+                                 <div class="q2-3-text3">
+                                 <span>特にご注意いただきたいこと<br>
+                                   現在ご加入の自動車保険の解約日とおとなの自動車保険の保険始期日が、必ず同日となるよう正確に解約 <br>
+                                   手続きをお願いします。<br>
+                                   同日でない場合は契約がない期間または契約が重複する期間が生じ、また、ノンフリート等級の継承ができ<br>
+                                   ない場合がありますのでご注意ください。
+                                 </span>
+                                 </div> -->
+                           </dxc-box>
+                        </dxc-box>
+                        <!-- Q2-3 End -->
+                        <!-- Q2-4 Start -->           
+                        <dxc-box class="inner-box" padding="small" style="margin-top: 10px;">
+                           <div class="questionbadge" style="height: 30px; margin-top: 30px;">
+                              Q2-<span>4</span>
+                           </div>
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">
+                              お見積もりのお車の現在の
+                              <br> 
+                              <span style="color: #e37026; font-weight: 700;">ノンフリート等級 </span>
+                              をご選択ください。
+                              <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;" >help</mat-icon>
+                              <span><a class="link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=1022">ノンフリート等級とは</a></span>
+                           </span>
+                           <span style="margin-top: 45px; margin-left: 5px; font-weight: 700;"></span>
+                           <div class="dotted-line"></div>
+                           <div style="margin-left: -10px; font-size: 13px;" class="q2SelectOptions">
+                              <div class="row">
+                                 現在のノンフリート等級
+                                 <dxc-select class="dropdown" style="margin-left: 10px; width: 65px;"></dxc-select>
+                                 <div class="q2-4-text1">
+                                    <span>※現在のご契約の保険開始日時点で適用されている『ノンフリート
+                                    等級』をお選びください。 『満期のご案内』等をお手元にお持ち 
+                                    の場合は誤って継続後の『ノンフリート等級』を入力されないよう
+                                    ご注意ください。
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                           <span class="q2-3checkbox-text" style="margin-top: 40px; margin-left: 5px; width: 400px; margin-bottom: -20px;">
+                              <div class="q2-3checkbox-container">
+                                 <div class="q2-3checkbox-wrapper">
+                                    <dxc-checkbox
+                                       label="わからない"
+                                       (click)="toggleQ4Checked($event)"
+                                       labelPosition="after"
+                                       margin="medium"
+                                       >
+                                    </dxc-checkbox>
+                                 </div>
+                              </div>
+                           </span>
+                           <div *ngIf="isQ4Checked" class="q4highlighted-box">
+                              <div class="arrow"></div>
+                              <h2>ノンフリート等級を仮で設定します。</h2>
+                              <p>
+                              ※今回は概算保険料の案内となりますのでお申込み、保存はできません。ノンフリート等級は、申込時に改めてお伺いします。
+                              </p>
+                              <div class="container">
+                                 <div class="q4grid">
+                                    <div *ngFor="let option of q4RadioBtnOptions" style="margin-left: 2px; height: 55px; width: 240px;" class="q4grid-item">
+                                       <dxc-radio [id]="option.id"></dxc-radio>
+                                       <label [for]="option.id">
+                                           <span style="font-weight: bold; margin-left: -10px;">{{ option.desc }}</span>
+                                           <br><span style="font-size: 10px; margin-left: -12px;">{{ option.grade }}</span>                               
+                                        </label>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="q2-4-text2">
+                              <span>※現保険期間中の等級をご選択ください。<br>
+                              満期案内等には、継続後の等級が記載されている場合があります。 <br>
+                              ※保険会社間の<a href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1098" target="_blank" rel="noopener noreferrer" class="link">情報交換制度</a>により確認させていただいた等級が、お客様にご入力いただいた等級と異な<br>
+                              る場合は、保険料を返還もしくは追加でお支払いいただく場合や、ご契約を解除させていただくことがありますので、あらかじめご了承ください。
+                              </span>
+                           </div>
+                        </dxc-box>
+                        <!-- Q2-4 End -->
+                        <!-- Q2-5 Start -->
+                        <dxc-box class="inner-box" padding="small" style="margin-top: 10px;">
+                           <div class="questionbadge" style="height: 30px; margin-top: 30px;">
+                              Q2-<span>5</span>
+                           </div>
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">現在の保険期間中に
+                           <br> 
+                           <span style="color: #e37026; font-weight: 700;">保険金を請求した、または請求予定の事故</span>
+                           はありますか？
+                           </span>
+                           <div class="dotted-line"></div>
+                           <div class="container">
+                              <div class="grid">
+                                 <div *ngFor="let option of q2RadioBtn4Options" style="height: 45px; width: 160px; margin-left: 5px; margin-bottom: -15px;" class="grid-item">
+                                    <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" >
+                                    </dxc-radio>
+                                    <label [for]="option.id">{{ option.label }}</label>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="q2-5-text">
+                              <span>
+                                 下記ケースを参照いただき、ご選択ください。<br>
+                                 ■「事故はない」を選択するケース <br>
+                                 ・事故にあったが保険を使用しなかった<br>
+                                 ・保険金は請求したが、<a href="https://faq-ins-saison.dga.jp/car_h/otona/faq_detail.html?id=8156" 
+                                    target="_blank" rel="noopener noreferrer" class="link">ノーカウント事故のお取り扱い</a>であった場合<br>
+                                 ・ロードサービスのみ利用した<br>
+                                 <div style="margin-top: 20px;"></div>
+                                 <span>
+                                 ■「事故あり」を選択するケース（件数をご確認ください）<br>
+                                 ・歩行者や相手側にケガをさせて対人賠償保険を使用した <br>
+                                 ・相手車や相手側の財物を壊して対物賠償保険を使用した <br>
+                                 ・自車両を電柱や建物にぶつけて車両保険を使用した <br>
+                                 ・自車両の盗難、飛び石などによる窓ガラスの破損、台風等の水災などで車両保険を使用した
+                                 </span>
+                              </span>
+                           </div>
+                        </dxc-box>
+                        <!-- Q2-5 End -->
+                        <!-- Q2-6 Start -->
+                        <dxc-box class="inner-box" size="fillParent" padding="small" style="margin-top: 10px;">
+                           <div class="questionbadge">
+                              Q2-<span>6</span>
+                           </div>
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">既に「おとなの自動車保険」に加入している、別のお車をお持ちですか？
+                           </span>
+                           <div class="dotted-line"></div>
+                           <dxc-box class="inner-box"  size="fillParent" padding="small" shadowDepth="0">
+                              <div *ngFor="let option of q2RadioBtn5Options" class="radiobtn1div" style="width: 230px; margin-top: -10px;">
+                                 <dxc-radio
+                                 [value]="option.value"
+                                 label="{{option.label}}"
+                                 (change)="onSelectionChange(option.value)"
+                                 id="{{option.id}}"
+                                 labelPosition="after">
+                                 </dxc-radio>
+                              </div>
+                           </dxc-box>
+                        </dxc-box>
+                        <!-- Q2-6 End -->
+                     </dxc-box>
+                  </dxc-box>
+                  <dxc-box size="fillParent" padding="small" style="height: 60px; background-color: #fffff0;" shadowDepth="0">
+                     <div class="prv-btn"> <img src="assets/img/btn_prev_01_o.png" 
+                        style="width: 106px; height: 36px; margin-top: 15px;"
+                        (click)="goToPreviousScreen()"/>
+                     </div>
+                     <div class="prv-btn"> <img src="assets/img/btn_next01_01_d.gif" 
+                        style="width: 420px; height: 64px; margin-bottom: -10px; margin-left: 20px;"
+                        (click)="goToNextScreen()"/>
+                     </div>
+                  </dxc-box>
+               </div>
+            </dxc-box>
+            <dxc-box class="outer-box2" padding="xxsmall" style="max-height: 850px;">
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <dxc-box class="inner-box3" padding="small">
+                    <label class="inner-box3-label" style="margin-bottom: 8px;">
+                      損保ジャパンの全国ネットワークと提携し、お客様の安心かつスムーズな事故解決を実現しています。
+                  </label>
+                  <img src="assets/img/logo_sjnk_02.gif" />
+                  </dxc-box>
+                  <img src="assets/img/banner_alsok_03.gif" style="height: 180px;" />
+                  <dxc-box class="inner-box3" padding="small">
+                    <img src="assets/img/hdg_question_01.gif" class="inner-box3-btnimg" />
+                    <span class="inner-box3-label2">
+                      当社試算サイトについて  
+                    </span>
+                    <div class="dotted-line2"></div>
+                    <ul class="links">
+                      <li *ngFor="let link of sidePanelLinks">
+                        <a class="link" target="_blank" rel="noopener noreferrer" 
+                        [href]="link.href">{{ link.text }}</a>
+                      </li>
+                    </ul>
+                  </dxc-box>
+                  <img src="assets/img/img_contact_03.gif" />
+              </div>
+            </dxc-box>
+         </div>
+      <div class="footer-links" style="margin-top: 15px; margin-right: 50px; margin-top: 40px;">
+        <ng-container *ngFor="let link of footerLinks; let last = last">
+          <mat-icon  aria-hidden="true">chevron_right</mat-icon>
+          <a class="link" target="_blank" rel="noopener noreferrer" [href]="link.href" >{{ link.text }}</a>
+        </ng-container>
+      </div>
+      </div>
+   </body>
+</html>
