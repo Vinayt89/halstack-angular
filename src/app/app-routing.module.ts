@@ -12,18 +12,11 @@ import { ScreenFourComponent } from "./pages/screen-four/screen-four.component";
   routes.push({ path: 'screen-three', component: ScreenThreeComponent}),
   routes.push({ path: 'screen-four', component: ScreenFourComponent});
   
- /* const routes: Routes = [
-    { path: '', redirectTo: '/screen-one', pathMatch: 'full' },
-    { path: 'screen-one', loadChildren: () => import('./pages/screen-one/screen-one.module').then(m => m.ScreenOneModule) },
-    { path: 'screen-two', loadChildren: () => import('./pages/screen-two/screen-two.module').then(m => m.ScreenTwoModule) },
-    { path: 'screen-three', loadChildren: () => import('./pages/screen-three/screen-three.module').then(m => m.ScreenThreeModule) },
-    { path: 'screen-four', loadChildren: () => import('./pages/screen-four/screen-four.module').then(m => m.ScreenFourModule) },
-    { path: '**', redirectTo: '/screen-one' }, // Fallback route
-  ];
-  */
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: true,
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled'
+   })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -46,7 +46,7 @@
 
             ],
             "scripts": [],
-            "baseHref": "https://github.dxc.com/vthakre2/Angular-Halstack-Sompo.git",
+            "baseHref": "/",
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,

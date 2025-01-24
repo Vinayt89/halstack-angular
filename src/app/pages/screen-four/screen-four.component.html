@@ -5,65 +5,178 @@
    </head>
    <body>
       <div class="lowerheader">
-         <img src="assets/img/img_currentq1_02.png" class="img1-lowerheader" />
-         <img src="assets/img/img_currentq2_01.png" class="img2-lowerheader" />
-         <img src="assets/img/img_currentq3_01.png" class="img3-lowerheader" />
-         <img src="assets/img/icon_5minutes_01.png" class="img4-lowerheader" />
+         <img src="assets/img/belt_01.gif" class="img1-lowerheader" />
+         <img style="margin-bottom: 15px;" src="assets/img/belt_02.gif"/>
       </div>
-     
-      <h2 style="padding-left: 140px; margin-top: 50px;">Q4. aaaa</h2>
-      <div class="screenthree-container">
-         <div class="screenthree-header">
+      <div class="header-right">
+         <span style="padding: 10px; font-size: 16px; font-weight: bold;">見積り番号:</span>
+      </div>
+      <div class="screenfour-container">
+            <div class="row">
+               <div class="top-highlighted-box">
+                  <div class="arrow"></div>
+                  <span style="font-weight: bold; font-size: 14px;">一括払保険料</span>
+                  <div class="vertical-line"></div><br>
+                  <a href="" class="link" style="margin-left: 8px; font-size: 14px;">分割払保険料はこちら</a> 
+                  <div class="amount">111,111
+                     <span style="color: red; margin-left: -5px; font-weight: bold;" class="currency">円</span>
+                  </div>
+                  <div style="margin-top: 40px; margin-left: 10px;">
+                     <img src="assets/img/txtimg_notice_01.gif" />
+                  </div>
+                  <span style="margin-top: 65px; margin-left: -135px; color: red;">（年間）</span>
+                  <div class="top-inner-highlighted-box">
+                     <div class="inner-arrow"></div>
+                     当社のインターネット割引は、新規なら13,000円、継続でも10,000円の割引です。<br>
+                     2025年4月21日までにお申込みいただくと <br>
+                     早割５０日（600円）の割引が適用されます。<br>
+                     ※お見積りは適用後の保険料を表示しています。
+                  </div>
+               </div>
+               <div class="top-btn">
+                  <img src="assets/img/btn_signup_01_o.gif"/>
+                  <img style="margin-left: 40px; margin-top: 0px;" src="assets/img/btn_estimate_save_01_o.gif" />
+               </div>
+               <div>
+                  <img style="margin-top: 60px; margin-left: -80px;" src="assets/img/btn_revise_01_o.gif" />
+               </div>
+               <div>
+                  <img style="margin-top: 140px; margin-left: -103px;" src="assets/img/btn_print_01_o.gif" />
+               </div>
+            </div>
+      
+         <div style="margin-top: 15px;"></div>
+         <div class="screenfour-header">
             <dxc-box class="outer-box" padding="xsmall">
                <div style="display: flex; flex-direction: column; gap: 16px;">
-                   
-                  <!-- Q4-1 Start -->
-                  <dxc-box id="q1Section" class="inner-box" style="background-color: rgb(245, 208, 213);" size="fillParent" padding="small">
-                     <div class="questionbadge">
-                        Q4-<span>1</span>
+                   <!-- Table 1 start -->
+                  <div class="table1-container">
+                     <div class="table1-section">
+                       <span style="font-size: 20px; font-weight: bold;">基本補償</span>
+                        対人・対物はもちろ<br>
+                        ん、保険未加入者との<br>
+                        事故に備え無保険車<br>
+                        傷害も「無制限」補償<br>
+                        としました。
                      </div>
-                     <span style="margin-top: 0px; margin-left: 10px; font-weight: bold;"></span>     
-                     <span style="margin-top: 0px; font-weight: 700;  color: #e37026;"></span>
-                     <span style="margin-top: 0px; margin-left: 5px; font-weight: bold;"></span>   
-                     <div class="dotted-line"></div>                                             
-                  </dxc-box>
-                  <!-- Q4-1 End -->
-                  <dxc-box size="fillParent" padding="small" style="height: 60px; background-color: #fffff0;" shadowDepth="0">
-                     <div class="prv-btn"> <img src="assets/img/btn_prev_01_o.png" 
-                        style="width: 106px; height: 36px; margin-top: 15px; margin-left: -20px;"
-                        (click)="goToPreviousScreen()"/>
-                     </div>
-                     <div class="prv-btn"> <img src="assets/img/btn_quot_01_d.png" 
-                        style="width: 280px; height: 64px; margin-bottom: -10px; margin-left: 100px;"
-                        (click)="goToNextScreen()"/>
-                     </div>
-                  </dxc-box>
+                     <table class="table1">
+                       <tr>
+                         <td style="font-weight: bold;">
+                           <span class="check-icon">✔</span>対人・対物賠償
+                           <mat-icon>arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a>
+                         </td>
+                         <td>
+                           無制限
+                           <mat-icon>help</mat-icon> 
+                           <a href="#" class="link">なぜ無制限なの？</a>
+                         </td>
+                       </tr>
+                       <tr>
+                         <td style="font-weight: bold;">
+                           <span class="check-icon">✔</span>無保険車傷害
+                           <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a>
+                         </td>
+                         <td>
+                           無制限 
+                           <mat-icon>help</mat-icon> 
+                           <a href="#" class="link">なぜ無制限なの？ </a>
+                         </td>
+                       </tr>
+                       <tr>
+                         <td style="font-weight: bold;">
+                           <span class="check-icon">✔</span>他車運転特約
+                           <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a>
+                         </td>
+                         <td>
+                           あり 
+                           <mat-icon style="margin-left: 20px;">help</mat-icon> 
+                           <a href="#" class="link">この特約が基本補償に入っている理由は？</a>
+                         </td>
+                       </tr>
+                       <tr>
+                         <td style="font-weight: bold;">
+                           <span class="check-icon">✔</span>被害者救済費用<br>
+                           <span style="margin-left: 95px;">特約</span>
+                           <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                         </td>
+                         <td>
+                          あり
+                         </td>
+                       </tr>
+                     </table>
+                     <div class="price-container">
+                        <span class="price">111,111</span><span class="currency">円</span>
+                      </div>
+                   </div>
+                <!-- Table 1 end -->
+                <div class="plus-icon"><img src="assets/img/icon_plus01.png"/></div>             
+                 <!-- Table 2 start -->
+                <div class="table2-container">
+                  <div class="table2-section">
+                    <span style="font-size: 20px; font-weight: bold;">各種割引</span>
+                    おとなの早割以外の<br>
+                    割引です<br>
+                  </div>
+                  <table class="discount-table">
+                     <tbody>
+                     <tr>
+                       <td colspan="5" class="header">
+                       <span class="sub-header">※保険料には、「インターネット割引13,000円」が適用されています。</span>
+                       </td>
+                       <td style="background-color: rgb(253, 247, 248);" class="internet-discount">111,111円</td>
+                     </tr>
+                     <tr>
+                     <td style="font-size: 12px; width: 25%;">
+                        <dxc-checkbox
+                          id="t2-checkbox"
+                          labelPosition="after"
+                        ></dxc-checkbox> 
+                          <label for="t2-checkbox" style="font-weight: bold;">
+                           電気・ハイブリ<br>
+                           <span style="margin-left: 30px;">ッド車割引</span>
+                         </label>
+                          <mat-icon>arrow_forward</mat-icon>
+                          <a href="" style="margin-top: -10px;" class="link">詳細</a>
+                        </td>
+                        <td colspan="4" class="discount-description">
+                         <div class="t2-inner-box1">
+                           ご契約のお車が電気自動車、ハイブリッド車の場合、保険料を
+                           <span class="discount-amount">1,200円割引</span>
+                           <mat-icon>arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
+                         </div>
+                         <span class="note">※初度登録（検査）年月から13か月以内の場合のみ対象。</span>
+                         </td>
+                         <td class="internet-discount">111,111円</td>       
+                     </tr>
+                     <tr>
+                        <td style="width: 210px; font-size: 12px;">
+                           <dxc-checkbox
+                           id="t2-checkbox"
+                           labelPosition="after"
+                           ></dxc-checkbox> 
+                           <label for="t2-checkbox" style="font-weight: bold;">
+                            電気・ハイブリ<br>
+                            <span style="margin-left: 30px;">ッド車割引</span>
+                          </label>
+                           <mat-icon>arrow_forward</mat-icon>
+                           <a href="" style="margin-top: -10px;" class="link">詳細</a>
+                         </td>
+                         <td colspan="4" class="discount-description">
+                           <div class="t2-inner-box1">
+                              2台目以降のご契約の保険料を
+                             <span class="discount-amount">600円割引</span>
+                             <br />
+                             きます。
+                             <mat-icon>arrow_forward</mat-icon><a href="" class="link">詳しく見る</a>
+                           </div>
+                         </td>     
+                         <td class="internet-discount">111,111円</td>    
+                     </tr>
+                   </tbody>
+                  </table>
+                </div>
+                <!-- Table 2 end -->
                </div>
-            </dxc-box>
-            <dxc-box class="outer-box2" padding="xxsmall" style="max-height: 1040px;">
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <dxc-box class="inner-box3" padding="small">
-                    <label class="inner-box3-label" style="margin-bottom: 8px;">
-                     損保ジャパンの全国ネットワークと提携し、お客様の安心かつスムーズな事故解決を実現しています。
-                  </label>
-                  <img src="assets/img/logo_sjnk_02.gif" />
-                  </dxc-box>
-                  <img src="assets/img/banner_alsok_03.gif" style="height: 180px;" />
-                  <dxc-box class="inner-box3" padding="small">
-                    <img src="assets/img/hdg_question_01.gif" class="inner-box3-btnimg" />
-                    <span class="inner-box3-label2">
-                     お車について
-                    </span>
-                    <div class="dotted-line2"></div>
-                    <ul class="links">
-                      <li *ngFor="let link of sidePanelLinks">
-                        <a class="link" target="_blank" rel="noopener noreferrer" 
-                        [href]="link.href">{{ link.text }}</a>
-                      </li>
-                    </ul>
-                  </dxc-box>
-                  <img src="assets/img/img_contact_03.gif" />
-              </div>
             </dxc-box>
          </div>
       <div class="footer-links" style="margin-top: 15px; margin-right: 50px; margin-top: 40px;">
