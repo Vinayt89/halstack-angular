@@ -7,7 +7,6 @@ body {
   background-color: #f9f9f9;
   color: #333;
 }
-
 div.screenfour-container {
   max-width: 1120px;
   // margin: 0px auto;
@@ -15,7 +14,6 @@ div.screenfour-container {
   margin-left: 140px;
   margin-top: -15px;
 }
-
 div.screenfour-header {
   display: flex;
   size : 10px;
@@ -23,77 +21,21 @@ div.screenfour-header {
   margin-top: 0px;
   height:  auto;
 }
-
-.image-highlight {
-    background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-
-.tabs-header {
-  display: flex;
-  justify-content: center;
-  background-color: orange;
-  padding: 30px 0;
-}
-
-.tab {
-  position: relative;
-  padding: 5px 60px; /* Increased size */
-  background-color: orange; /* Background for tabs */
-  margin: 0 10px;
-  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
-  transition: background-color 0.3s, transform 0.2s;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  color: white;
-  border: 1.5px solid white;  /* Thick white border */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-}
-
-.tab.active {
-  background-color: #ff7f00;
-  transform: translateY(-5px);
-}
-
-.tab:hover {
-  background-color: #ff6f00;
-}
-
-.tab-content {
-  margin-top: 40px;
-  padding: 25px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-}
-
 .outer-box {
   background-color: #fafaf8;
   width: 955px;
 }
-
-.outer-box2 {
-  background-color: #f6f6ef;
-  margin-left: 20px;
-}
-
-.inner-box {
-  flex-wrap: wrap;
-  width: 630px;
-}
-
 .lowerheader {
   width: auto;
   height: 60px;
   background-color: rgb(231, 227, 227);
   margin-bottom: -20px;
 }
-
 .img1-lowerheader {
   margin-bottom: 10px;
   padding: 8px 20px;
   margin-left: 120px;
 }
-
 .header-right {
   // display: inline-block;
   width: 210px;
@@ -105,7 +47,6 @@ div.screenfour-header {
   margin-left: 920px;
   background-color: white;
 }
-
 .link {
   text-decoration: none;
   color: #007bff;
@@ -115,108 +56,6 @@ div.screenfour-header {
   font-weight: normal;
   font-size: 12px;
 }
-
-.inner-box2 {
-  flex-wrap: wrap;
-  margin-top: 10px;
-  width: 100%;
-  font-weight: normal ;
-  font-size: 15px;
-  text-decoration: none;  
-  cursor: pointer;
-  display: inline-flex;
-  background-color: #f8f8e9;
-  // border: 2px solid rgb(255, 119, 0);
-  border-width: 3px;
-}
-
-.inner-box3 {
-  flex-wrap: wrap;
-  width: 180px;
-  // height: 300px;
-}
-
-.inner-box3-label {
-  font-size: 11px;
-  margin-left: -15px;
-  margin-top: -3px;
-  margin-right: -15px;
-}
-.inner-box3-btnimg {
-  margin-left: -15px;
-  margin-top: -15px;
-  margin-right: -15px;
-  width: 117%;
-  height: 40px;
-}
-.inner-box3-label2 {
-  font-size: 12px;
-  margin-left: -15px;
-  margin-top: 10px;
-  margin-right: -15px;
-  font-weight:normal;
-}
-.inner-box2-text {
-  margin-top:20px;
-  font-size: 12px;
-  font-weight: 650;
-  color: rgb(255, 111, 0);
-  
-}
-.dropdown {
-  padding: 5px;
-  background-color: #f9e6e6;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 120px;
-}
-.q3-3-text2 {
-  background-color: #f2f2f2;
-  width: 100%;
-  padding: 10px;
-  font-size: 11px;
-  border-radius: 8px;
-  // margin: -20px;
-  margin-top: 20px;
-  margin-left: -25px;
-  // font-family: 'Arial', sans-serif;
-  line-height: 1.8;
-  color: #333;
-}
-
-.inner-box2-label {
-  font-size: 12px;
-  margin-left: -15px;
-  margin-top: -5px;
-  margin-right: -15px;
-}
-
-.q3-3checkbox-container {
-  display: flex;  
-  align-items: center;
-  justify-content: start;
-}
-
-.radio-space {
-  margin-left: 20px;
-}
-
-.prv-btn img {
-  transition: opacity 0.3s ease, transform 0.3s ease; 
-  cursor: pointer; 
-}
-
-.prv-btn img:hover {
-  opacity: 0.7; 
-  // transform: scale(1.05); /* Optionally scale up slightly */
-}
-
-.links {
-  list-style-type: disc; /* Ensures bullet points are shown */
-  padding-left: 10px;    /* Adds space for the bullet points */
-  margin: 0;
-}
-
 .footer-links {
   text-decoration: none;
   color: #007bff;
@@ -226,160 +65,6 @@ div.screenfour-header {
   font-weight: normal;
   font-size: 12px;
 }
-/* ---------------------------------------------------------------- */
-.button-container {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-}
-
-.custom-button {
-  font-size: 16px;
-  width: 300px;
-  font-weight: bold;
-  color: #000;
-  background: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.custom-button:hover {
-  background: #e0e0e0;
-}
-
-.custom-button .icon {
-  color: orange;
-  font-size: 18px;
-  margin-left: 10px;
-}
-
-/* Wrapper for plates and info text */
-.license-plates-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 16px;
-}
-
-/* Flex container for license plates and info text */
-.plates-and-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) 1fr; /* 3 plates + 1 column for info text */
-  gap: 14px; /* Ensures space between plates and info text */
-}
-
-/* License plates grid */
-.license-plates-container {
-  grid-column: span 3; /* Span 3 columns for plates */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for plates */
-  gap: 28px; /* Added space between rows and columns */
-}
-
-/* Individual license plate */
-.license-plate {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 3px;
-  background-color: #fff;
-  text-align: center;
-  cursor: pointer;
-  margin-left: -15px;
-  width: 190px; /* Set consistent width */
-  height: 190px;
-}
-
-.license-plate input {
-  display: none; /* Hide raw radio button */
-}
-
-.license-label {
-  display: block;
-  cursor: pointer;
-  padding: 8px; /* Adds spacing around the label */
-  margin: 8px; /* Adds spacing between the plates */
-  text-align: center;
-}
-
-.license-plate .plate-image {
-  width: 120px;
-  margin-left: -20px;
-  height: auto;
-  margin-bottom: 8px;
-}
-
-.license-plate .plate-description {
-  font-size: 14px;
-  color: #333;
-  margin-left: -5px;
-}
-
-/* Styling for info text */
-.info-text {
-  grid-column: 4; /* Align in the fourth column */
-  width: 195px;
-  font-size: 12px;
-  color: #333;
-  align-self: start; /* Align to the top of the plates */
-  margin-top: 350px;
-  // margin-left: 45px;
-}
-.q2-btn {
-  margin-left: 140px;
-  margin-top: -25px;
-}
-.q2-btn img {
-  transition: opacity 0.3s ease, transform 0.3s ease; 
-  cursor: pointer; 
-}
-.q2-btn img:hover {
-  opacity: 0.7; 
-  // transform: scale(1.05); /* Optionally scale up slightly */
-}
-
-.q3highlighted-box {
-  position: relative;
-  border: 3px solid rgb(255, 111, 0);
-  background-color: #fffbe6;
-  padding: 15px;
-  margin-left: 20px;
-  border-radius: 5px;
-  max-width: 600px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-/* Arrow pointing to the checkbox text */
-.q3highlighted-box .arrow {
-  position: absolute;
-  top: -10px; /* Position the arrow just above the box */
-  left: 60px; /* Adjust to align with checkbox text */
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 10px solid rgb(255, 111, 0);
-}
-
-/* Styling for the text inside the box */
-.q3highlighted-box p {
-  margin: 5px 0;
-}
-
-// ------------------------------------------------
-
 .top-highlighted-box {
   position: relative;
   border: 4px solid rgb(222, 163, 13);
@@ -394,7 +79,6 @@ div.screenfour-header {
   line-height: 1.5;
   display: flex;  
 }
-
 .top-inner-highlighted-box {
   position: relative;
   border: 1px solid lightgray;
@@ -410,20 +94,34 @@ div.screenfour-header {
   line-height: 1.5;
   // display: flex;  
 }
-
+.arrow-container {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+.arrow-container::before {
+  content: '';
+  position: absolute;
+  top: 28px; /* Adjust for alignment */
+  left: -18px; /* Larger border dimensions */
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent; /* Transparent top border */
+  border-bottom: 12px solid transparent; /* Transparent bottom border */
+  border-right: 18px solid #fffae0; /* Bright border color */
+  z-index: 0; /* Behind the arrow */
+}
 .inner-arrow {
   position: absolute;
   top: 30px; 
-  left: -15px;
+  left: -15px; 
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 15px solid #fffbe6;;
-  border-left: none;
-  z-index: 1;
+  border-top: 10px solid transparent; /* Transparent top border */
+  border-bottom: 10px solid transparent; /* Transparent bottom border */
+  border-right: 15px solid #fffbe6; /* Arrow background */
+  z-index: 1; /* Above the border */
 }
-
 .arrow {
   position: absolute;
   top: 30%;
@@ -435,7 +133,6 @@ div.screenfour-header {
   border-width: 30px 0 30px 15px;
   border-color: transparent transparent transparent rgb(222, 163, 13);
 }
-
 .vertical-line {
   width: 1px; /* Thickness of the line */
   height: 20px; /* Height of the line */
@@ -446,13 +143,13 @@ div.screenfour-header {
 .table1-container {
   display: flex;
   border: 1px solid #ccc;
-  width: 955px;
+  width: 100%;
   height: 200px;
   border-radius: 4px;
   margin-bottom: -10px;
 }
 .table1-section {
-  width: 150px;
+  width: 175px;
   background-color: #94c83d;
   padding: 10px;
   color: white;
@@ -463,10 +160,8 @@ div.screenfour-header {
   border-bottom-left-radius: 4px;
 }
 .table1 {
-  width: 600px;
-  height: 20px;
+  width: 100%;
   border-collapse: collapse;
-  background-color: white;
   border-radius: 5px;
 }
 .table1 tr {
@@ -485,15 +180,13 @@ div.screenfour-header {
   margin-right: 8px;
   padding: 5px;
 }
-
 mat-icon {
   margin-left: 5px;
   font-size: 18px;
   color: rgb(0, 106, 255); 
   font-weight: bold;
 }
-
-.price-container {
+.t1-amt-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -501,33 +194,31 @@ mat-icon {
   width: 200px; 
   background-color: #fff;
 }
-
-.price {
+.t1-amt {
+  text-align: center;
+  margin-left: 20px;
+  // width: 95px;
   color: red; 
-  font-size: 20px; 
+  font-size: 16px; 
   font-weight: bold;
 }
-
-.currency {
-  color: black; 
-  font-size: 18px;
-  margin-left: 2px;
-}
-
-.amount {
+.top-box-amount {
   font-size: 26px;
   font-weight: 520;
   color: red;
   margin-top: 30px; /* Space above the amount */
   margin-left: -245px; /* Align with the left margin of the content */
 }
-
 .row {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-
+.table2 {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
 .table2-container {
   display: flex;
   border: 1px solid #f5958a;
@@ -561,78 +252,153 @@ mat-icon {
   align-content: center;
   // display: flex;  
 } 
-.discount-container {
-  border: 1px solid #ff7f50;
-  border-radius: 5px;
-  background-color: #ffe4e1;
-  padding: 10px;
-}
-.discount-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 5px;
-}
-.discount-table th,
-.discount-table td {
+.table2 th,
+.table2 td {
   padding: 10px;
   text-align: left;
   vertical-align: top;
   border: 1px solid #ff7f50;
 }
-.header {
+.table2-header {
   font-weight: bold;
   text-align: left;
   background-color: rgb(253, 247, 248);
 }
-.sub-header {
+.table2-sub-header {
   font-size: 14px;
   color: #555;
   margin-left: 5px;
 }
-.internet-discount {
+.table2-sub-header-amt {
   text-align: left;
   width: 200px;
   font-weight: bold;
+  font-size: 16px;
   color: red;
 }
-.checkbox-column {
-  width: 10%;
-}
-.discount-title {
-  font-weight: bold;
-  width: 27%;
-}
-.discount-title a {
-  color: blue;
-  text-decoration: underline;
-  margin-left: 10px;
-}
-.discount-description {
-  width: 60%;
-}
-.discount-amount {
+.t2-col2-amt {
   width: 100px;
   color: red;
   font-weight: bold;
 }
-.note {
-  font-size: 14px;
-  margin-left: 10px;
-  color: #555;
-}
-.discount-value {
-  text-align: right;
-  font-weight: bold;
-  color: red;
-  width: 10%;
-}
 .plus-icon {
   margin-left: 50%;
 }
-
 .top-btn {
   width: 260px;
   padding: 10px;
   margin-left: -3px;
   margin-top: 25px;
 }
+.table3 {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+.table3-container {
+  display: flex;
+  border: 1px solid #f5958a;
+  width: 100%;
+  margin-top: -12px;
+}
+.table3-section {
+  width: 175px;
+  background-color: #eb824d;
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.table3 th,
+.table3 td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #ff7f50;
+}
+.table3-header {
+  font-weight: bold;
+  width: 193px;
+  text-align: left;
+  background-color: rgb(253, 247, 248);
+}
+.table4 {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+.table4-container {
+  display: grid;
+  border: 1px solid #e0e0e0;
+  grid-template-columns: auto 1fr; /* Left sections auto-size, table takes remaining space */
+  grid-auto-rows: auto; /* Rows adjust based on content */
+  // gap: 10px; /* Space between sections and table */
+  width: 100%;
+  margin-top: -12px;
+}
+.table4-section {
+  width: 145px;
+  height: 135px;
+  background-color: #45B3C0;
+  // padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  // border-top-left-radius: 4px;
+  // border-bottom-left-radius: 4px;
+}
+.table4 th,
+.table4 td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #e0e0e0;
+}
+.table4-header {
+  font-weight: bold;
+  width: 210px;
+  text-align: left;
+}
+//----------------------------------------------
+.container {
+  font-family: Arial, sans-serif;
+}
+
+.price {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  width: 90px;
+}
+
+.form-group {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+.dotted-line {
+  border-bottom: 2px dotted rgb(210, 204, 204); 
+  width: 104%; 
+  margin-left: -10px;
+}
+.t4-inner-box {
+  position: relative;
+  border: 1px solid lightgray;
+  background-color: #fffbe6;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 350px;
+  height: 110px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  line-height: 1.5;
+  align-content: center;
+  // display: flex;  
+} 
