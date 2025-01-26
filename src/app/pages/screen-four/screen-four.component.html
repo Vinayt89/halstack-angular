@@ -1,288 +1,464 @@
 <html lang="ja">
-   <head>
-      <meta charset="UTF-8">
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-   </head>
-   <body>
-      <div class="lowerheader">
-         <img src="assets/img/belt_01.gif" class="img1-lowerheader" />
-         <img style="margin-bottom: 15px;" src="assets/img/belt_02.gif"/>
-      </div>
-      <div class="header-right">
-         <span style="padding: 10px; font-size: 16px; font-weight: bold;">見積り番号:</span>
-      </div>
-      <div class="screenfour-container">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="lowerheader">
+            <img src="assets/img/belt_01.gif" class="img1-lowerheader" />
+            <img style="margin-bottom: 15px;" src="assets/img/belt_02.gif" />
+        </div>
+        <div class="header-right">
+            <span style="padding: 10px; font-size: 16px; font-weight: bold;">見積り番号:</span>
+        </div>
+        <div class="screenfour-container">
             <div class="row">
-               <div class="top-highlighted-box">
-                  <div class="arrow"></div>
-                  <span style="font-weight: bold; font-size: 14px;">一括払保険料</span>
-                  <div class="vertical-line"></div><br>
-                  <a href="" class="link" style="margin-left: 8px; font-size: 14px;">分割払保険料はこちら</a> 
-                  <div class="top-box-amount">111,111
-                     <span style="color: red; margin-left: -5px; font-weight: bold;" class="currency">円</span>
-                  </div>
-                  <div style="margin-top: 40px; margin-left: 10px;">
-                     <img src="assets/img/txtimg_notice_01.gif" />
-                  </div>
-                  <span style="margin-top: 65px; margin-left: -135px; color: red;">（年間）</span>
-                  <div class="top-inner-highlighted-box">
-                     <div class="arrow-wrapper">
-                        <div class="inner-arrow"></div>
-                      </div>
-                      
-                     当社のインターネット割引は、新規なら13,000円、継続でも10,000円の割引です。<br>
-                     2025年4月21日までにお申込みいただくと <br>
-                     早割５０日（600円）の割引が適用されます。<br>
-                     ※お見積りは適用後の保険料を表示しています。
-                  </div>
-               </div>
-               <div class="top-btn">
-                  <img src="assets/img/btn_signup_01_o.gif"/>
-                  <img style="margin-left: 40px; margin-top: 0px;" src="assets/img/btn_estimate_save_01_o.gif" />
-               </div>
-               <div>
-                  <img style="margin-top: 60px; margin-left: -80px;" src="assets/img/btn_revise_01_o.gif" />
-               </div>
-               <div>
-                  <img style="margin-top: 140px; margin-left: -103px;" src="assets/img/btn_print_01_o.gif" />
-               </div>
+                <div class="top-highlighted-box">
+                    <div class="arrow"></div>
+                    <span style="font-weight: bold; font-size: 14px;">一括払保険料</span>
+                    <div class="vertical-line"></div>
+                    <br />
+                    <a href="" class="link" style="margin-left: 8px; font-size: 14px;">分割払保険料はこちら</a>
+                    <div class="top-box-amount">
+                        111,111
+                        <span style="color: red; margin-left: -5px; font-weight: bold;" class="currency">円</span>
+                    </div>
+                    <div style="margin-top: 40px; margin-left: 10px;">
+                        <img src="assets/img/txtimg_notice_01.gif" />
+                    </div>
+                    <span style="margin-top: 65px; margin-left: -135px; color: red;">（年間）</span>
+                    <div class="top-inner-highlighted-box">
+                        <div class="arrow-wrapper">
+                            <div class="inner-arrow"></div>
+                        </div>
+
+                        当社のインターネット割引は、新規なら13,000円、継続でも10,000円の割引です。<br />
+                        2025年4月21日までにお申込みいただくと <br />
+                        早割５０日（600円）の割引が適用されます。<br />
+                        ※お見積りは適用後の保険料を表示しています。
+                    </div>
+                </div>
+                <div class="top-btn">
+                    <img src="assets/img/btn_signup_01_o.gif" />
+                    <img style="margin-left: 40px; margin-top: 0px;" src="assets/img/btn_estimate_save_01_o.gif" />
+                </div>
+                <div>
+                    <img style="margin-top: 60px; margin-left: -80px;" src="assets/img/btn_revise_01_o.gif" />
+                </div>
+                <div>
+                    <img style="margin-top: 140px; margin-left: -103px;" src="assets/img/btn_print_01_o.gif" />
+                </div>
             </div>
-      
-         <div style="margin-top: 15px;"></div>
-         <div class="screenfour-header">
-            <dxc-box class="outer-box" padding="xsmall">
-               <div style="display: flex; flex-direction: column; gap: 16px;">
-                   <!-- Table 1 start -->
-                  <div class="table1-container">
-                     <div class="table1-section">
-                       <span style="font-size: 18px; font-weight: bold;">基本補償</span>
-                        対人・対物はもちろ<br>
-                        ん、保険未加入者との<br>
-                        事故に備え無保険車<br>
-                        傷害も「無制限」補償<br>
-                        としました。
-                     </div>
-                     <dxc-table class="table1">
-                        <tbody>
-                           <tr>
-                              <td style="font-weight: bold;">
-                                <span class="check-icon">✔</span>対人・対物賠償
-                                <mat-icon>arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a>
-                              </td>
-                              <td >
-                                無制限
-                                <mat-icon>help</mat-icon> 
-                                <a href="#" class="link">なぜ無制限なの？</a>
-                              </td>
-                              <td rowspan="4" class="t1-amt">
-                              <span>111,111</span><span style="color: black; font-weight: normal;">円</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="font-weight: bold;" >
-                                <span class="check-icon">✔</span>無保険車傷害
-                                <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a>
-                              </td>
-                              <td>
-                                無制限 
-                                <mat-icon>help</mat-icon> 
-                                <a href="#" class="link">なぜ無制限なの？ </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="font-weight: bold;">
-                                <span class="check-icon">✔</span>他車運転特約
-                                <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a>
-                              </td>
-                              <td>
-                                あり 
-                                <mat-icon style="margin-left: 20px;">help</mat-icon> 
-                                <a href="#" class="link">この特約が基本補償に入っている理由は？</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="font-weight: bold;">
-                                <span class="check-icon">✔</span>被害者救済費用<br>
-                                <span style="margin-left: 95px;">特約</span>
-                                <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
-                              </td>
-                              <td>
-                               あり
-                              </td>
-                            </tr>
-                        </tbody>
-                     </dxc-table>
-                   </div>
-                <!-- Table 1 end -->
-                <div class="plus-icon"><img src="assets/img/icon_plus01.png"/></div>             
-                 <!-- Table 2 start -->
-                <div class="table2-container">
-                  <div class="table2-section">
-                    <span style="font-size: 18px; font-weight: bold;">各種割引</span>
-                    おとなの早割以外の<br>
-                    割引です<br>
-                  </div>
-                  <dxc-table class="table2">
-                     <tbody>
-                     <tr>
-                       <td colspan="5" class="table2-header">
-                       <span class="table2-sub-header">※保険料には、「インターネット割引13,000円」が適用されています。</span>
-                       </td>
-                       <td style="background-color: rgb(253, 247, 248);">
-                        <span class="table2-sub-header-amt">111,111</span>円
-                     </td>
-                     </tr>
-                     <tr>
-                     <td style="font-size: 12px; width: 27%;">
-                        <dxc-checkbox
-                          id="t2-checkbox"
-                          labelPosition="after"
-                        ></dxc-checkbox> 
-                          <label style="font-weight: bold; font-size: 16px;">
-                           電気・ハイブリ<br>
-                           <span style="margin-left: 30px;">ッド車割引</span>
-                         </label>
-                          <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon>
-                          <a href="" style="margin-top: -10px;" class="link">詳細</a>
-                        </td>
-                        <td colspan="4" style="width: 60%;">
-                         <div class="t2-inner-box1">
-                           ご契約のお車が電気自動車、ハイブリッド車の場合、保険料を
-                           <span class="t2-col2-amt">1,200円割引</span>
-                           <mat-icon>arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
-                         </div>
-                         <span style="margin-left:10px; font-size: 14px;">※初度登録（検査）年月から13か月以内の場合のみ対象。</span>
-                         </td>
-                         <td>111,111円</td>       
-                     </tr>
-                     <tr>
-                        <td style="width: 210px; font-size: 12px;">
-                           <dxc-checkbox
-                           id="t2-checkbox"
-                           labelPosition="after"
-                           ></dxc-checkbox> 
-                           <label style="font-weight: bold; font-size: 16px;">
-                            おとなの2台目<br>
-                            <span style="margin-left: 30px;">割引</span>
-                          </label>
-                           <mat-icon style="margin-left: 70px;">arrow_forward</mat-icon>
-                           <a href="" style="margin-top: -10px;" class="link">詳細</a>
-                         </td>
-                         <td colspan="4">
-                           <div class="t2-inner-box1">
-                              2台目以降のご契約の保険料を
-                             <span class="t2-col2-amt">600円割引</span>
-                             <br />
-                             きます。
-                             <mat-icon>arrow_forward</mat-icon><a href="" class="link">詳しく見る</a>
-                           </div>
-                         </td>     
-                         <td>111,111円</td>    
-                     </tr>
-                   </tbody>
-                  </dxc-table>
-                </div>
-                <!-- Table 2 end -->
-                <div class="plus-icon"><img src="assets/img/icon_plus01.png"/></div>             
-                 <!-- Table 3 start -->
-                 <div class="table3-container">
-                  <div class="table3-section">
-                     <span style="font-size: 18px; font-weight: bold;">付帯サービス</span>
-                     自動セットされます。
-                  </div>
-                  <dxc-table class="table3">
-                     <tbody>
-                     <tr>
-                       <td class="table3-header">
-                        <span class="check-icon">✔</span>
-                        <label style="font-weight: 550; font-size: 16px;">
-                           ALSOK事故現<br>
-                           <span style="margin-left: 30px;">場安心サポート</span>
-                         </label>                        
-                       </td>
-                       <td style="width: 454px; background-color: rgb(253, 247, 248);">
-                        <span>
-                           ALSOK隊員が事故現場へかけつけ、現場の安全確保、救急車の手配、事故状況の聴取・報告などの事故対応サポートを行うサービスが自動セットされています。
-                        </span>
-                       </td>
-                       <td style="background-color: rgb(253, 247, 248);">111,111円</td>
-                     </tr>
-                     </tbody>
-                     </dxc-table>
-                </div>
-                 <!-- Table 3 end -->
-                 <div class="plus-icon"><img src="assets/img/icon_plus01.png"/></div>             
-                 <!-- Table 4 start -->
-                <div class="table4-container">
-                  <dxc-table class="table4">
-                    <tbody>
-                      <tr>
-                        <td class="table4-section">
-                           <span style="font-size: 18px; font-weight: bold;">ご自身や同乗
-                              <br> 者への補償
-                           </span>
-                           <div>
-                              <img src="assets/img/hdg_basic01.gif" />
-                           </div>      
-                        </td>
-                        <td class="table4-header">
-                        <span class="check-icon">✔</span>
-                        <span>人身傷害</span>
-                        <mat-icon style="margin-left:40px;">arrow_forward</mat-icon><a class="link" href="#">詳細</a>
-                        <img style="margin-top: 10px; margin-left: 5px;" src="assets/img/btn-accident02_o.png" />
-                        </td>
-                        <td style="width: 480px;">
-                          <div class="form-group">
-                            <label>補償範囲</label>
-                            <dxc-select style="width: 150px; margin-left:40px"> 
-                            </dxc-select>
-                            <mat-icon style="margin-left: 10px;">help</mat-icon><a href="" class="link">補償範囲の決め方は？</a>
-                          </div>
-                          <div class="dotted-line"></div>
-                          <div class="form-group">
-                            <label>保険金額 <br> (1名につき)</label>
-                            <dxc-select style="width: 150px; margin-left:20px"> 
-                           </dxc-select>
-                           <mat-icon style="margin-left:10px;">help</mat-icon><a href="" class="link">保険金額の決め方は？</a>
-                          </div>
-                        </td>
-                        <td class="price"><span>1,580</span><span style="color: black; font-weight: normal;">円</span></td>
-                      </tr>
-                      <tr>
-                        <td class="table4-section">
-                           <div>
-                              <img src="assets/img/hdg_selected01.gif" />
-                           </div>      
-                        </td>
-                        <td class="table4-header">
-                          <dxc-checkbox></dxc-checkbox>
-                           <label style="margin-left: 5px;">搭乗者傷害</label>
-                           <mat-icon style="margin-left:20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
-                           <a href="#" class="link" style="margin-left: 10px;">追加</a>
-                      </td>
-                      <td>
-                           <div class="t4-inner-box">
-                              治療中でもあらかじめ定められた金額をスピーディーにお支払いしますので、通院費や治療費などの出費に備えることができ
-                              ます。この補償を、<strong style="color: #45a6b1; font-size: 18px;">57.1%</strong>の方が選んでいます <br>
-                              <mat-icon style="margin-left:-5px">arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
+
+            <div style="margin-top: 5px;"></div>
+            <div class="screenfour-header">
+                <dxc-box class="outer-box" padding="xsmall">
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <!-- Table 1 start -->
+                        <div class="table1-container">
+                            <div class="table1-section">
+                                <span style="font-size: 18px; font-weight: bold;">基本補償</span>
+                                対人・対物はもちろ<br />
+                                ん、保険未加入者との<br />
+                                事故に備え無保険車<br />
+                                傷害も「無制限」補償<br />
+                                としました。
                             </div>
-                       </td>
-                        <td style="text-align: center;">-</td>
-                      </tr>
-                    </tbody>
-                  </dxc-table>
-                </div>
-                 <!-- Table 4 end -->
-                 <div class="plus-icon"><img src="assets/img/icon_plus01.png"/></div>             
-               </div>
-            </dxc-box>
-         </div>
-      <div class="footer-links" style="margin-top: 15px; margin-right: 50px; margin-top: 40px;">
-        <ng-container *ngFor="let link of footerLinks; let last = last">
-          <mat-icon  aria-hidden="true">chevron_right</mat-icon>
-          <a class="link" target="_blank" rel="noopener noreferrer" [href]="link.href" >{{ link.text }}</a>
-        </ng-container>
-      </div>
-      </div>
-   </body>
+                            <dxc-table class="table1">
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight: bold;"><span class="check-icon">✔</span>対人・対物賠償 <mat-icon>arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a></td>
+                                        <td>
+                                            無制限
+                                            <mat-icon>help</mat-icon>
+                                            <a href="#" class="link">なぜ無制限なの？</a>
+                                        </td>
+                                        <td rowspan="4" class="t1-amt"><span>111,111</span><span style="color: black; font-weight: normal;">円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">
+                                            <span class="check-icon">✔</span>無保険車傷害 <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a>
+                                        </td>
+                                        <td>
+                                            無制限
+                                            <mat-icon>help</mat-icon>
+                                            <a href="#" class="link">なぜ無制限なの？ </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">
+                                            <span class="check-icon">✔</span>他車運転特約 <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a style="margin-top: 20px;" href="#" class="link">詳細</a>
+                                        </td>
+                                        <td>
+                                            あり
+                                            <mat-icon style="margin-left: 20px;">help</mat-icon>
+                                            <a href="#" class="link">この特約が基本補償に入っている理由は？</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">
+                                            <span class="check-icon">✔</span>被害者救済費用<br />
+                                            <span style="margin-left: 95px;">特約</span>
+                                            <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                        </td>
+                                        <td>
+                                            あり
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </dxc-table>
+                        </div>
+                        <!-- Table 1 end -->
+                        <div class="plus-icon"><img src="assets/img/icon_plus01.png" /></div>
+                        <!-- Table 2 start -->
+                        <div class="table2-container">
+                            <div class="table2-section">
+                                <span style="font-size: 18px; font-weight: bold;">各種割引</span>
+                                おとなの早割以外の<br />
+                                割引です<br />
+                            </div>
+                            <dxc-table class="table2">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5" class="table2-header">
+                                            <span class="table2-sub-header">※保険料には、「インターネット割引13,000円」が適用されています。</span>
+                                        </td>
+                                        <td style="background-color: rgb(253, 247, 248);"><span class="table2-sub-header-amt">111,111</span>円</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 12px; width: 27%;">
+                                            <dxc-checkbox id="t2-checkbox" labelPosition="after"></dxc-checkbox>
+                                            <label style="font-weight: bold; font-size: 16px;">
+                                                電気・ハイブリ<br />
+                                                <span style="margin-left: 30px;">ッド車割引</span>
+                                            </label>
+                                            <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon>
+                                            <a href="" style="margin-top: -10px;" class="link">詳細</a>
+                                        </td>
+                                        <td colspan="4" style="width: 60%;">
+                                            <div class="t2-inner-box1">
+                                                ご契約のお車が電気自動車、ハイブリッド車の場合、保険料を
+                                                <span class="t2-col2-amt">1,200円割引</span>
+                                                <mat-icon>arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
+                                            </div>
+                                            <span style="margin-left: 10px; font-size: 14px;">※初度登録（検査）年月から13か月以内の場合のみ対象。</span>
+                                        </td>
+                                        <td>111,111円</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 210px; font-size: 12px;">
+                                            <dxc-checkbox id="t2-checkbox" labelPosition="after"></dxc-checkbox>
+                                            <label style="font-weight: bold; font-size: 16px;">
+                                                おとなの2台目<br />
+                                                <span style="margin-left: 30px;">割引</span>
+                                            </label>
+                                            <mat-icon style="margin-left: 70px;">arrow_forward</mat-icon>
+                                            <a href="" style="margin-top: -10px;" class="link">詳細</a>
+                                        </td>
+                                        <td colspan="4">
+                                            <div class="t2-inner-box1">
+                                                2台目以降のご契約の保険料を
+                                                <span class="t2-col2-amt">600円割引</span>
+                                                <br />
+                                                きます。
+                                                <mat-icon>arrow_forward</mat-icon><a href="" class="link">詳しく見る</a>
+                                            </div>
+                                        </td>
+                                        <td>111,111円</td>
+                                    </tr>
+                                </tbody>
+                            </dxc-table>
+                        </div>
+                        <!-- Table 2 end -->
+                        <div class="plus-icon"><img src="assets/img/icon_plus01.png" /></div>
+                        <!-- Table 3 start -->
+                        <div class="table3-container">
+                            <div class="table3-section">
+                                <span style="font-size: 18px; font-weight: bold;">付帯サービス</span>
+                                自動セットされます。
+                            </div>
+                            <dxc-table class="table3">
+                                <tbody>
+                                    <tr>
+                                        <td class="table3-header">
+                                            <span class="check-icon">✔</span>
+                                            <label style="font-weight: 550; font-size: 16px;">
+                                                ALSOK事故現<br />
+                                                <span style="margin-left: 30px;">場安心サポート</span>
+                                            </label>
+                                        </td>
+                                        <td style="width: 454px; background-color: rgb(253, 247, 248);">
+                                            <span>
+                                                ALSOK隊員が事故現場へかけつけ、現場の安全確保、救急車の手配、事故状況の聴取・報告などの事故対応サポートを行うサービスが自動セットされています。
+                                            </span>
+                                        </td>
+                                        <td style="background-color: rgb(253, 247, 248);">111,111円</td>
+                                    </tr>
+                                </tbody>
+                            </dxc-table>
+                        </div>
+                        <!-- Table 3 end -->
+                        <div class="plus-icon"><img src="assets/img/icon_plus01.png" /></div>
+                        <!-- Table 4 start -->
+                        <div class="table4-container">
+                            <dxc-table class="table4">
+                                <tbody>
+                                    <tr>
+                                        <td class="table4-section">
+                                            <span style="font-size: 18px; font-weight: bold;">
+                                                ご自身や同乗 <br />
+                                                者への補償
+                                            </span>
+                                            <div>
+                                                <img src="assets/img/hdg_basic01.gif" />
+                                            </div>
+                                        </td>
+                                        <td class="table4-header">
+                                            <span class="check-icon">✔</span>
+                                            <span>人身傷害</span>
+                                            <mat-icon style="margin-left: 40px;">arrow_forward</mat-icon><a class="link" href="#">詳細</a>
+                                            <img style="margin-top: 10px; margin-left: 5px;" src="assets/img/btn-accident02_o.png" />
+                                        </td>
+                                        <td style="width: 480px;">
+                                            <div class="t4-r1-col3-grp">
+                                                <label>補償範囲</label>
+                                                <dxc-select style="width: 150px; margin-left: 37px;"> </dxc-select>
+                                                <mat-icon style="margin-left: 10px;">help</mat-icon><a href="" class="link">補償範囲の決め方は？</a>
+                                            </div>
+                                            <div class="dotted-line"></div>
+                                            <div class="t4-r1-col3-grp">
+                                                <label>
+                                                    保険金額 <br />
+                                                    (1名につき)
+                                                </label>
+                                                <dxc-select style="width: 150px; margin-left: 20px;"> </dxc-select>
+                                                <mat-icon style="margin-left: 10px;">help</mat-icon><a href="" class="link">保険金額の決め方は？</a>
+                                            </div>
+                                        </td>
+                                        <td class="t4-amt"><span>1,580</span><span style="color: black; font-weight: normal;">円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table4-section">
+                                            <div>
+                                                <img src="assets/img/hdg_selected01.gif" />
+                                            </div>
+                                        </td>
+                                        <td class="table4-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                            <dxc-checkbox></dxc-checkbox>
+                                            <label style="margin-left: 20px;">車両保険</label>
+                                            <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                            <a href="#" class="link" style="margin-left: 10px;">追加</a>
+                                        </td>
+                                        <td style="background-color: rgba(244, 242, 242, 0.847);">
+                                            <div class="t4-inner-box">
+                                                治療中でもあらかじめ定められた金額をスピーディーにお支払いしますので、通院費や治療費などの出費に備えることができ ます。この補償を、
+                                                <strong style="color: #45a6b1; font-size: 18px;">57.1%</strong>の方が選んでいます <br />
+                                                <mat-icon style="margin-left: -5px;">arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
+                                            </div>
+                                        </td>
+                                        <td style="text-align: center; background-color: rgba(244, 242, 242, 0.847);">-</td>
+                                    </tr>
+                                </tbody>
+                            </dxc-table>
+                        </div>
+                        <!-- Table 4 end -->
+                        <div class="plus-icon"><img src="assets/img/icon_plus01.png" /></div>
+                        <!-- Table 5 start -->
+                        <div class="table5-container">
+                            <dxc-table class="table5">
+                                <tbody>
+                                    <tr>
+                                        <td class="table5-section">
+                                            <div>
+                                                <img src="assets/img/hdg_selected01.gif" /> <br />
+                                                <span style="font-size: 18px; font-weight: bold;">
+                                                    ご自身の車へ <br />
+                                                    の補償
+                                                </span>
+                                                <br />
+                                                <span>
+                                                    お車が事故により損 <br />
+                                                    害を被ったり、盗難に <br />
+                                                    遭った場合に保険金 <br />
+                                                    をお支払いします。
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td class="table5-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                            <dxc-checkbox></dxc-checkbox>
+                                            <label style="margin-left: 5px;">搭乗者傷害</label>
+                                            <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                            <a href="#" class="link" style="margin-left: 10px;">追加</a>
+                                        </td>
+                                        <td style="background-color: rgba(244, 242, 242, 0.847); width: 447px;" >
+                                            <div class="t4-inner-box">
+                                                お車が事故により損害を被ったり、盗難に遭った場合の損害額をお支払いする補償です。この補償を、
+                                                <strong style="color: #45a6b1; font-size: 18px;">69.1%</strong>の方が選んでいます<br />
+                                                <mat-icon style="margin-left: -5px;">arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
+                                            </div>
+                                        </td>
+                                        <td style="text-align: center; background-color: rgba(244, 242, 242, 0.847); width: 85px;">-</td>
+                                    </tr>
+                                </tbody>
+                            </dxc-table>
+                        </div>
+                        <!-- Table 5 end -->
+                        <div class="plus-icon"><img src="assets/img/icon_plus01.png" /></div>
+                        <!-- Table 6 start -->
+                        <div class="table6-container">
+                            <div class="table6-section">
+                                <div><img src="assets/img/hdg_selected01.gif" /></div>
+                                <span style="font-size: 18px; font-weight: bold;">その他の補償</span>
+                                ニーズに合わせて必 <br />
+                                要な保険を作っていた<br />
+                                だけるよう、各種特約<br />
+                                をご用意しております。
+                            </div>
+                            <dxc-table class="table6">
+                                <tbody>
+                                    <!-- Row 1 start-->
+                                    <tr>
+                                        <td class="table6-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                            <dxc-checkbox></dxc-checkbox>
+                                            <label style="margin-left: 5px;">対物全損時修</label>
+                                            <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                            <a href="#" class="link" style="margin-left: 10px;">外す</a>
+                                            理差額費用特約
+                                        </td>
+                                        <td style="background-color: rgba(244, 242, 242, 0.847); width: 447px;">
+                                          あり
+                                        </td>
+                                        <td class="t4-amt"><span>111</span><span style="color: black; font-weight: normal;">円</span></td>
+                                    </tr>
+                                    <!-- Row 1 end-->
+                                    <!-- Row 2 start-->
+                                    <tr>
+                                       <td class="table6-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                           <dxc-checkbox></dxc-checkbox>
+                                           <label style="margin-left: 5px;">ロードアシスタ</label>
+                                           <mat-icon style="margin-left: 7px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                           <a href="#" class="link" style="margin-left: 10px;">外す</a>
+                                           ンス特約
+                                       </td>
+                                       <td style="background-color: rgba(244, 242, 242, 0.847); width: 447px;">
+                                           <span>あり</span>
+                                           <div class="t4-inner-box" style="margin-left: 40px; margin-top: -20px; width: 320px;">
+                                             お車が事故・故障・トラブルにより自力走行できなくなった場合のサポートを行う補償です。
+                                             ＪＡＦ会員の方には優遇サービスがあります。この補償を、
+                                               <strong style="color: #45a6b1; font-size: 18px;">81.6%</strong>の方が選んでいます<br />
+                                               <mat-icon style="margin-left: -5px;">arrow_forward</mat-icon><a href="" class="link">詳しく見る</a>
+                                           </div>
+                                       </td>
+                                       <td class="t4-amt"><span>111</span><span style="color: black; font-weight: normal;">円</span></td>
+                                   </tr>
+                                   <!-- Row 2 end-->
+                                   <!-- Row 3 start-->
+                                    <tr>
+                                       <td class="table6-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                           <dxc-checkbox></dxc-checkbox>
+                                           <label style="margin-left: 5px;">弁護士費用特</label>
+                                           <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                           <a href="#" class="link" style="margin-left: 10px;">追加</a>
+                                           約
+                                       </td>
+                                       <td style="background-color: rgba(244, 242, 242, 0.847); width: 447px;">
+                                           <div class="t4-inner-box">
+                                                自動車事故などの被害事故に関する損害賠償請求のために必要な弁護士費用や、法律相談・書類作成費用
+                                                などをお支払いする補償ですこの補償を、
+                                               <strong style="color: #45a6b1; font-size: 18px;">56.9%</strong>の方が選んでいます<br />
+                                               <mat-icon style="margin-left: -5px;">arrow_forward</mat-icon><a href="" class="link">詳しく見る</a>
+                                           </div>
+                                       </td>
+                                       <td class="t4-amt"><span>111</span><span style="color: black; font-weight: normal;">円</span></td>
+                                   </tr>
+                                   <!-- Row 3 end-->
+                                   <!-- Row 4 start-->
+                                    <tr>
+                                       <td class="table6-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                           <dxc-checkbox></dxc-checkbox>
+                                           <label style="margin-left: 5px;">個人賠償責任</label>
+                                           <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                           <a href="#" class="link" style="margin-left: 10px;">追加</a>
+                                           特約（示談交渉<br>
+                                           <span style="margin-left: 35px;">サービス付き）</span>
+                                       </td>
+                                       <td style="background-color: rgba(244, 242, 242, 0.847); width: 447px;">
+                                           <div class="t4-inner-box">
+                                             自動車以外の日常生活の事故により、賠償責任を負ってしまった場合に保険金をお支払いする補償です。
+                                               <mat-icon style="margin-left: -5px;">arrow_forward</mat-icon><a href="" class="link">詳しく見る</a>
+                                           </div>
+                                       </td>
+                                       <td class="t4-amt"><span>111</span><span style="color: black; font-weight: normal;">円</span></td>
+                                   </tr>
+                                   <!-- Row 4 end-->
+                                   <!-- Row 5 start-->
+                                    <tr>
+                                       <td class="table6-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                           <dxc-checkbox></dxc-checkbox>
+                                           <label style="margin-left: 5px;"></label>
+                                           <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                           <a href="#" class="link" style="margin-left: 10px;">追加</a>
+                                       </td>
+                                       <td style="background-color: rgba(244, 242, 242, 0.847); width: 447px;">
+                                           <div class="t4-inner-box">
+                                               お車が事故により損害を被ったり、盗難に遭った場合の損害額をお支払いする補償です。この補償を、
+                                               <strong style="color: #45a6b1; font-size: 18px;">69.1%</strong>の方が選んでいます<br />
+                                               <mat-icon style="margin-left: -5px;">arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
+                                           </div>
+                                       </td>
+                                       <td class="t4-amt"><span>111</span><span style="color: black; font-weight: normal;">円</span></td>
+                                   </tr>
+                                   <!-- Row 5 end-->
+                                   <!-- Row 6 start-->
+                                    <tr>
+                                       <td class="table6-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                           <dxc-checkbox></dxc-checkbox>
+                                           <label style="margin-left: 5px;">搭乗者傷害</label>
+                                           <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                           <a href="#" class="link" style="margin-left: 10px;">追加</a>
+                                       </td>
+                                       <td style="background-color: rgba(244, 242, 242, 0.847); width: 447px;">
+                                           <div class="t4-inner-box">
+                                               お車が事故により損害を被ったり、盗難に遭った場合の損害額をお支払いする補償です。この補償を、
+                                               <strong style="color: #45a6b1; font-size: 18px;">69.1%</strong>の方が選んでいます<br />
+                                               <mat-icon style="margin-left: -5px;">arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
+                                           </div>
+                                       </td>
+                                       <td class="t4-amt"><span>111</span><span style="color: black; font-weight: normal;">円</span></td>
+                                   </tr>
+                                   <!-- Row 6 end-->
+                                   <!-- Row 7 start-->
+                                    <tr>
+                                       <td class="table6-header" style="background-color: rgba(244, 242, 242, 0.847);">
+                                           <dxc-checkbox></dxc-checkbox>
+                                           <label style="margin-left: 5px;">搭乗者傷害</label>
+                                           <mat-icon style="margin-left: 20px;">arrow_forward</mat-icon><a href="#" class="link">詳細</a>
+                                           <a href="#" class="link" style="margin-left: 10px;">追加</a>
+                                       </td>
+                                       <td style="background-color: rgba(244, 242, 242, 0.847); width: 447px;">
+                                           <div class="t4-inner-box">
+                                               お車が事故により損害を被ったり、盗難に遭った場合の損害額をお支払いする補償です。この補償を、
+                                               <strong style="color: #45a6b1; font-size: 18px;">69.1%</strong>の方が選んでいます<br />
+                                               <mat-icon style="margin-left: -5px;">arrow_forward</mat-icon><a href="" class="link">詳しく見る </a>
+                                           </div>
+                                       </td>
+                                       <td class="t4-amt"><span>111</span><span style="color: black; font-weight: normal;">円</span></td>
+                                   </tr>
+                                   <!-- Row 7 end-->
+                                </tbody>
+                            </dxc-table>
+                        </div>
+                        <!-- Table 6 end -->
+                        <div class="plus-icon"><img src="assets/img/icon_plus01.png" /></div>
+                    </div>
+                </dxc-box>
+            </div>
+            <div class="footer-links" style="margin-top: 15px; margin-right: 50px; margin-top: 40px;">
+                <ng-container *ngFor="let link of footerLinks; let last = last">
+                    <mat-icon aria-hidden="true">chevron_right</mat-icon>
+                    <a class="link" target="_blank" rel="noopener noreferrer" [href]="link.href">{{ link.text }}</a>
+                </ng-container>
+            </div>
+        </div>
+    </body>
 </html>
