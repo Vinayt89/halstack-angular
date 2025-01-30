@@ -482,7 +482,7 @@
                </dxc-box>
             <!-- Table 7 end -->
              <!-- Table 8 start -->
-               <dxc-box class="outer-box3" padding="xsmall">
+               <dxc-box class="outer-box3" padding="xxsmall">
                   <div>
                    <div class="t8-image-row">
                     <span style="font-size: 16px; font-weight: 700; color: rgb(255, 128, 0);"> ＼さらに！／あなたの生活に役立つサービスも無料でご利用いただけます。</span>
@@ -493,6 +493,7 @@
                     <div class="t8-image-row">
                      <img src="assets/img/t8-img1.png"/>
                    </div>
+                   <div style="margin-top: 10px;"></div>
                    <div class="t8-image-row">
                      <img src="assets/img/t8-img2.png"/>
                    </div>
@@ -511,6 +512,80 @@
             <div class="botton-text-section2">
                <mat-icon>help</mat-icon><a href="" class="link" style="font-size: 14px; font-weight: 700;" >ダイレクトの自動車保険は、事故時の示談交渉が不利になるのでは・・？</a>
             </div>
+            <div class="container">
+               <div class="hint-section">
+                 <h3 style="margin-left: 30px;">補償選びのヒント</h3>
+                 <div class="contract-example">
+                   <div class="content">
+                     <img src="assets/img/img_hint_03.gif"/>
+                     <div class="text">
+                        <img src="assets/img/hdg_example01.gif" />
+                      <p style="margin-bottom:15px"> 22歳の娘さんも運転する50代夫婦の補償の選び方 </p>
+                       <p style="font-weight: 600;">補償選びのポイント</p>
+                       <span class="highlight" style="margin-bottom: 15px">家族全員補償される個人賠償</span>も心強いですね。<br>
+                       <mat-icon style="margin-left:-2px"   >arrow_forward</mat-icon><a href="#" class="link">詳しく見る</a>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="checklist">
+                   <div class="content">
+                     <img style="margin-top:10px" src="assets/img/img_hint_02.gif" />
+                     <div class="text">
+                     <p>万が一の事故のとき、困らないために</p>
+                     <p style="font-weight: 600; font-size: 16px;margin-bottom: 10px;margin-bottom:15px">補償選びのチェックリスト</p>
+                     <p>あなたに必要な補償が抜け漏れることを防ぐためのチェックリストです</p>
+                     <mat-icon style="margin-left:-2px">arrow_forward</mat-icon><a href="#" class="link">詳しく見る</a>
+                  </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="faq-section">
+                  <h3 style="margin-left: 30px;">よくあるご質問</h3>
+                     <div class="faq-item" *ngFor="let faq of faqs">
+                        <mat-icon class="icon">help</mat-icon>
+                       <a href="#" class="faq-link">{{ faq.question }}</a>
+                     </div>
+                   </div>
+               </div> 
+               <div class="bottom-btn"> <img src="assets/img/btn_estimate_01.gif"/></div>
+               <div class="bottom-images">
+                  <img style="width: 100%" src="assets/img/img_contact_02.gif" />
+                  <img style="margin-left: 20px;" src="assets/img/fig_contact_02.gif" />
+               </div>
+               <div class="dotted-line" style="width: 985px; margin-left:5px"></div>
+               <div class="quote-container">
+                  <div class="header">
+                    <span style="font-size: 18px; font-weight: 700;">お見積りの条件</span>
+                    <mat-icon>arrow_forward</mat-icon><a href="#" class="edit-link">見積条件を修正する</a>
+                  </div>
+                  <div class="bottom-content">
+                    <div class="conditions-grid">
+                      <div class="column">
+                           <ul>
+                              <li *ngFor="let item of bottomSectionColumn1">{{ item }}</li>
+                           </ul>
+                           </div>
+                           <div class="column">
+                              <ul>
+                                 <li *ngFor="let item of bottomSectionColumn2">{{ item }}</li>
+                              </ul>
+                           </div>
+                           <div class="column">
+                              <ul>
+                                 <li *ngFor="let item of bottomSectionColumn3">{{ item }}</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                </div>
+                <div class="quote-container">
+                  <div class="header">
+                     <span style="font-size: 16px; font-weight: 700;">適用されている割引</span>
+                  </div>
+                  <div style="margin-top: 10px;"></div>
+                  <span style="font-size: 14px;">インターネット割引（新規）、ゴールド免許割引、早割５０日</span>
+               </div>
+                
             <div class="footer-links" style="margin-top: 15px; margin-right: 50px; margin-top: 40px;">
                 <ng-container *ngFor="let link of footerLinks; let last = last">
                     <mat-icon aria-hidden="true">chevron_right</mat-icon>
