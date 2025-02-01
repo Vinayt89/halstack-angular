@@ -4,7 +4,7 @@ import { DxcBoxModule } from '@dxc-technology/halstack-angular';
 import { ScreenThreeComponent } from './screen-three.component';
 import { FormsModule } from '@angular/forms'; 
 import { MatIconModule } from '@angular/material/icon';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import {  
   DxcSelectModule,
@@ -26,7 +26,8 @@ import {
     // DxcLinkModule,
     DxcButtonModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   exports: [ScreenThreeComponent] 
 })

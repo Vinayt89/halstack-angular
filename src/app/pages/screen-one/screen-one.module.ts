@@ -5,6 +5,7 @@ import { ScreenOneComponent } from "./screen-one.component";
 import { RouterModule } from "@angular/router";
 import { MatIconModule } from "@angular/material/icon";
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 import {
   DxcBoxModule,
   DxcBoxComponent,
@@ -36,7 +37,8 @@ import {
     DxcSelectModule,
     DxcRadioModule,
     DxcLinkModule,
-    DxcButtonModule
+    DxcButtonModule,
+    HttpClientModule
   ],
   exports: [ScreenOneComponent],
   entryComponents: [DxcBoxComponent, DxcTagComponent, DxcHeadingComponent],

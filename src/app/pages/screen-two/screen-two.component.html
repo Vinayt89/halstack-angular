@@ -1,7 +1,6 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8">
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
    </head>
    <body>
       <div class="header-area">
@@ -31,14 +30,23 @@
                      <span style="font-size: 13px;">下記の選択内容に誤りがある場合は、このページでは変更できません。</span>
                      <span style="font-size: 13px;">「戻る」ボタンから前ページに戻り、Q1-3を変更してください。</span>
                      <dxc-box class="inner-box"  size="fillParent" padding="xxsmall" shadowDepth="0">
-                        <div *ngFor="let option of q2RadioBtnOptions" class="radiobtn1div">
+                        <!-- <div *ngFor="let option of q2RadioBtnOptions" class="radiobtn1div" style="margin-left: 3px;">
                            <dxc-radio
                            [value]="option.value"
-                           label="{{option.label}}"
                            (change)="onSelectionChange(option.value)"
                            id="{{option.id}}"
                            labelPosition="after">
                            </dxc-radio>
+                           <label [for]="option.id" class="q2-1-radio-label">
+                              <span> {{option.label}} </span>
+                            </label>
+                        </div> -->
+                        <div class="grid-radiobtn1">
+                           <div *ngFor="let option of q2RadioBtnOptions" style="height: 40px; width: 282px; " class="grid-item-radiobtn1">
+                              <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" >
+                              </dxc-radio>
+                              <label [for]="option.id">{{ option.label }}</label>
+                           </div>
                         </div>
                         <span (click)="onSpanClicked($event)" class="q2-1-text">現在ご契約中の自動車保険を満期日より前に解約し<br>
                         新たにお申込みいただく場合(中途更改の場合)はこちらからお見積りください。
@@ -322,11 +330,11 @@
                            <div class="questionbadge">
                               Q2-<span>6</span>
                            </div>
-                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">既に「おとなの自動車保険」に加入している、別のお車をお持ちですか？
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold; font-size: 14px;">既に「おとなの自動車保険」に加入している、別のお車をお持ちですか？
                            </span>
                            <div class="dotted-line"></div>
                            <dxc-box class="inner-box"  size="fillParent" padding="small" shadowDepth="0">
-                              <div *ngFor="let option of q2RadioBtn5Options" class="radiobtn1div" style="width: 230px; margin-top: -10px;">
+                              <!-- <div *ngFor="let option of q2RadioBtn5Options" class="radiobtn1div" style="width: 230px; margin-top: -10px;">
                                  <dxc-radio
                                  [value]="option.value"
                                  label="{{option.label}}"
@@ -334,6 +342,13 @@
                                  id="{{option.id}}"
                                  labelPosition="after">
                                  </dxc-radio>
+                              </div> -->
+                              <div class="grid-radiobtn1">
+                                 <div *ngFor="let option of q2RadioBtn5Options" style="height: 40px; width: 240px; margin-top:-20px;" class="grid-item-radiobtn1">
+                                    <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" >
+                                    </dxc-radio>
+                                    <label [for]="option.id">{{ option.label }}</label>
+                                 </div>
                               </div>
                            </dxc-box>
                         </dxc-box>

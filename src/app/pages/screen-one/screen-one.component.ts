@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { Router } from '@angular/router';
-
+import { GenericTextService } from "src/app/services/generic.text.service";
 
 @Component({
   selector: "app-screen-one",
@@ -10,48 +10,37 @@ import { Router } from '@angular/router';
 })
 export class ScreenOneComponent implements OnInit {
   imgDxc: string;
-
+  messages: any = {};
   underlined: boolean = true;
   newWindow: boolean = true;
   inheritColor: boolean = true;
   activeImage: number | null = null;
   
-  constructor(private router: Router) {}
+  constructor(private router: Router,private generictextservice: GenericTextService) {}
 
   goToScreenTwo() {
-    this.router.navigate(['/screen-two'], {
-      state: { highlightHeader2: true }
-    });
+    this.router.navigate(['/screen-two']);
   }
-
-  componentsMargin = {
-    bottom: 'large'
-  }
-
-  components: Array<any>;
-  default:boolean;
-
-  responsiveClass: string;
-  innerWidth;
-
-  responsiveSizes = {
-    mobileSmall: "320",
-    mobileMedium: "375",
-    mobileLarge: "425",
-    tablet: "768",
-    laptop: "1024",
-    desktop: "1440"
-  }
-  boxMargin={ top: "large", bottom: 'large'};
-  boxPadding = 'large';
 
   ngOnInit() {
     this.imgDxc = "assets/img/dxclogo.svg";
+    this.loadTextData('screen-one.json');
   }
 
    isSectionVisible: boolean = false;
    isImageVisible: boolean = false;
    selectedOption: string = 'close';
+
+   loadTextData(fileName: string) {
+    this.generictextservice.readJSONFile(fileName).subscribe(
+      (data) => {
+        this.messages = data;
+      },
+      (error) => {
+        console.error('Error loading text file:', error);
+      }
+    );
+  }
    
    toggleSection(): void {
      this.isSectionVisible = !this.isSectionVisible;
@@ -67,6 +56,8 @@ export class ScreenOneComponent implements OnInit {
     this.selectedSection = section;
     this.isSectionVisible = !this.isSectionVisible;
   }
+
+  q1Selectlabels = ['生年月日'];
 
   footerLinks = [
     { text: '会社情報', href: 'https://www.sompo-direct.co.jp/shisan_company/company.html' },
