@@ -336,6 +336,7 @@ div.screenthree-header {
   gap: 10px;
 }
 .grid-item {
+  border: 2px solid #d1d4d5;
   background-color: #f9d5d3;
   width: 184px;
   height: 55px;
@@ -348,14 +349,19 @@ div.screenthree-header {
   justify-content: center;
   font-size: 14px;
   font-weight: 550;
+  &:focus-within {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
+  &:active {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
 }
 .grid-item label {
   flex: 1;
   text-align: center;
   margin-left: 10px;
-}
-.grid-item:hover {
-  background-color: #f4b6b3;
 }
 
 .q2-2-text2 {
@@ -601,10 +607,10 @@ div.screenthree-header {
 
 /* Individual license plate */
 .license-plate {
+  border: 2px solid #d1d4d5;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 3px;
   background-color: #fff;
@@ -613,11 +619,19 @@ div.screenthree-header {
   margin-left: -15px;
   width: 190px; /* Set consistent width */
   height: 190px;
+  &:focus-within {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
+  &:active {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
 }
 
-.license-plate input {
-  display: none; /* Hide raw radio button */
-}
+// .license-plate input {
+//   display: none; /* Hide raw radio button */
+// }
 
 .license-label {
   display: block;

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 import { GenericTextService } from "src/app/services/generic.text.service";
 
@@ -6,7 +6,6 @@ import { GenericTextService } from "src/app/services/generic.text.service";
   selector: "app-screen-one",
   templateUrl: "./screen-one.component.html",
   styleUrls: ["./screen-one.component.scss"],
-  encapsulation: ViewEncapsulation.None
 })
 export class ScreenOneComponent implements OnInit {
   imgDxc: string;
@@ -57,6 +56,21 @@ export class ScreenOneComponent implements OnInit {
     this.isSectionVisible = !this.isSectionVisible;
   }
 
+  setActiveImage(imageNumber: number) {
+    if (this.activeImage === imageNumber) {
+      this.activeImage = null;
+    } else {
+      this.activeImage = imageNumber;
+    }
+  }
+
+  step = 1;  // Current step
+  nextStep() {
+    if (this.step < 3) {
+      this.step++;
+    }
+  }
+  
   q1Selectlabels = ['生年月日'];
 
   footerLinks = [

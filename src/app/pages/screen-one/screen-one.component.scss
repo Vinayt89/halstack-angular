@@ -214,7 +214,8 @@ a {
 }
 
 .radiobtnq2 {
-  border: 2px solid #969c9f;
+  border: 2px solid #d1d4d5;
+  background-color: #f9d5d3;
   font-size: 10;
   border-radius: 5px;
   padding: 0px;
@@ -235,7 +236,8 @@ a {
   }
 }
 .radiobtnq3 {
-  border: 2px solid #969c9f;
+  border: 2px solid #d1d4d5;
+  background-color: #f9d5d3;
   border-radius: 5px;
   padding: 0px;
   height: 90px;
@@ -350,7 +352,8 @@ a {
 }
 
 .radiobtnq4 {
-  border: 2px solid #969c9f;
+  border: 2px solid #d1d4d5;
+  background-color: #f9d5d3;
   border-radius: 5px;
   margin-top: 10px;
   padding: 0px;
@@ -361,20 +364,19 @@ a {
   width: 275px;
   height: 60px;
   background-color: #f6dada;
-
   &:focus-within {
     border-color: orange; 
-    // background-color: #f6c0e4;
+    background-color: #FFFFF0;
   }
-
   &:active {
     border-color: orange; 
-    // background-color: #FFFFF0;
-  }
+    background-color: #FFFFF0;
+  } 
 }
 
 .radiobtnq5 {
-  border: 2px solid #969c9f;
+  border: 2px solid #d1d4d5;
+  background-color: #f9d5d3;
   border-radius: 5px;
   margin-top: 10px;
   padding: 1px;
@@ -385,16 +387,14 @@ a {
   width: 135px;
   height: 200px;
   background-color: #fafafa;
-
   &:focus-within {
     border-color: orange; 
-    // background-color: #f6c0e4;
+    background-color: #FFFFF0;
   }
-
   &:active {
     border-color: orange; 
-    // background-color: #FFFFF0;
-  }
+    background-color: #FFFFF0;
+  } 
 }
 
 .image-container {

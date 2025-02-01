@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-screen-two',
   templateUrl: './screen-two.component.html',
   styleUrls: ['./screen-two.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class ScreenTwoComponent implements OnInit {
 
