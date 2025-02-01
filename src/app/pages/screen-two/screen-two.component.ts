@@ -1,25 +1,18 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-screen-two',
   templateUrl: './screen-two.component.html',
   styleUrls: ['./screen-two.component.scss'],
-
+  encapsulation: ViewEncapsulation.None
 })
 export class ScreenTwoComponent implements OnInit {
-
-  @ViewChild('headerimg2') headerimg2!: ElementRef;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
     
-  }
-
-  activeTab = 1;
-  selectTab(tabIndex: number) {
-    this.activeTab = tabIndex;
   }
 
   isQ3Checked: boolean = false;

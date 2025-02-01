@@ -1,28 +1,17 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-screen-three',
   templateUrl: './screen-three.component.html',
   styleUrls: ['./screen-three.component.scss'],
-
+  encapsulation: ViewEncapsulation.None
 })
 export class ScreenThreeComponent implements OnInit {
-
-  @ViewChild('headerimg2') headerimg2!: ElementRef;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   this.headerimg2.nativeElement.style.backgroundColor = 'red';
-    // }, 100);
-  }
-
-  activeTab = 1;
-  selectTab(tabIndex: number) {
-    this.activeTab = tabIndex;
   }
 
   q3RadioBtnOptions = [

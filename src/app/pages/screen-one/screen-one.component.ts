@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { Router } from '@angular/router';
 
 
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   selector: "app-screen-one",
   templateUrl: "./screen-one.component.html",
   styleUrls: ["./screen-one.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class ScreenOneComponent implements OnInit {
   imgDxc: string;
@@ -14,13 +15,7 @@ export class ScreenOneComponent implements OnInit {
   newWindow: boolean = true;
   inheritColor: boolean = true;
   activeImage: number | null = null;
-
-  q3Radio1: boolean = false;
-  q3Radio2: boolean = false;
-  q4Radio1: boolean = false;
-  q4Radio2: boolean = false;
-  q4Radio3: boolean = false;
-
+  
   constructor(private router: Router) {}
 
   goToScreenTwo() {
@@ -47,64 +42,16 @@ export class ScreenOneComponent implements OnInit {
     laptop: "1024",
     desktop: "1440"
   }
-  
   boxMargin={ top: "large", bottom: 'large'};
   boxPadding = 'large';
 
-
   ngOnInit() {
-    
     this.imgDxc = "assets/img/dxclogo.svg";
-
-  }
-
-  yearOptions = Array.from({ length: 101 }, (_, i) => ({
-    label: `${1980 + i}`,
-    value: 1980 + i,
-  }));
-  monthOptions = Array.from({ length: 12 }, (_, i) => ({
-    label: `${i + 1}`,
-    value: i + 1,
-  }));
-  dayOptions = Array.from({ length: 31 }, (_, i) => ({
-    label: `${i + 1}`,
-    value: i + 1,
-  }));
-
-  adjustDropdownPosition(type: string) {
-    setTimeout(() => {
-      const dropdown = document.querySelector('.dxc-select-dropdown') as HTMLElement;
-
-      if (dropdown) {
-        const triggerElement = document.querySelector(`.select-container dxc-select[label="${type}"]`) as HTMLElement;
-
-        if (triggerElement) {
-          const triggerRect = triggerElement.getBoundingClientRect();
-
-          dropdown.style.position = 'absolute';
-          dropdown.style.top = `${triggerRect.top - dropdown.offsetHeight}px`; // Place above
-          dropdown.style.left = `${triggerRect.left}px`; // Align with trigger
-          dropdown.style.zIndex = '1000';
-        }
-      }
-    }, 50); // Delay to allow dropdown to render
-  }
-
-  onYearChange(event: any) {
-    console.log('Year selected:', event.value);
-  }
-
-  onMonthChange(event: any) {
-    console.log('Month selected:', event.value);
-  }
-
-  onDayChange(event: any) {
-    console.log('Day selected:', event.value);
   }
 
    isSectionVisible: boolean = false;
    isImageVisible: boolean = false;
-   selectedOption: string = 'close'; // Default option
+   selectedOption: string = 'close';
    
    toggleSection(): void {
      this.isSectionVisible = !this.isSectionVisible;
@@ -119,21 +66,6 @@ export class ScreenOneComponent implements OnInit {
   showSection(section: number): void {
     this.selectedSection = section;
     this.isSectionVisible = !this.isSectionVisible;
-  }
-
-  setActiveImage(imageNumber: number) {
-    if (this.activeImage === imageNumber) {
-      this.activeImage = null;
-    } else {
-      this.activeImage = imageNumber;
-    }
-  }
-
-  step = 1;  // Current step
-  nextStep() {
-    if (this.step < 3) {
-      this.step++;
-    }
   }
 
   footerLinks = [

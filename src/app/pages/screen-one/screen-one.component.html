@@ -2,35 +2,44 @@
 <head>
 <meta charset="UTF-8">
 </head>
-<div class="lowerheader">
-   <img src="assets/img/img_currentq1_02.png" class="img1-lowerheader" />
-   <img src="assets/img/img_currentq2_01.png" class="img2-lowerheader" />
-   <img src="assets/img/img_currentq3_01.png" class="img3-lowerheader" />
-   <img src="assets/img/icon_5minutes_01.png" class="img4-lowerheader" />
+<div class="header-area">
+    <div class="header-area-content">
+      <ul class="header-area-image-list">
+        <li><img src="assets/img/img_currentq1_02.png" alt="Q1. お車を使用される方について" width="256" height="40"/></li>
+        <li><img src="assets/img/img_currentq2_01.png" alt="Q2. ご契約中の保険について" width="240" height="40"/></li>
+        <li><img src="assets/img/img_currentq3_01.png" alt="Q3. お車について 完了！" width="224" height="40"/></li>
+      </ul>
+      <p class="fiveminutes-img"><img decoding="async"  src="assets/img/icon_5minutes_01.png" alt="最短5分でお見積り" width="111" height="101" /></p>
+    </div>
 </div>
-
 <div class="screen-one-container">
     <h2 style="margin-top: -5px;">Q1. お車を使用される方について</h2>
-   <!-- <img style="margin-top: -15px; margin-bottom: 25px;" src="assets/img/hdg_q1_01.gif" class="img-ques1-heading" /> -->
    <div class="screen-one-header">
        <dxc-box class="outer-box" padding="xsmall">
            <div style="display: flex; flex-direction: column; gap: 16px;">
                <dxc-box class="inner-box" size="fillParent" padding="small">
-                    <div style="margin-top: 10px;"></div>
-                   <img src="assets/img/hdg_q1-1_01.png" />
+                   <div style="margin-top: 10px;"></div>
+                   <div class="questionbadge">
+                    Q1-<span>1</span>
+                 </div>
+                 <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">主に使用される方（記名被保険者）の</span>     
+                 <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">生年月日</span>
+                 <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">をご入力ください</span>     
                    <div class="dotted-line"></div>
                    <div class="date-div" style="display: flex; align-items: center; gap: 10px;">
                        <label class="date-label" style="margin-right: 10px;">生年月日</label>
-                       <!-- Year Selector -->
-                       <dxc-select class="date-select" label="年" style="width: 150px;" [options]="yearOptions" (onFocus)="adjustDropdownPosition('year')" (onChange)="onYearChange($event)"> </dxc-select>
-                       <!-- Month Selector -->
-                       <dxc-select label="月" style="width: 100px;" [options]="monthOptions" (onFocus)="adjustDropdownPosition('month')" (onChange)="onMonthChange($event)"> </dxc-select>
-                       <!-- Day Selector -->
-                       <dxc-select label="日" style="width: 100px;" [options]="dayOptions" (onFocus)="adjustDropdownPosition('day')" (onChange)="onDayChange($event)"> </dxc-select>
+                       <dxc-select class="date-select" label="年" style="width: 150px;"> </dxc-select>
+                       <dxc-select label="月" style="width: 100px;"> </dxc-select>
+                       <dxc-select label="日" style="width: 100px;"> </dxc-select>
                    </div>
                </dxc-box>
                <dxc-box class="inner-box" size="fillParent" padding="small">
-                   <img src="assets/img/hdg_q1-2_01.png" />
+                   <div class="questionbadge">
+                   Q1-<span>2</span>
+                   </div>
+                   <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">主に使用される方（記名被保険者）の</span>     
+                   <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">免許証の色</span>
+                   <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">をご選択ください</span> 
                    <div class="dotted-line"></div>
                    <div class="radiobtnq2">
                        <dxc-radio label="ゴールド" name="radioLabel2" margin="medium" labelPosition="after"></dxc-radio>
@@ -46,7 +55,11 @@
                    <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=9867" class="custom-link" style="margin-top: 10px;" target="_blank" rel="noopener noreferrer">免許証の色を選択する場合の注意点 </a>
                </dxc-box>
                <dxc-box class="inner-box" size="fillParent" padding="small">
-                   <img src="assets/img/hdg_q1-3_01.png" />
+                   <div class="questionbadge">
+                    Q1-<span>3</span>
+                    </div>
+                    <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お見積りされるお車は、</span>     
+                    <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">現在自動車保険に加入していますか？</span> 
                    <div class="dotted-line"></div>
                    <div class="radiobtnq3">
                        <dxc-radio label="加入している" name="radioLabel2" margin="medium" (click)="toggleSection()" labelPosition="after"></dxc-radio>
@@ -66,7 +79,12 @@
                    </dxc-box>
                </dxc-box>
                <dxc-box class="inner-box" size="fillParent" padding="small">
-                   <img src="assets/img/hdg_q1-4_01.png" />
+                   <div class="questionbadge">
+                    Q1-<span>4</span>
+                    </div>
+                    <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お車の</span>     
+                    <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">主な使用目的</span> 
+                    <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">をご選択ください</span>  
                    <span style="margin-top: 14px; margin-left: 5px;">
                        <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
                        <a style="margin-left: -5px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=1350" class="custom-link">使用目的とは </a>
@@ -124,7 +142,11 @@
                <div *ngIf="isImageVisible">
                    <div style="display: flex; flex-direction: column; gap: 16px;">
                        <dxc-box class="inner-box" size="fillParent" padding="small">
-                           <img style="width: 450px;" src="assets/img/hdg_q1-5_02.png" />
+                           <div class="questionbadge">
+                            Q1-<span>5</span>
+                            </div>    
+                            <span style="margin-top: 20px; margin-left: 10px; font-weight: 700;  color: #e37026;">お車を運転される方(補償範囲)</span> 
+                            <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">をご選択ください</span>  
                            <span style="margin-top: 14px; margin-left: 5px;">
                                <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
                                <a style="margin-left: -5px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=12119" class="custom-link">運転者の範囲の決め方は？ </a>
@@ -218,7 +240,10 @@
                            </div>
                        </dxc-box>
                        <dxc-box class="inner-box" size="fillParent" padding="small">
-                        <img style="width: 630px;" src="assets/img/hdg_q1-6_02.png" />
+                        <div class="questionbadge">
+                            Q1-<span>6</span>
+                            </div>    
+                            <span style="margin-top: 20px; margin-left: 10px; font-weight: 700;  color: #e37026;">運転する同居のお子さまで一番若い方の生年月日をご入力ください。</span> 
                         <div class="dotted-line"></div>
                         <span style="margin-top: 10px; font-size: 14px;">運転する同居のお子さまで一番若い方の生年月日
                         </span>
@@ -290,44 +315,59 @@
            </div>
        </dxc-box>
    </div>
-
-   <div style="margin-top: -20px;">
-       <dxc-box class="outer-box" padding="xsmall" style="background-color: white; width: 680px;">
+   <div>
+       <dxc-box class="outer-box" padding="xsmall" style="background-color: white; width: 680px; margin-top: -15px;">
            <div style="display: flex; flex-direction: column; gap: 16px;">
                <img src="assets/img/hdg_caution_box_01.gif" style="width: 678px;" />
-               <dxc-box class="inner-box3" shadowDepth="0" size="fillParent" padding="small" margin="xxsmall" style="background-color: white; margin-top: -20px;">
-                   <mat-icon>warning</mat-icon><span class="normal-text">下記「お申込みが可能な条件」に該当しない場合は、インターネットでのお申込みができません。お見積りの前に必ずご確認ください。 </span>
-               </dxc-box>
-               <dxc-box class="inner-box4" size="fillParent" padding="xsmall" style="margin-top: -25px;">
-                   <h5 style="margin-top: -10px;">お申込みが可能な主な条件</h5>
-                   <div class="normal-text" style="margin-left: -150px; margin-top: 15px;">
-                       <mat-icon style="font-size: 8px;">lens</mat-icon>
-                       <span>
-                           ノンフリート契約※であること <br />
-                           ※今回、お見積りのお車も含めて、ご自身が所有・使用し、自動車保険を付けているお車が9台以下であること
-                       </span>
-                       <br />
-                       <mat-icon style="font-size: 8px;">lens</mat-icon>
-                       <span>
-                           お車を主に使用される方（記名被保険者）が個人であること
-                          <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon> <a class="custom-link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1180">記名被保険者とは</a>
-                       </span>
-                       <br />
-                       <mat-icon style="font-size: 8px;">lens</mat-icon>お車が自家用車で3、4、5、6、7ナンバーであることなど
+                <div class="warning-container">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 42"
+                      class="warning-icon"
+                    >
+                      <!-- Triangle with rounded corners -->
+                      <path
+                        d="M24 2
+                           L4 40
+                           A2 2 0 0 0 6 42
+                           L42 42
+                           A2 2 0 0 0 44 40
+                           L24 2
+                           Z"
+                        fill="#FFC107"
+                      ></path>
+                      <!-- Exclamation mark -->
+                      <rect x="22" y="14" width="4" height="16" fill="#FFFFFF"></rect>
+                      <rect x="22" y="34" width="4" height="4" fill="#FFFFFF"></rect>
+                    </svg>
+                    <span class="warning-text">
+                      下記「お申込みが可能な条件」に該当しない場合は、インターネットでのお申込みができません。お見積りの前に必ずご確認ください。
+                    </span>
+                  </div>
+               <div class="inner-box4" size="fillParent" padding="xxsmall">
+                   <h5 style="margin: 10px;">お申込みが可能な主な条件</h5>
+                   <div class="normal-text">
+                        <span>ノンフリート契約※であること <br>
+                           ※今回、お見積りのお車も含めて、ご自身が所有・使用し、自動車保険を付けているお車が9台以下であること<br>
+                           お車を主に使用される方（記名被保険者）が個人であること<br>
+                          <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon> 
+                          <a class="custom-link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1180">記名被保険者とは</a>
+                            お車が自家用車で3、4、5、6、7ナンバーであることなど
+                        </span>
                    </div>
                    <div class="dotted-line"></div>
                    <div class="normal-text" style="margin-left: 15px; margin-top: 5px;">
                        詳細はこちらをクリックしてご確認ください。<mat-icon style="color: blue; margin-left: -5px; font-weight: bold; font-size: 15px;">arrow_forward</mat-icon>
                        <a style="margin-left: -7px;" target="_blank" rel="noopener noreferrer" class="custom-link" href="https://www.sompo-direct.co.jp/otona/clause/">お申込み可能な条件について</a>
                    </div>
-               </dxc-box>
-               <h2 style="font-size: 18px; margin-bottom : -15px">お申込みの際にご用意いただくもの</h2>
+               </div>
+               <h2 style="font-size: 18px; margin-bottom : -15px; margin-top:-20px;">お申込みの際にご用意いただくもの</h2>
                <div class="bottom-container">
                   <div class="section">
                     <h3 style="font-size: 14px;">他社でご契約中のお車の場合</h3>
                     <div class="bottom-image-items">
                       <div class="bottom-image-item">
-                        <img src="assets/img/guide-img01.png" alt="運転免許証" style="width: 65px; height: 45px;"/>
+                        <img src="assets/img/guide-img01.png" alt="運転免許証" style="width: 60px; height: 45px;"/>
                         <p>運転免許証</p>
                       </div>
                       <div class="bottom-image-item">
