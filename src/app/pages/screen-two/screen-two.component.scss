@@ -639,6 +639,7 @@ div.screentwo-header {
 
 .q4grid-item {
   background-color: white;
+  background-color: #f9d5d3;
   padding: 10px;
   border: 2px solid rgb(194, 191, 191);
   text-align: center;
@@ -651,11 +652,11 @@ div.screentwo-header {
   font-weight: 550;
   &:focus-within {
     border-color: orange; 
-    background-color: rgb(250, 230, 191);
+    background-color: #FFFFF0;
   }
   &:active {
     border-color: orange; 
-    background-color: rgb(250, 230, 191);
+    background-color: #FFFFF0;
   }
 }
 
