@@ -704,3 +704,9 @@ mat-icon {
   font-weight: bold;
   vertical-align: middle;
 }
+
+.bottom-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

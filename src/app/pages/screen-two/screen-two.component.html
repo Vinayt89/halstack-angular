@@ -355,15 +355,37 @@
                         <!-- Q2-6 End -->
                      </dxc-box>
                   </dxc-box>
-                  <dxc-box size="fillParent" padding="small" style="height: 60px; background-color: #fffff0;" shadowDepth="0">
-                     <div class="prv-btn"> <img src="assets/img/btn_prev_01_o.png" 
-                        style="width: 106px; height: 36px; margin-top: 15px;"
-                        (click)="goToPreviousScreen()"/>
+                  <dxc-box size="fillParent" padding="small" style="background-color: #fffff0;" shadowDepth="0">
+                    <div class="bottom-buttons">
+                     <div class="row">
+                        <div class="prv-btn"> <img src="assets/img/btn_next01_01.gif" 
+                           style="width: 420px; height: 64px; margin-left: 130px; margin-top:-20px;"
+                           (click)="goToNextScreen()"/>
+                        </div>
                      </div>
-                     <div class="prv-btn"> <img src="assets/img/btn_next01_01_d.gif" 
-                        style="width: 420px; height: 64px; margin-bottom: -10px; margin-left: 20px;"
-                        (click)="goToNextScreen()"/>
+                     <div class="row">
+                        <div class="prv-btn"> <img src="assets/img/btn_prev_01_o.png" 
+                           style="width: 106px; height: 36px; margin-top: 15px;"
+                           (click)="goToPreviousScreen()"/>
+                        </div>
+                        <div class="prv-btn"> <img src="assets/img/btn_next02_01_d.gif" 
+                           style="width: 420px; height: 64px; margin-bottom: -10px; margin-left: 20px;"
+                           (click)="goToNextScreen()"/>
+                        </div>
                      </div>
+                  </div> 
+                  <!-- <div class="bottom-buttons">
+                     <div class="row">
+                        <div class="prv-btn"> <img src="assets/img/btn_prev_01_o.png" 
+                           style="width: 106px; height: 36px; margin-top: 15px;"
+                           (click)="goToPreviousScreen()"/>
+                        </div>
+                        <div class="prv-btn"> <img src="assets/img/btn_next02_01_d.gif" 
+                           style="width: 420px; height: 64px; margin-bottom: -10px; margin-left: 20px;"
+                           (click)="goToNextScreen()"/>
+                        </div>
+                     </div>  
+                  </div>                    -->
                   </dxc-box>
                </div>
             </dxc-box>
