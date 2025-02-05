@@ -2,6 +2,7 @@
 <head>
 <meta charset="UTF-8">
 </head>
+<body>
 <div class="header-area">
     <div class="header-area-content">
       <ul class="header-area-image-list">
@@ -29,12 +30,17 @@
                    <div class="dateSelectOptions">
                     <div class="row" *ngFor="let label of q1Selectlabels; let i = index">
                        <span class="label">{{ label }}</span>
-                       <dxc-select class="dropdown" style="margin-left: 5px;">
+                       <dxc-select class="dropdown" style="margin-left: 5px;"
+                       placeholder=" ">
                        </dxc-select>
                        <span>年</span>
-                       <dxc-select class="dropdown"></dxc-select>
+                       <dxc-select class="dropdown"
+                       placeholder=" "
+                       ></dxc-select>
                        <span>月</span>
-                       <dxc-select class="dropdown"></dxc-select>
+                       <dxc-select class="dropdown"
+                       placeholder=" "
+                       ></dxc-select>
                        <span>日</span>
                     </div>
                  </div>
@@ -256,12 +262,18 @@
                         <div class="q1SelectOptions">
                             <div class="row">
                                <span class="label">{{ label }}</span>
-                               <dxc-select class="dropdown" style="margin-left: 15px; width: 80px;">
+                               <dxc-select class="dropdown" style="margin-left: 15px; width: 80px;"
+                               placeholder=" "
+                               >
                                </dxc-select>
                                <span>年</span>
-                               <dxc-select class="dropdown" style="width: 50px;"></dxc-select>
+                               <dxc-select class="dropdown" style="width: 50px;"
+                               placeholder=" "
+                               ></dxc-select>
                                <span>月</span>
-                               <dxc-select class="dropdown" style="width: 50px;"></dxc-select>
+                               <dxc-select class="dropdown" style="width: 50px;"
+                               placeholder=" "
+                               ></dxc-select>
                                <span>日</span>
                             </div>
                         </div>
@@ -434,4 +446,5 @@
     </ng-container>
   </div>
 </div>
+</body>
 </html>

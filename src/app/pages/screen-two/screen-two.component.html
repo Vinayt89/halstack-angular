@@ -136,7 +136,9 @@
                               <div class="q2SelectOptions">
                                  <div class="row">
                                     <span class="label" style="margin-left: 15px;">契約年数</span>
-                                    <dxc-select class="dropdown">
+                                    <dxc-select class="dropdown"
+                                    placeholder=" "
+                                    >
                                     </dxc-select>
                                  </div>
                                  <div style="margin-top: 10px;"></div>
@@ -144,12 +146,18 @@
                               <div class="q2SelectOptions">
                                  <div class="row" *ngFor="let label of q2Selectlabels; let i = index">
                                     <span class="label">{{ label }}</span>
-                                    <dxc-select class="dropdown" style="margin-left: 15px;">
+                                    <dxc-select class="dropdown" style="margin-left: 15px;"
+                                    placeholder=" "
+                                    >
                                     </dxc-select>
                                     <span>年</span>
-                                    <dxc-select class="dropdown"></dxc-select>
+                                    <dxc-select class="dropdown"
+                                    placeholder=" "
+                                    ></dxc-select>
                                     <span>月</span>
-                                    <dxc-select class="dropdown"></dxc-select>
+                                    <dxc-select class="dropdown"
+                                    placeholder=" "
+                                    ></dxc-select>
                                     <span>日</span>
                                  </div>
                               </div>
@@ -235,7 +243,9 @@
                            <div style="margin-left: -10px; font-size: 13px;" class="q2SelectOptions">
                               <div class="row">
                                  現在のノンフリート等級
-                                 <dxc-select class="dropdown" style="margin-left: 10px; width: 65px;"></dxc-select>
+                                 <dxc-select class="dropdown" style="margin-left: 10px; width: 65px;"
+                                 placeholder=" "
+                                 ></dxc-select>
                                  <div class="q2-4-text1">
                                     <span>※現在のご契約の保険開始日時点で適用されている『ノンフリート
                                     等級』をお選びください。 『満期のご案内』等をお手元にお持ち 

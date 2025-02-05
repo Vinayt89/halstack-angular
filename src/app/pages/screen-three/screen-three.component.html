@@ -85,7 +85,9 @@
                      <div style="margin-left: -10px; font-size: 13px;">
                         <div class="row">
                            メーカー名
-                           <dxc-select class="dropdown" style="margin-left: 10px; width: 65px;"></dxc-select>
+                           <dxc-select class="dropdown" style="margin-left: 10px; width: 65px;"
+                           placeholder=" "
+                           ></dxc-select>
                            <div class="q2-2-text1">
                               <span>※以下の車は、お見積りいただけません。<br>
                                  ・型式の末尾に「改」または「カイ」が付いているお車<a class="link" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1079" target="_blank" rel="noopener noreferrer">（改造車）</a><br>
@@ -96,7 +98,9 @@
                         </div>
                         <div class="row" style="margin-top: -45px;">
                            車名
-                           <dxc-select class="dropdown" style="margin-left: 50px; width: 65px;"></dxc-select>
+                           <dxc-select class="dropdown" style="margin-left: 50px; width: 65px;"
+                           placeholder=" "
+                           ></dxc-select>
                         </div>
                         <div class="q2-2-text2">
                            <span style="font-weight: bold; font-size: 14px;">型式がわかる方はこちら<br></span>
@@ -127,10 +131,14 @@
                      <div class="q3SelectOptions">
                         <div class="row" *ngFor="let label of q3Selectlabels; let i = index">
                            <span class="label">{{ label }}</span>
-                           <dxc-select class="dropdown" style="margin-left: 15px;">
+                           <dxc-select class="dropdown" style="margin-left: 15px;"
+                           placeholder=" "
+                           >
                            </dxc-select>
                            <span>年</span>
-                           <dxc-select class="dropdown"></dxc-select>
+                           <dxc-select class="dropdown"
+                           placeholder=" "
+                           ></dxc-select>
                            <span>月</span>
                         </div>
                         <span class="q3-3checkbox-text" style="margin-left: 20px; width: 420px; margin-top: 10px;">
@@ -180,7 +188,9 @@
                      <span><a class="link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1030">主な使用地とは</a></span>
                      <div class="dotted-line"></div>
                      <span style="margin-top: 20px;">主な使用地 (都道府県)</span>
-                     <dxc-select style="width: 200px; margin-left: 10px; margin-top: 10px;"></dxc-select>
+                     <dxc-select style="width: 200px; margin-left: 10px; margin-top: 10px;"
+                     placeholder=" "
+                     ></dxc-select>
                   </dxc-box>
                   <!-- Q3-4 End -->
                   <!-- Q3-5 Start -->
