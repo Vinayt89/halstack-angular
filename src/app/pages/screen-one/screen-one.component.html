@@ -107,8 +107,9 @@
                     </div>
                 </div>
                    <div *ngIf="visibleSection === 'q4subsection'">
-                       <dxc-box class="inner-box5" size="fitcontent" padding="small">
-                           <span style="font-weight: bold;">過去１年間のお車の走行距離（前年走行距離）をご選択ください。</span>
+                       <div class="inner-box5">
+                        <div class="arrow"></div>
+                           <span style="font-weight: bold; margin-left: -20px;">過去１年間のお車の走行距離（前年走行距離）をご選択ください。</span>
                            <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
                            <a style="margin-left: -3px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=12119" class="custom-link">前年走行距離とは </a>
                            <div class="grid-3-sub-radiobtn">
@@ -125,7 +126,7 @@
                                    前契約保険会社が当社（ＳＯＭＰＯダイレクト（旧セゾン自動車火災保険））の方への注意点
                                </a>
                            </div>
-                       </dxc-box>
+                          </div>
                    </div>
                    <div>
                        <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>

@@ -61,7 +61,8 @@
                            お客様サポートセンターまでお電話ください。<br>
                            お客様サポートセンター：0120-163-028 営業時間：9:00～17:30 年末年始は除く
                         </div>
-                        <dxc-box *ngIf="isSpanClicked" class="inner-box2" padding="small">
+                        <div *ngIf="isSpanClicked" class="inner-box2">
+                           <div class="arrow"></div>
                            <span style="margin-top: 10px; font-weight: bold;">現在ご加入の自動車保険を解約して</span>     
                            <span style="margin-top: 10px; font-weight: 700;  color: #e37026;">おとなの自動車保険に加入しますか？</span>
                            <div class="dotted-line"></div>
@@ -76,7 +77,7 @@
                            </div>
                            <div class="inner-box2-text">
                               現在ご加入の自動車保険を保険期間の途中で解約し、おとなの自動車保険をお申込みいただく場合<br>
-                              <span style="margin-left: -10px;">（中途更改の場合）は、以下の点に十分にご注意ください。</span>
+                              <span>（中途更改の場合）は、以下の点に十分にご注意ください。</span>
                            </div>
                            <div style="margin-left: -10px; font-size: 14px;">
                               <ol>
@@ -94,7 +95,7 @@
                               <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?cid=WHP001&id=12016" 
                                  class="link" target="_blank" rel="noopener noreferrer">中途更改によりお客様に発生する不利益とは？</a>
                            </div>
-                        </dxc-box>
+                        </div>
                         <!-- Q2-1 End -->
                         <!-- Q2-2 Start -->
                         <dxc-box class="inner-box" padding="small" style="margin-top: 10px;">

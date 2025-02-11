@@ -289,7 +289,8 @@ a {
 .inner-box5 {
   flex-wrap: wrap;
   margin-top: 20px;
-  width: 580px;
+  width: 600px;
+  padding: 15px;
   font-size: 15px;
   text-decoration: none;  
   cursor: pointer;
@@ -297,7 +298,21 @@ a {
   background-color: #f8f8e9;
   border: 2px solid rgb(255, 119, 0);
   border-width: 3px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.inner-box5 .arrow {
+  position: relative;
+  top: -30px; /* Position the arrow just above the box */
+  left: 60px; /* Adjust to align with checkbox text */
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 15px solid rgb(255, 111, 0);
+}
+
 
 .vertical-line {
   width: 1px; /* Thickness of the line */

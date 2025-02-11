@@ -256,7 +256,8 @@ div.screentwo-header {
 
 .inner-box2 {
   flex-wrap: wrap;
-  margin-top: 10px;
+  padding: 12px;
+  margin-top: 18px;
   width: 100%;
   font-weight: normal ;
   font-size: 15px;
@@ -264,8 +265,21 @@ div.screentwo-header {
   cursor: pointer;
   display: inline-flex;
   background-color: #f8f8e9;
-  // border: 2px solid rgb(255, 119, 0);
+  border-radius: 5px;
+  border: 2px solid rgb(255, 119, 0);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   border-width: 3px;
+}
+
+.inner-box2 .arrow {
+  position: relative;
+  top: -30px; /* Position the arrow just above the box */
+  left: 60px; /* Adjust to align with checkbox text */
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid rgb(255, 111, 0);
 }
 
 .inner-box3 {
