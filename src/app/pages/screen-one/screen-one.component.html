@@ -19,8 +19,8 @@
        <dxc-box class="outer-box" padding="xsmall">
            <div style="display: flex; flex-direction: column; gap: 16px;">
                <dxc-box class="inner-box" size="fillParent" padding="small">
-                   <div style="margin-top: 10px;"></div>
-                   <div class="questionbadge">
+                   <!-- <div style="margin-top: 10px;"></div> -->
+                 <div class="questionbadge">
                     Q1-<span>1</span>
                  </div>
                  <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">主に使用される方（記名被保険者）の</span>     
@@ -44,6 +44,7 @@
                        <span>日</span>
                     </div>
                  </div>
+                 <!-- <div class="down-arrow"></div> -->
                </dxc-box>
                <dxc-box class="inner-box" size="fillParent" padding="small">
                    <div class="questionbadge">
@@ -53,18 +54,14 @@
                    <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">免許証の色</span>
                    <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">をご選択ください</span> 
                    <div class="dotted-line"></div>
-                   <div class="radiobtnq2">
-                       <dxc-radio label="ゴールド" name="radioLabel2" margin="medium" labelPosition="after"></dxc-radio>
-                   </div>
-                   <div class="radio-space"></div>
-                   <div class="radiobtnq2">
-                       <dxc-radio label="ブルー" name="radioLabel2" margin="medium" labelPosition="after"></dxc-radio>
-                   </div>
-                   <div class="radio-space"></div>
-                   <div class="radiobtnq2">
-                       <dxc-radio label="グリーン" name="radioLabel2" margin="medium" labelPosition="after"></dxc-radio>
-                   </div>
-                   <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=9867" class="custom-link" style="margin-top: 10px;" target="_blank" rel="noopener noreferrer">免許証の色を選択する場合の注意点 </a>
+                   <div class="grid-3-radiobtn">
+                        <div *ngFor="let option of q2RadioBtn1Options" style="height: 40px; width: 177px; margin-top:10px;" class="grid-3-item-radiobtn">
+                        <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" >
+                        </dxc-radio>
+                        <label [for]="option.id">{{ option.label }}</label>
+                        </div>
+                    </div>
+                   <mat-icon style="margin-top: 10px;">help</mat-icon><a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=9867" style="margin-top: 10px;" class="custom-link" target="_blank" rel="noopener noreferrer">免許証の色を選択する場合の注意点 </a>
                </dxc-box>
                <dxc-box class="inner-box" size="fillParent" padding="small">
                    <div class="questionbadge">
@@ -73,14 +70,13 @@
                     <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お見積りされるお車は、</span>     
                     <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">現在自動車保険に加入していますか？</span> 
                    <div class="dotted-line"></div>
-                   <div class="radiobtnq3">
-                       <dxc-radio label="加入している" name="radioLabel2" margin="medium" (click)="toggleSection()" labelPosition="after"></dxc-radio>
-                   </div>
-                   <div class="radio-space"></div>
-                   <div class="radiobtnq3">
-                       <dxc-radio label="加入していない" name="radioLabel2" margin="medium" (click)="toggleSection()"  labelPosition="after"></dxc-radio>
-                   </div>
-
+                   <div class="grid-2-radiobtn">
+                        <div *ngFor="let option of q2RadioBtn2Options" style="height: 40px; width: 285px; margin-top:10px; font-weight: bold;" class="grid-2-item-radiobtn">
+                            <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value">
+                            </dxc-radio>
+                            <label [for]="option.id">{{ option.label }}</label>
+                        </div>
+                    </div>
                    <dxc-box class="inner-box3" padding="xxsmall">
                        <span>※</span><a href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1084" class="custom-link" target="_blank" rel="noopener noreferrer">中断証明書</a>
                        <span class="normal-text">
@@ -102,39 +98,27 @@
                        <a style="margin-left: -5px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=1350" class="custom-link">使用目的とは </a>
                    </span>
                    <div class="dotted-line"></div>
-                   <div class="radiobtnq2">
-                       <dxc-radio label="日常・レジャー" name="radioLabel2" margin="small" [checked]="isSectionVisible" (click)="showSection(1)" labelPosition="after"></dxc-radio>
-                   </div>
-                   <div class="radio-space"></div>
-                   <div class="radiobtnq2">
-                       <dxc-radio label="通勤・通学" name="radioLabel2" margin="small" [checked]="isSectionVisible" (click)="showSection(1)" labelPosition="after"></dxc-radio>
-                   </div>
-                   <div class="radio-space"></div>
-                   <div class="radiobtnq2">
-                       <dxc-radio label="業務使用" name="radioLabel2" margin="small" [checked]="isSectionVisible" (click)="showSection(2)" labelPosition="after"></dxc-radio>
-                   </div>
-                   <div *ngIf="isSectionVisible">
+                   <div class="grid-3-radiobtn">
+                    <div *ngFor="let option of q2RadioBtn3Options" style="height: 40px; width: 177px; margin-top:10px;" class="grid-3-item-radiobtn">
+                    <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value"
+                    [(ngModel)]="selectedValue" (click)="q4ClickEvent(option.value)" [checked]="isSectionVisible">
+                    </dxc-radio>
+                    <label [for]="option.id">{{ option.label }}</label>
+                    </div>
+                </div>
+                   <div *ngIf="visibleSection === 'q4subsection'">
                        <dxc-box class="inner-box5" size="fitcontent" padding="small">
-                           <span>過去１年間のお車の走行距離（前年走行距離）をご選択ください。</span>
+                           <span style="font-weight: bold;">過去１年間のお車の走行距離（前年走行距離）をご選択ください。</span>
                            <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
                            <a style="margin-left: -3px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=12119" class="custom-link">前年走行距離とは </a>
-                           <div class="radiobtnq4">
-                               <dxc-radio label="3,000km以下" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
-                           </div>
-                           <div class="radio-space"></div>
-                           <div class="radiobtnq4">
-                               <dxc-radio label="3,000km超～5,000km以下" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
-                           </div>
-                           <div class="radiobtnq4">
-                               <dxc-radio label="5,000km超～10,000km以下" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
-                           </div>
-                           <div class="radio-space"></div>
-                           <div class="radiobtnq4">
-                               <dxc-radio label="10,000km超～15,000km以下" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
-                           </div>
-                           <div class="radiobtnq4">
-                               <dxc-radio label="15,000km超" name="radioLabel2" margin="xxsmall" labelPosition="after" name="toggleImageSection" [checked]="isImageVisible" (click)="toggleImageSection()"></dxc-radio>
-                           </div>
+                           <div class="grid-3-sub-radiobtn">
+                            <div *ngFor="let option of q2RadioBtn3SubOptions" style="height: 40px; width: 260px; margin-top:10px;" class="grid-3-sub-item-radiobtn">
+                            <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value"
+                             [checked]="isImageVisible" (click)="toggleImageSection()">
+                            </dxc-radio>
+                            <label [for]="option.id">{{ option.label }}</label>
+                            </div>
+                            </div>
                            <div>
                                <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
                                <a href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=12120" class="custom-link" target="_blank" rel="noopener noreferrer" style="margin-top: 20px; margin-left: -5px;">
@@ -182,72 +166,29 @@
                               </ng-container>
                             </div>
                            <img style="width: 630px; margin-top: 10px;" src="assets/img/range.png" />
-                           <div class="radiobtnq5">
-                               <dxc-radio
-                                   label="補償範囲：①
-                                 【主に運転される方】のみ運転"
-                                   name="radioLabel2"
-                                   margin="xxsmall"
-                                   labelPosition="after"
-                                   [checked]="activeImage === 1"
-                                   (click)="setActiveImage(1)"
-                               >
-                               </dxc-radio>
-                           </div>
-                           <div class="radio-space"></div>
-                           <div class="radiobtnq5">
-                               <dxc-radio
-                                   label="補償範囲：①+②
-                                 【主に運転される方・配偶者・別居の未婚のお子さま】のみ運転"
-                                   name="radioLabel2"
-                                   margin="xxsmall"
-                                   labelPosition="after"
-                                   [checked]="activeImage === 2"
-                                   (click)="setActiveImage(2)"
-                               >
-                               </dxc-radio>
-                           </div>
-                           <div class="radio-space"></div>
-                           <div class="radiobtnq5">
-                               <dxc-radio
-                                   label="補償範囲：①+②+③
-                                 【同居のお子さま】以外の方が運転"
-                                   name="radioLabel2"
-                                   margin="xxsmall"
-                                   labelPosition="after"
-                                   [checked]="activeImage === 3"
-                                   (click)="setActiveImage(3)"
-                               >
-                               </dxc-radio>
-                           </div>
-                           <div class="radio-space"></div>
-                           <div class="radiobtnq5">
-                               <dxc-radio
-                                   label="補償範囲：①+②+③+④
-                                 【同居のお子さま（その方の配偶者含む）】も含め運転"
-                                   name="radioLabel2"
-                                   margin="xxsmall"
-                                   labelPosition="after"
-                                   [checked]="activeImage === 4"
-                                   (click)="setActiveImage(4)"
-                               >
-                               </dxc-radio>
-                           </div>
+                           <div class="grid-4-radiobtn">
+                              <div *ngFor="let option of q2RadioBtn4Options" style="height: 160px; width: 122px; margin-top:10px;" class="grid-4-item-radiobtn">
+                              <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value"
+                              (click)="q5ClickEvent(option.value)" [checked]="activeImage === option.id">
+                              </dxc-radio>
+                              <label [for]="option.id">{{ option.label }}</label>
+                              </div>
+                              </div>
                            <div style="font-size: 11px; font-weight: normal; margin-top: 20px;">
-                               <dxc-box size="fillParent" padding="xsmall" style="background-color: #f5f5f5; width: 595px;" shadowDepth="0">
-                                   <span>
-                                       補償される運転者の範囲 <br />
-                                       (1) お車を主に運転される方 <br />
-                                       (2) お車を主に運転される方の配偶者 <br />
-                                       (3) 上記(1)、(2)のどちらとも別居している未婚のお子さま <br />
-                                       (4) 同居の親族・友人・知人や別居の既婚のお子さまなど <br />
-                                       (5) 同居のお子さま（同居のお子さまの配偶者含む） ※1 <br />
+                               <dxc-box size="fillParent" padding="xxsmall" style="background-color: #f5f5f5; width: 595px;" shadowDepth="0">
+                                <ul class="q5-list">
+                                      <span style="margin-left: -20px;">補償される運転者の範囲</span>
+                                       <li>(1) お車を主に運転される方 </li>
+                                       <li>(2) お車を主に運転される方の配偶者 </li>
+                                       <li>(3) 上記(1)、(2)のどちらとも別居している未婚のお子さま </li>
+                                       <li>(4) 同居の親族・友人・知人や別居の既婚のお子さまなど </li>
+                                       <li>(5) 同居のお子さま（同居のお子さまの配偶者含む） ※1 </li>
                                        <br />
-                                       ※1 設定した年齢（※2）未満の「<a class="custom-link" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1446">同居のお子さま</a>」 が運転中の事故は補償されませんので、ご注意ください。
+                                       <span style="margin-left: -20px;">※1 設定した年齢（※2）未満の「<a class="custom-link" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1446">同居のお子さま</a>」 が運転中の事故は補償されませんので、ご注意ください。</span>
                                        <br />
                                        （「<a class="custom-link" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=1446">同居のお子さま</a>」以外の方が運転中の事故は、年齢による制限なく補償されます。） <br />
-                                       ※2 入力された生年月日から計算した保険期間の初日時点の年齢をいいます。
-                                   </span>
+                                       <span style="margin-left: -20px;">※2 入力された生年月日から計算した保険期間の初日時点の年齢をいいます。</span>
+                                      </ul>
                                </dxc-box>
                            </div>
                        </dxc-box>
