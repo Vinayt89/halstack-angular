@@ -108,12 +108,12 @@
                 </div>
                    <div *ngIf="visibleSection === 'q4subsection'">
                        <div class="inner-box5">
-                        <div class="arrow"></div>
+                        <div [ngClass]="{'move-right': isMovedRight}" [ngClass]="{'move-center': isMovedCenter}" class="arrow"></div>
                            <span style="font-weight: bold; margin-left: -20px;">過去１年間のお車の走行距離（前年走行距離）をご選択ください。</span>
                            <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;">help</mat-icon>
                            <a style="margin-left: -3px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=12119" class="custom-link">前年走行距離とは </a>
                            <div class="grid-3-sub-radiobtn">
-                            <div *ngFor="let option of q2RadioBtn3SubOptions" style="height: 40px; width: 260px; margin-top:10px;" class="grid-3-sub-item-radiobtn">
+                            <div *ngFor="let option of q2RadioBtn3SubOptions" style="height: 40px; width: 272px; margin-top:10px;" class="grid-3-sub-item-radiobtn">
                             <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value"
                              [checked]="isImageVisible" (click)="toggleImageSection()">
                             </dxc-radio>

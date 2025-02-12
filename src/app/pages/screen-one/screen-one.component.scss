@@ -304,15 +304,20 @@ a {
 
 .inner-box5 .arrow {
   position: relative;
-  top: -30px; /* Position the arrow just above the box */
+  top: -35px; /* Position the arrow just above the box */
   left: 60px; /* Adjust to align with checkbox text */
   width: 0;
   height: 0;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-bottom: 15px solid rgb(255, 111, 0);
+  border-bottom: 18px solid rgb(255, 111, 0);
 }
-
+.move-center {
+  transform: translateX(220px);
+}
+.move-right {
+  transform: translateX(440px);
+}
 
 .vertical-line {
   width: 1px; /* Thickness of the line */
@@ -526,7 +531,7 @@ mat-icon {
   display: grid;
   // margin-top: 20px;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 5px;
 }
 .grid-3-sub-item-radiobtn {
   border: 2px solid #d1d4d5;

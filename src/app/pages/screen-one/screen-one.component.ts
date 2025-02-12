@@ -97,17 +97,17 @@ export class ScreenOneComponent implements OnInit {
       case '通勤・通学':
         this.visibleSection = 'q4subsection';
         this.showSection(1);
+        this.moveArrowToCenter();
         break;
       case '業務使用':
         this.visibleSection = 'q4subsection';
         this.showSection(2);
+        this.moveArrowToRight();
         break;
       default:
         this.visibleSection = '';
     }
   }
-
-
   q5ClickEvent(value: string) {
     switch (value) {
       case '補償範囲：①':
@@ -123,6 +123,16 @@ export class ScreenOneComponent implements OnInit {
         this.setActiveImage(4);
         break;
     }
+  }
+
+  isMovedRight = false;
+  moveArrowToRight() {
+    this.isMovedRight = true;
+  }
+
+  isMovedCenter = false;
+  moveArrowToCenter() {
+    this.isMovedCenter = true;
   }
 
   loadTextData(fileName: string) {
