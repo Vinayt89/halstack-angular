@@ -85,8 +85,8 @@
                      <div style="margin-left: -10px; font-size: 13px;">
                         <div class="row">
                            メーカー名
-                           <dxc-select class="dropdown" style="margin-left: 10px; width: 65px;"
-                           placeholder=" "
+                           <dxc-select [(ngModel)]="selectedOption1" (change)="onSelectedChange()" class="dropdown" style="margin-left: 10px; width: 105px;"
+                            [options]="selectOptions" placeholder=" "
                            ></dxc-select>
                            <div class="q2-2-text1">
                               <span>※以下の車は、お見積りいただけません。<br>
@@ -98,11 +98,32 @@
                         </div>
                         <div class="row" style="margin-top: -45px;">
                            車名
-                           <dxc-select class="dropdown" style="margin-left: 50px; width: 65px;"
-                           placeholder=" "
+                           <dxc-select [(ngModel)]="selectedOption2" (onChange)="onSelectedChange()" class="dropdown" style="margin-left: 50px; width: 105px;"
+                            [options]="selectOptions" placeholder=" "
                            ></dxc-select>
                         </div>
-                        <div class="q2-2-text2">
+                        <div *ngIf="isTableVisible">
+                        <div class="table-container">
+                        <dxc-table class="q2-table">
+                             <thead>
+                               <tr>
+                                 <th style="width: 35%;">型式</th>
+                                 <th>発売日</th>
+                               </tr>
+                             </thead>
+                             <tbody>
+                               <tr *ngFor="let option of q2TableRadioBtnOptions">
+                                 <td>
+                                    <dxc-radio [id]="option.id" name="" [value]="option.value" ></dxc-radio>
+                                    <label style="margin-left: 10px;" [for]="option.id">{{ option.label }}</label>
+                                 </td>
+                                 <td></td>
+                               </tr>
+                             </tbody>
+                           </dxc-table>
+                        </div>
+                     </div>
+                        <div [ngStyle]="{ 'margin-top': isTableVisible ? '0px' : '40px'}" class="q2-2-text2">
                            <span style="font-weight: bold; font-size: 14px;">型式がわかる方はこちら<br></span>
                           <span> 満期案内等には、継続後の等級が記載されている場合があります。 <br>
                            型式がわかる場合はこちらから検索することができます。<br>

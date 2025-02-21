@@ -362,20 +362,6 @@ div.screenthree-header {
   text-align: center;
   margin-left: 10px;
 }
-
-.q2-2-text2 {
-  background-color: #f2f2f2;
-  padding: 20px;
-  font-size: 13px;
-  border-radius: 8px;
-  // margin-top: -30px;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 10px;
-  line-height: 1.8;
-  color: #333;
-}
-
 .q3SelectOptions {
   display: flex;
   flex-direction: column;
@@ -439,7 +425,7 @@ div.screenthree-header {
   font-size: 11px;
   border-radius: 8px;
   margin: -20px;
-  margin-left: 50px;
+  margin-left: 30px;
   margin-top: 45px;
   font-family: 'Arial', sans-serif;
   line-height: 1.8;
@@ -450,13 +436,14 @@ div.screenthree-header {
   background-color: #f2f2f2;
   padding: 10px;
   width: 100%;
-  font-size: 11px;
-  border-radius: 8px;
-  // margin-left: 5px;
-  margin-top: 40px;
-  font-family: 'Arial', sans-serif;
+  max-width: 850px;
+  font-size: 12px;
+  border-radius: 0 0 8px 8px;
+  border: 2px solid #ddd;
   line-height: 1.8;
   color: #333;
+  border-collapse: separate; /* Allows border-radius to work */
+  border-spacing: 0; /* Removes gaps between cells */
 }
 
 .q2-5-text {
@@ -712,4 +699,48 @@ mat-icon {
   color: rgb(0, 106, 255); 
   font-weight: bold;
   vertical-align: middle;
+}
+
+.table-container {
+  width: calc(100% + 24px);
+  display: flex;
+  max-width: 850px; 
+  overflow-x: auto; 
+}
+
+.q2-table {
+  width: 100%;
+  max-width: 850px;
+  max-height: 275px;
+  overflow-y: auto;
+  border-radius: 8px 8px 0 0;
+  font-size: 13px;
+  margin-top: 40px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #ddd;
+}
+
+.q2-table th,
+.q2-table td {
+  border: 1px solid #c3bdbde4;
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+  color: #000;
+}
+
+.q2-table th {
+  background-color: #fffce7;
+  border: 1px solid #c3bdbde4;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.q2-table td {
+  font-weight:300;
+  background-color: rgb(247, 212, 217);
 }

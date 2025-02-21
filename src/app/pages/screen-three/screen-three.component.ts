@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { Option } from '@dxc-technology/halstack-angular';
 
 @Component({
   selector: 'app-screen-three',
@@ -78,7 +79,7 @@ export class ScreenThreeComponent implements OnInit {
   scrollToQ1Section(): void {
     const q1Section = document.getElementById('q1Section');
     if (q1Section) {
-    const yOffset = -65; // Adjust this offset as needed
+    const yOffset = 0;
     const yPosition = q1Section.getBoundingClientRect().top + window.scrollY + yOffset;
     window.scrollTo({ top: yPosition, behavior: 'smooth' });
     }
@@ -88,12 +89,10 @@ export class ScreenThreeComponent implements OnInit {
     const q2Section = document.getElementById('q2Section');
 
     if (q2Section) {
-      // Calculate the exact position
       const rect = q2Section.getBoundingClientRect();
-      const yOffset = -58; // Adjust this offset if needed for headers
+      const yOffset = 0;
       const scrollPosition = rect.top + window.scrollY + yOffset;
 
-      // Scroll smoothly
       window.scrollTo({
         top: scrollPosition,
         behavior: 'smooth',
@@ -116,6 +115,28 @@ export class ScreenThreeComponent implements OnInit {
     this.router.navigate(['/screen-four'], {
   });
   }
+
+  selectOptions:  Option[]  = [{ label: "BMW", value: "BMW" }];
+  selectedOption1: string = '';  
+  selectedOption2: string = '';  
+  isTableVisible: boolean = false; 
+
+  onSelectedChange(){
+    this.isTableVisible = this.selectedOption1.trim() !== ' ' && this.selectedOption2.trim() !== ' ';
+  }
+
+  q2TableRadioBtnOptions = [
+    {id: '',label:'12AP20', value:'12AP20'},
+    {id: '',label:'12AR30', value:'12AR30'},
+    {id: '',label:'12AV20', value:'12AV20'},
+    {id: '',label:'12AW30', value:'12AW30'},
+    {id: '',label:'12CF89A', value:'12CF89A'},
+    {id: '',label:'12CF89S', value:'12CF89S'},
+    {id: '',label:'12CM20', value:'12CM20'},
+    {id: '',label:'12DM30', value:'12DM30'},
+    {id: '',label:'12EF20', value:'12EF20'},
+    {id: '',label:'12ET44', value:'12ET44'},
+  ];
 
 
   sidePanelLinks = [

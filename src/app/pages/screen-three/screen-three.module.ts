@@ -12,6 +12,7 @@ import {
   DxcCheckboxModule,
   DxcLinkModule,
   DxcButtonModule,
+  DxcTableModule
 } from "@dxc-technology/halstack-angular";
 
 
@@ -27,7 +28,8 @@ import {
     DxcButtonModule,
     FormsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    DxcTableModule
   ],
   exports: [ScreenThreeComponent] 
 })
