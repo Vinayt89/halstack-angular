@@ -29,18 +29,7 @@
                      <div class="dotted-line"></div>
                      <span style="font-size: 13px;">下記の選択内容に誤りがある場合は、このページでは変更できません。</span>
                      <span style="font-size: 13px;">「戻る」ボタンから前ページに戻り、Q1-3を変更してください。</span>
-                     <dxc-box class="inner-box"  size="fillParent" padding="xxsmall" shadowDepth="0">
-                        <!-- <div *ngFor="let option of q2RadioBtnOptions" class="radiobtn1div" style="margin-left: 3px;">
-                           <dxc-radio
-                           [value]="option.value"
-                           (change)="onSelectionChange(option.value)"
-                           id="{{option.id}}"
-                           labelPosition="after">
-                           </dxc-radio>
-                           <label [for]="option.id" class="q2-1-radio-label">
-                              <span> {{option.label}} </span>
-                            </label>
-                        </div> -->
+                     <dxc-box class="inner-box"  size="fillParent" padding="xxsmall" shadowDepth="0">                     
                         <div class="grid-radiobtn1">
                            <div *ngFor="let option of q2RadioBtnOptions" style="height: 40px; width: 282px; " class="grid-item-radiobtn1">
                               <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" >
@@ -309,7 +298,7 @@
                            <div class="dotted-line"></div>
                            <div class="container">
                               <div class="grid">
-                                 <div *ngFor="let option of q2RadioBtn4Options" style="height: 45px; width: 155px; margin-left: 5px; margin-bottom: -15px;" class="grid-item">
+                                 <div *ngFor="let option of q2RadioBtn4Options" style="height: 45px; width: 155px; margin-left: 5px; margin-bottom: -15px;" class="grid-item-radiobtnq5">
                                     <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" >
                                     </dxc-radio>
                                     <label [for]="option.id">{{ option.label }}</label>
@@ -345,15 +334,6 @@
                            </span>
                            <div class="dotted-line"></div>
                            <dxc-box class="inner-box"  size="fillParent" padding="small" shadowDepth="0">
-                              <!-- <div *ngFor="let option of q2RadioBtn5Options" class="radiobtn1div" style="width: 230px; margin-top: -10px;">
-                                 <dxc-radio
-                                 [value]="option.value"
-                                 label="{{option.label}}"
-                                 (change)="onSelectionChange(option.value)"
-                                 id="{{option.id}}"
-                                 labelPosition="after">
-                                 </dxc-radio>
-                              </div> -->
                               <div class="grid-radiobtn1">
                                  <div *ngFor="let option of q2RadioBtn5Options" style="height: 40px; width: 240px; margin-top:-20px;" class="grid-item-radiobtn1">
                                     <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" >

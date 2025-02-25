@@ -143,38 +143,8 @@ div.screentwo-header {
     width: 100%; 
     margin: 10px 0;
 }
-.radiobtn1div {
-  border: 2px solid #969c9f;
-  font-size: 10;
-  border-radius: 5px;
-  padding: 10px;
-  margin-left: -4px;
-  margin-top: 10px;
-  // margin: 10px 0 20px 0;
-  // height: 90px;
-  display: flex; 
-  align-items: center; 
-  text-align: center;
-  transition: border-color 0.3s ease; 
-  width: 282px;
-  height: 40px;
-  &:focus-within {
-    border-color: orange; 
-    background-color: #FFFFF0;
-  }
-  &:active {
-    border-color: orange; 
-    background-color: #FFFFF0;
-  }
-}
-
-.radiobtn1div + .radiobtn1div {
-  margin-left: 10px;  /* Ensures space between consecutive radio button divs */
-}
-
 .grid-radiobtn1 {
   display: grid;
-  // margin-top: 20px;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
@@ -183,12 +153,9 @@ div.screentwo-header {
   border: 2px solid #d1d4d5;
   background-color: #f9d5d3;
   padding: 10px;
-  text-align: center;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 14px;
   font-weight: 550;
   &:focus-within {
@@ -204,13 +171,14 @@ div.screentwo-header {
   flex: 1;
   text-align: center;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 .q2-1-radio-label {
   display: block;
   cursor: pointer;
-  padding: 8px; /* Adds spacing around the label */
-  margin: 8px; /* Adds spacing between the plates */
+  padding: 8px;
+  margin: 8px; 
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -219,7 +187,6 @@ div.screentwo-header {
 .q2-1-text {
   width: 100%;
   transition: border-color 0.3s ease; 
-  // margin: 10px auto;
   margin-top: 20px;
   margin-left: -4px;
   padding: 10px;
@@ -316,33 +283,6 @@ div.screentwo-header {
     margin-right: -15px;
 }
 
-.radiobtn2div {
-  border: 2px solid #969c9f;
-  font-size: 10;
-  border-radius: 5px;
-  padding: 10px;
-  margin-left: -20px;
-  // margin: 10px 0 20px 0;
-  height: 90px;
-  display: flex; 
-  align-items: center; 
-  transition: border-color 0.3s ease; 
-  width: 240px;
-  height: 100px;
-  &:focus-within {
-    border-color: orange; 
-    background-color: #FFFFF0;
-  }
-  &:active {
-    border-color: orange; 
-    background-color: #FFFFF0;
-  }
-}
-
-.radiobtn2div + .radiobtn2div {
-  margin-left: 20px;  /* Ensures space between consecutive radio button divs */
-}
-
 .radiobtn3 {
   display: flex;
   border: 2px solid #969c9f;
@@ -369,7 +309,7 @@ div.screentwo-header {
 }
 
 .radiobtn3 + .radiobtn3 {
-  margin-left: 10px;  /* Ensures space between consecutive radio button divs */
+  margin-left: 10px; 
 }
 
 .inner-box2-text {
@@ -515,6 +455,31 @@ div.screentwo-header {
   color: #333;
 }
 
+.grid-item-radiobtnq5 {
+  border: 2px solid #d1d4d5;
+  background-color: #f9d5d3;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  font-weight: 550;
+  &:focus-within {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
+  &:active {
+    border-color: orange; 
+    background-color: #FFFFF0;
+  }
+}
+.grid-item-radiobtnq5 label {
+  flex: 1;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 .q2-5-text {
   background-color: #f2f2f2;
   padding: 10px;
@@ -569,7 +534,7 @@ div.screentwo-header {
   border: 2px solid #ccc;
   border-radius: 10px;
   text-align: center;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.8;
   font-family: 'Arial', sans-serif;
 }
@@ -656,12 +621,9 @@ div.screentwo-header {
   background-color: #f9d5d3;
   padding: 10px;
   border: 2px solid rgb(194, 191, 191);
-  text-align: center;
   border-radius: 8px;
   cursor: pointer;
   display: flex;  
-  align-items: center;
-  justify-content: center;
   font-size: 12px;
   font-weight: 550;
   &:focus-within {
@@ -678,6 +640,7 @@ div.screentwo-header {
   flex: 1;
   text-align: center;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 .q4highlighted-box {

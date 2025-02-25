@@ -31,6 +31,6 @@ import { ScreenFourModule } from './pages/screen-four/screen-four.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [],
+  // entryComponents: [],
 })
 export class AppModule {}

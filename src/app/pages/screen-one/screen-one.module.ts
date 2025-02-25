@@ -41,6 +41,6 @@ import {
     HttpClientModule
   ],
   exports: [ScreenOneComponent],
-  entryComponents: [DxcBoxComponent, DxcTagComponent, DxcHeadingComponent],
+  // entryComponents: [DxcBoxComponent, DxcTagComponent, DxcHeadingComponent],
 })
 export class ScreenOneModule {}

@@ -86,18 +86,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "halstack-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "halstack-angular:build:production"
+              "buildTarget": "halstack-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "halstack-angular:build"
           }
         },
         "test": {
@@ -140,7 +138,6 @@
       }
     }
   },
-  "defaultProject": "halstack-angular",
   "cli": {
     "analytics": false
   }

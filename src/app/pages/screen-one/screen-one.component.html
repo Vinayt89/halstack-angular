@@ -17,7 +17,7 @@
     <h2 style="margin-top: -5px;">{{messages.Q1_Heading}}</h2>
    <div class="screen-one-header">
        <dxc-box class="outer-box" padding="xsmall">
-           <div style="display: flex; flex-direction: column; gap: 16px;">
+           <div class="outer-box-div">
                <dxc-box class="inner-box" size="fillParent" padding="small">
                    <!-- <div style="margin-top: 10px;"></div> -->
                  <div class="questionbadge">
@@ -56,7 +56,7 @@
                    <div class="dotted-line"></div>
                    <div class="grid-3-radiobtn">
                         <div *ngFor="let option of q2RadioBtn1Options" style="height: 40px; width: 177px; margin-top:10px;" class="grid-3-item-radiobtn">
-                        <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value" >
+                        <dxc-radio [id]="option.id" name="" [value]="option.value" >
                         </dxc-radio>
                         <label [for]="option.id">{{ option.label }}</label>
                         </div>
@@ -101,7 +101,7 @@
                    <div class="grid-3-radiobtn">
                     <div *ngFor="let option of q2RadioBtn3Options" style="height: 40px; width: 177px; margin-top:10px;" class="grid-3-item-radiobtn">
                     <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value"
-                    [(ngModel)]="selectedValue" (click)="q4ClickEvent(option.value)" [checked]="isSectionVisible">
+                    [(ngModel)]="selectedValue" (click)="q4ClickEvent(option.value)" >
                     </dxc-radio>
                     <label [for]="option.id">{{ option.label }}</label>
                     </div>
@@ -114,8 +114,8 @@
                            <a style="margin-left: -3px;" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/glossary/faq_detail.html?id=12119" class="custom-link">前年走行距離とは </a>
                            <div class="grid-3-sub-radiobtn">
                             <div *ngFor="let option of q2RadioBtn3SubOptions" style="height: 40px; width: 272px; margin-top:10px;" class="grid-3-sub-item-radiobtn">
-                            <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value"
-                             [checked]="isImageVisible" (click)="toggleImageSection()">
+                            <dxc-radio [id]="option.id" name="" [value]="option.value"
+                            (click)="toggleImageSection()">
                             </dxc-radio>
                             <label [for]="option.id">{{ option.label }}</label>
                             </div>
@@ -168,7 +168,7 @@
                             </div>
                            <img style="width: 630px; margin-top: 10px;" src="assets/img/range.png" />
                            <div class="grid-4-radiobtn">
-                              <div *ngFor="let option of q2RadioBtn4Options" style="height: 160px; width: 122px; margin-top:10px;" class="grid-4-item-radiobtn">
+                              <div *ngFor="let option of q2RadioBtn4Options" style="height: 180px; width: 122px; margin-top:10px;" class="grid-4-item-radiobtn">
                               <dxc-radio type="radio" [id]="option.id" name="" [value]="option.value"
                               (click)="q5ClickEvent(option.value)" [checked]="activeImage === option.id">
                               </dxc-radio>

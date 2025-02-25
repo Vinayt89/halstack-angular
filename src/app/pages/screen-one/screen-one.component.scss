@@ -476,12 +476,9 @@ mat-icon {
   border: 2px solid #d1d4d5;
   background-color: #f9d5d3;
   padding: 10px;
-  text-align: center;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 14px;
   font-weight: 550;
   &:focus-within {
@@ -496,6 +493,7 @@ mat-icon {
 .grid-2-item-radiobtn label {
   flex: 1;
   text-align: center;
+  margin-top: 10px;
   margin-left: 10px;
 }
 .grid-3-radiobtn {
@@ -508,12 +506,9 @@ mat-icon {
   border: 2px solid #d1d4d5;
   background-color: #f9d5d3;
   padding: 10px;
-  text-align: center;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 14px;
   font-weight: 550;
   &:focus-within {
@@ -528,6 +523,7 @@ mat-icon {
 .grid-3-item-radiobtn label {
   flex: 1;
   text-align: center;
+  margin-top: 10px;
   margin-left: 10px;
 }
 .grid-3-sub-radiobtn {
@@ -540,12 +536,9 @@ mat-icon {
   border: 2px solid #d1d4d5;
   background-color: #f9d5d3;
   padding: 10px;
-  text-align: center;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 14px;
   // font-weight: 550;
   &:focus-within {
@@ -561,6 +554,7 @@ mat-icon {
   flex: 1;
   text-align: center;
   margin-left: 10px;
+  margin-top: 10px;
 }
 .grid-4-radiobtn {
   display: grid;
