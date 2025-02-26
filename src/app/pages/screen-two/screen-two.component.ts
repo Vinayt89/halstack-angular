@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GenericTextService } from "src/app/services/generic.text.service";
 
 @Component({
   selector: 'app-screen-two',
@@ -7,11 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./screen-two.component.scss'],
 })
 export class ScreenTwoComponent implements OnInit {
+  messages: any = {};
 
-  constructor(private router: Router) {}
-
+  constructor(private router: Router, private generictextservice: GenericTextService) {}
+  
   ngOnInit() {
-    
+    this.loadTextData('screen-two.json');
   }
 
   isQ3Checked: boolean = false;
@@ -89,6 +91,17 @@ export class ScreenTwoComponent implements OnInit {
   goToNextScreen() {
     this.router.navigate(['/screen-three'], {
   });
+  }
+
+  loadTextData(fileName: string) {
+    this.generictextservice.readJSONFile(fileName).subscribe(
+      (data) => {
+        this.messages = data;
+      },
+      (error) => {
+        console.error('Error loading text file:', error);
+      }
+    );
   }
 
   sidePanelLinks = [

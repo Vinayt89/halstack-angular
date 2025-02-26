@@ -8,7 +8,6 @@ import { GenericTextService } from "src/app/services/generic.text.service";
   styleUrls: ["./screen-one.component.scss"],
 })
 export class ScreenOneComponent implements OnInit {
-  // imgDxc: string;
   messages: any = {};
   underlined: boolean = true;
   newWindow: boolean = true;
@@ -22,7 +21,6 @@ export class ScreenOneComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.imgDxc = "assets/img/dxclogo.svg";
     this.loadTextData('screen-one.json');
   }
 

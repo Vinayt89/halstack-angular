@@ -86,12 +86,17 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "buildTarget": "halstack-angular:build"
           },
           "configurations": {
             "production": {
               "buildTarget": "halstack-angular:build:production"
+            },
+            "development": {
+              "buildTarget": "halstack-angular:build"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

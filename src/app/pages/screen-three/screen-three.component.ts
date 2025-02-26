@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Option } from '@dxc-technology/halstack-angular';
+import { GenericTextService } from "src/app/services/generic.text.service";
 
 @Component({
   selector: 'app-screen-three',
@@ -8,10 +9,12 @@ import { Option } from '@dxc-technology/halstack-angular';
   styleUrls: ['./screen-three.component.scss']
 })
 export class ScreenThreeComponent implements OnInit {
+  messages: any = {};
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private generictextservice: GenericTextService) {}
 
   ngOnInit() {
+    this.loadTextData('screen-three.json');
   }
 
   q3RadioBtnOptions = [
@@ -138,6 +141,16 @@ export class ScreenThreeComponent implements OnInit {
     {id: '',label:'12ET44', value:'12ET44'},
   ];
 
+  loadTextData(fileName: string) {
+    this.generictextservice.readJSONFile(fileName).subscribe(
+      (data) => {
+        this.messages = data;
+      },
+      (error) => {
+        console.error('Error loading text file:', error);
+      }
+    );
+  }
 
   sidePanelLinks = [
     { text: '福祉車両の取扱いは？', href: 'https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=15696' },

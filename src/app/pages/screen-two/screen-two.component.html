@@ -13,7 +13,7 @@
            <p class="fiveminutes-img"><img decoding="async"  src="assets/img/icon_5minutes_01.png" alt="最短5分でお見積り" width="111" height="101" /></p>
          </div>
      </div>
-      <h2 style="padding-left: 140px; margin-top: 50px;">Q2. ご契約中の保険について</h2>
+      <h2 style="padding-left: 140px; margin-top: 50px;">{{messages.Q2_Heading}}</h2>
       <div class="screentwo-container">
          <div class="screentwo-header">
             <dxc-box class="outer-box" padding="xsmall">
@@ -24,8 +24,8 @@
                      <div class="questionbadge">
                         Q2-<span>1</span>
                      </div>
-                     <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お見積りされるお車は、</span>     
-                     <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">現在自動車保険に加入していますか？</span>
+                     <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">{{messages.Q2_1_1}}</span>     
+                     <span style="margin-top: 20px; font-weight: 700;  color: #e37026;">{{messages.Q2_1_2}}</span>
                      <div class="dotted-line"></div>
                      <span style="font-size: 13px;">下記の選択内容に誤りがある場合は、このページでは変更できません。</span>
                      <span style="font-size: 13px;">「戻る」ボタンから前ページに戻り、Q1-3を変更してください。</span>
@@ -91,8 +91,8 @@
                            <div class="questionbadge" style="height: 30px; margin-top: 25px;">
                               Q2-<span>2</span>
                            </div>
-                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お見積もりのお車が <br>
-                           <span style="color: #e37026; font-weight: 700;">現在ご加入中の保険会社（共済）</span>をご選択ください。
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">{{messages.Q2_2_1}}<br>
+                           <span style="color: #e37026; font-weight: 700;">{{messages.Q2_2_2}}</span>{{messages.Q2_2_3}}
                            </span>
                            <div class="dotted-line"></div>
                            <div class="container">
@@ -116,9 +116,9 @@
                            <div class="questionbadge" style="height: 30px; margin-top: 25px;">
                               Q2-<span>3</span>
                            </div>
-                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">お見積もりのお車が <br>
-                           現在ご加入の自動車保険の
-                           <span style="color: #e37026; font-weight: 700;">保険期間</span>をご入力ください。
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">{{messages.Q2_3_1}}<br>
+                              {{messages.Q2_3_2}}
+                           <span style="color: #e37026; font-weight: 700;">{{messages.Q2_3_3}}</span>{{messages.Q2_3_4}}
                            </span>
                            <div class="dotted-line"></div>
                            <dxc-box class="inner-box"  size="fillParent" padding="small" shadowDepth="0">
@@ -221,10 +221,10 @@
                               Q2-<span>4</span>
                            </div>
                            <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">
-                              お見積もりのお車の現在の
+                              {{messages.Q2_4_1}}
                               <br> 
-                              <span style="color: #e37026; font-weight: 700;">ノンフリート等級 </span>
-                              をご選択ください。
+                              <span style="color: #e37026; font-weight: 700;">{{messages.Q2_4_2}}</span>
+                              {{messages.Q2_4_3}}
                               <mat-icon style="color: rgb(0, 106, 255); font-size: 18px;" >help</mat-icon>
                               <span><a class="link" target="_blank" rel="noopener noreferrer" href="https://faq-ins-saison.dga.jp/car/otona/faq_detail.html?id=1022">ノンフリート等級とは</a></span>
                            </span>
@@ -290,10 +290,10 @@
                            <div class="questionbadge" style="height: 30px; margin-top: 30px;">
                               Q2-<span>5</span>
                            </div>
-                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">現在の保険期間中に
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold;">{{messages.Q2_5_1}}
                            <br> 
-                           <span style="color: #e37026; font-weight: 700;">保険金を請求した、または請求予定の事故</span>
-                           はありますか？
+                           <span style="color: #e37026; font-weight: 700;">{{messages.Q2_5_2}}</span>
+                           {{messages.Q2_5_3}}
                            </span>
                            <div class="dotted-line"></div>
                            <div class="container">
@@ -330,7 +330,7 @@
                            <div class="questionbadge">
                               Q2-<span>6</span>
                            </div>
-                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold; font-size: 14px;">既に「おとなの自動車保険」に加入している、別のお車をお持ちですか？
+                           <span style="margin-top: 20px; margin-left: 10px; font-weight: bold; font-size: 14px;">{{messages.Q2_6_1}}
                            </span>
                            <div class="dotted-line"></div>
                            <dxc-box class="inner-box"  size="fillParent" padding="small" shadowDepth="0">
