@@ -1,14 +1,14 @@
 # POC for SD using Halstack Angular
 
-### Technologies Used
+<h1><u>Technologies / Libraries Used</u></h1>
 1. Node JS v22.14.0
 2. Angular v19 (19.1.7)
-3. Halstack [Github Repository](https://github.com/dxc-technology/halstack-angular)
+3. Halstack 5.0.2 [Github Repository](https://github.com/dxc-technology/halstack-angular)
 4. Typescript 5.7.3
 5. HTML
 6. CSS
 
-### Project Setup
+<h1><u>Project Setup</u></h1>
 1. Download and Install Node JS v22.14.0 for your operating system (Windows, Linux, MacOS)
 2. Download and Extract Halstack-Angular project 
 3. Go to project directory through command prompt (cd project directory) and run `npm install`
