@@ -13,4 +13,4 @@
 2. Download and Extract Halstack-Angular project 
 3. Go to project directory through command prompt (cd project directory) and run `npm install`
 4. Run `ng serve`
-5. Open browser and hit this URL [URL](http://localhost:4200/)
+5. Open browser and hit this [URL](http://localhost:4200/)
