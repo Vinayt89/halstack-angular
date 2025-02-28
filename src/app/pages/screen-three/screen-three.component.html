@@ -85,8 +85,8 @@
                      <div style="margin-left: -10px; font-size: 13px;">
                         <div class="row">
                            メーカー名
-                           <dxc-select [(ngModel)]="selectedOption1" (change)="onSelectedChange()" class="dropdown" style="margin-left: 10px; width: 105px;"
-                            [options]="selectOptions" placeholder=" "
+                           <dxc-select [(ngModel)]="selectedOption" (onChange)="onChange($event)" class="dropdown" style="margin-left: 10px; width: 105px; font-size: 10px;"
+                           [options]="selectOptions" placeholder=" "
                            ></dxc-select>
                            <div class="q2-2-text1">
                               <span>※以下の車は、お見積りいただけません。<br>
@@ -98,8 +98,8 @@
                         </div>
                         <div class="row" style="margin-top: -45px;">
                            車名
-                           <dxc-select [(ngModel)]="selectedOption2" (onChange)="onSelectedChange()" class="dropdown" style="margin-left: 50px; width: 105px;"
-                            [options]="selectOptions" placeholder=" "
+                           <dxc-select [(ngModel)]="selectedModel" class="dropdown" style="margin-left: 50px; width: 105px;"
+                            [options]="secondSelectOptions" placeholder=" "
                            ></dxc-select>
                         </div>
                         <div *ngIf="isTableVisible">
