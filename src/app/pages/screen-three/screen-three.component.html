@@ -85,8 +85,14 @@
                      <div style="margin-left: -10px; font-size: 13px;">
                         <div class="row">
                            メーカー名
-                           <dxc-select [(ngModel)]="selectedOption" (onChange)="onChange($event)" class="dropdown" style="margin-left: 10px; width: 105px; font-size: 10px;"
-                           [options]="selectOptions" placeholder=" "
+                           <dxc-select
+                           class="dropdown" style="margin-left: 10px; width: 105px; font-size: 10px;"
+                           id="dropdown1"
+                           placeholder=" "
+                           [options]="selectOptions"
+                           [(ngModel)]="selectedOption"
+                           (onChange)="updateSecondDropdownOptions($event.value)">
+                           >
                            ></dxc-select>
                            <div class="q2-2-text1">
                               <span>※以下の車は、お見積りいただけません。<br>
@@ -98,8 +104,12 @@
                         </div>
                         <div class="row" style="margin-top: -45px;">
                            車名
-                           <dxc-select [(ngModel)]="selectedModel" class="dropdown" style="margin-left: 50px; width: 105px;"
-                            [options]="secondSelectOptions" placeholder=" "
+                           <dxc-select class="dropdown" style="margin-left: 50px; width: 105px;"
+                           id="dropdown2"
+                           placeholder=" "
+                           [options]="secondSelectOptions"
+                           [(ngModel)]="selectedModel"
+                           (onChange)="updateTableData($event.value)"
                            ></dxc-select>
                         </div>
                         <div *ngIf="isTableVisible">
@@ -112,12 +122,14 @@
                                </tr>
                              </thead>
                              <tbody>
-                               <tr *ngFor="let option of q2TableRadioBtnOptions">
-                                 <td>
+                               <tr *ngFor="let row of filteredTableData">
+                                 <!-- <td>
                                     <dxc-radio [id]="option.id" name="" [value]="option.value" ></dxc-radio>
                                     <label style="margin-left: 10px;" [for]="option.id">{{ option.label }}</label>
                                  </td>
-                                 <td></td>
+                                 <td></td> -->
+                                 <td>{{  row.subModel }}</td>
+                                 <td>{{  row.description }}</td>
                                </tr>
                              </tbody>
                            </dxc-table>

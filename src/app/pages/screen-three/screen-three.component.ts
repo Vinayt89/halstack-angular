@@ -1,10 +1,20 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Option } from '@dxc-technology/halstack-angular';
 import { GenericTextService } from "src/app/services/generic.text.service";
-import * as XLSX from 'xlsx';
+import * as Papa from 'papaparse';
 import { HttpClient } from '@angular/common/http';
 
+interface SelectOption {
+  label: string;
+  value: string;
+}
+
+interface TableRow {
+  name: string;
+  model: string;
+  subModel: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-screen-three',
@@ -12,11 +22,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./screen-three.component.scss']
 })
 export class ScreenThreeComponent implements OnInit {
-  tableData: any[] = [];
-  displayedColumns: string[] = [];
-  selectOptions: { label: string, value: string }[] = [];
-  secondSelectOptions: { label: string, value: string }[] = [];
-  selectedOption: string = ' ';
+  selectOptions: SelectOption[] = [];
+  secondSelectOptions: SelectOption[] = [];
+  tableData: TableRow[] = [];
+  filteredTableData: TableRow[] = [];
+  selectedOption: string = '';
   selectedModel: string = '';
   messages: any = {};
 
@@ -25,73 +35,87 @@ export class ScreenThreeComponent implements OnInit {
 
   ngOnInit() {
     this.loadTextData('screen-three.json');
-    this.loadExcelData();
+    this.loadCSVData();
   }
 
-  private loadExcelData() {
-    const url = 'assets/excel/screen-three/Test.xlsx';
-    this.http.get(url, { responseType: 'arraybuffer' }).subscribe(data => {
-      const workbook = XLSX.read(data, { type: 'array' });
-      const sheetName = workbook.SheetNames[0];
-      const sheet = workbook.Sheets[sheetName];
-      const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+  private loadCSVData() {
+    const url = 'assets/excel/screen-three/Test.csv';
+    fetch(url)
+      .then(response => response.text())
+      .then(csvData => {
+        Papa.parse(csvData, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (result) => {
+            let lastValidName = '';
+            let lastValidModel = '';
 
-      console.log('Raw Excel Data:', jsonData);
+            this.tableData = result.data.map((row: any) => {
+              lastValidName = row["Name"] || lastValidName; // Fill forward missing Name values
+              lastValidModel = row["Models"] || lastValidModel; // Fill forward missing Model values
+              return {
+                name: lastValidName,
+                model: lastValidModel,
+                subModel: row["Sub-Model"]?.trim() || '',
+                description: row["Description"]?.trim() || '',
+              };
+            });
 
-      if (jsonData.length) {
-        this.displayedColumns = jsonData[0] as string[];
-        this.tableData = (jsonData.slice(1) as unknown[]).map((row) => {
-          const rowArray = row as (string | number)[];
-          const rowObj: any = {};
-          this.displayedColumns.forEach((col, index) => {
-            rowObj[col] = rowArray[index];
-          });
-          return rowObj;
+            // Populate dropdown1 (Name options)
+            this.selectOptions = Array.from(new Set(this.tableData.map((row) => row.name)))
+              .map((name) => ({ label: name, value: name }));
+
+            console.log('Dropdown 1 Options:', this.selectOptions);
+            console.log('Table Data:', this.tableData);
+
+            // Trigger UI update
+            this.cdr.detectChanges();
+          }
         });
-
-        console.log('Processed Table Data:', this.tableData);
-
-        // Add a blank placeholder option at the top
-        this.selectOptions = [
-          { label: '', value: ' ' },  // Blank string as the placeholder
-          ...this.tableData
-            .map(row => ({ label: row["Name"], value: row["Name"] }))
-            .filter((value, index, self) => self.findIndex(v => v.value === value.value) === index)
-        ];
-
-        console.log('Select Options for Dropdown 1:', this.selectOptions);
-      }
-    });
+      })
+      .catch(error => console.error('Error loading CSV file:', error));
   }
 
-  // Called when the first dropdown value changes
-  onChange(selectedValue: { value: string, error?: any }) {
-    // Extract the actual string value from the object
-    this.selectedOption = selectedValue?.value?.trim() || ' ';
-    console.log('Selected Option from Dropdown 1:', this.selectedOption);
+  updateSecondDropdownOptions(selectedName: string) {
+    this.selectedOption = selectedName;
+    this.selectedModel = '';
+    this.filteredTableData = [];
 
-    this.secondSelectOptions = [];
+    // Extract unique models for the selected Name
+    const models = Array.from(new Set(
+        this.tableData
+            .filter(row => row.name === selectedName && row.model)
+            .map(row => row.model)
+    ));
 
-    // If the blank placeholder is selected, clear the second dropdown
-    if (this.selectedOption === ' ') {
-      console.log('Resetting second dropdown options');
-      this.cdr.detectChanges();
-      return;
-    }
+    this.secondSelectOptions = models.map((model) => ({
+        label: model,
+        value: model,
+    }));
 
-    const selectedRow = this.tableData.find(row => row["Name"] === this.selectedOption);
+    console.log('Selected Option from Dropdown 1:', selectedName);
+    console.log('Second Dropdown Options:', this.secondSelectOptions);
 
-    if (selectedRow && selectedRow["Models"]) {
-      const models = selectedRow["Models"].split(',').map((model: string) => model.trim());
-      console.log('Models Array for Second Dropdown:', models);
-
-      this.secondSelectOptions = models.map((model: string) => ({ label: model, value: model }));
-    }
-
-    console.log('Options for Dropdown 2:', this.secondSelectOptions);
-
-    // Force change detection
+    // Force UI update
     this.cdr.detectChanges();
+  }
+
+  updateTableData(selectedModel: string) {
+    this.selectedModel = selectedModel;
+
+    // Filter table data based on selected Name and Model
+    this.filteredTableData = this.tableData.filter(row =>
+      row.name === this.selectedOption &&
+      row.model === this.selectedModel &&
+      row.subModel // Ensure sub-model is not empty
+    );
+
+    console.log('Selected Option from Dropdown 2:', selectedModel);
+    console.log('Filtered Table Data:', this.filteredTableData);
+
+    // Force UI update
+    this.cdr.detectChanges();
+    this.isTableVisible = this.selectedOption.trim() !== ' ' && this.selectedModel.trim() !== ' ';
   }
 
   q3RadioBtnOptions = [
@@ -196,13 +220,8 @@ export class ScreenThreeComponent implements OnInit {
   });
   }
 
-  selectedOption1: string = '';  
-  selectedOption2: string = '';  
   isTableVisible: boolean = false; 
 
-  onSelectedChange(){
-    this.isTableVisible = this.selectedOption1.trim() !== ' ' && this.selectedOption2.trim() !== ' ';
-  }
 
   q2TableRadioBtnOptions = [
     {id: '',label:'12AP20', value:'12AP20'},
