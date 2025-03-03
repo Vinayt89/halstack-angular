@@ -62,8 +62,9 @@ export class ScreenThreeComponent implements OnInit {
             });
 
             // Populate dropdown1 (Name options)
-            this.selectOptions = Array.from(new Set(this.tableData.map((row) => row.name)))
-              .map((name) => ({ label: name, value: name }));
+            this.selectOptions = [{ label: '選択してください', value: ' ' }, 
+              ...Array.from(new Set(this.tableData.map((row) => row.name)))
+                .map((name) => ({ label: name, value: name }))];
 
             console.log('Dropdown 1 Options:', this.selectOptions);
             console.log('Table Data:', this.tableData);
@@ -78,27 +79,33 @@ export class ScreenThreeComponent implements OnInit {
 
   updateSecondDropdownOptions(selectedName: string) {
     this.selectedOption = selectedName;
-    this.selectedModel = '';
     this.filteredTableData = [];
-
+  
     // Extract unique models for the selected Name
     const models = Array.from(new Set(
         this.tableData
             .filter(row => row.name === selectedName && row.model)
             .map(row => row.model)
     ));
-
-    this.secondSelectOptions = models.map((model) => ({
-        label: model,
-        value: model,
-    }));
-
+  
+    // Populate dropdown2 (Model options) with default "選択してください"
+    this.secondSelectOptions = [{ label: '選択してください', value: ' ' }, 
+      ...models.map((model) => ({ label: model, value: model }))];
+  
     console.log('Selected Option from Dropdown 1:', selectedName);
     console.log('Second Dropdown Options:', this.secondSelectOptions);
+  
+    // **Step 1: Temporarily clear selection**
+    this.selectedModel = ''; 
+    this.cdr.detectChanges(); // Force UI update
 
-    // Force UI update
-    this.cdr.detectChanges();
+    // **Step 2: Reset to "選択してください" after UI updates**
+    setTimeout(() => {
+      this.selectedModel = '選択してください';
+      this.cdr.detectChanges();
+    }, 0);
   }
+  
 
   updateTableData(selectedModel: string) {
     this.selectedModel = selectedModel;
