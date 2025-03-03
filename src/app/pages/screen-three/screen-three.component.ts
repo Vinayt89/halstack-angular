@@ -39,7 +39,7 @@ export class ScreenThreeComponent implements OnInit {
   }
 
   private loadCSVData() {
-    const url = 'assets/excel/screen-three/Test.csv';
+    const url = 'assets/csv/screen-three/Q3_Data.csv';
     fetch(url)
       .then(response => response.text())
       .then(csvData => {
