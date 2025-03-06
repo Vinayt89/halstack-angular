@@ -1,4 +1,4 @@
-# POC for SD using Halstack Angular
+# POC for Sompo Direct using Halstack Angular
 
 ### Technologies / Libraries Used
 1. Node JS v22.14.0
